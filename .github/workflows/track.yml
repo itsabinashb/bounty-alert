@@ -1,0 +1,32 @@
+name: Track Immunefi scopes
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"  # every 15 minutes (GitHub may delay runs a few minutes)
+  workflow_dispatch:         # lets you run it manually from the Actions tab
+
+permissions:
+  contents: write            # needed to commit scope snapshots
+
+concurrency:
+  group: track
+  cancel-in-progress: false
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check scopes and alert
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          git config user.name "scope-tracker"
+          git config user.email "scope-tracker@users.noreply.github.com"
+          python track.py
