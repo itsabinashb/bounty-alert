@@ -51,7 +51,7 @@ Also, for any file to be in scope, it has to be part of a release, not including
 
 If an impact can be caused to any other asset managed by Chainlink that isn’t on this table but for which the impact is in the Impacts in Scope section below, you are encouraged to submit it for consideration by the project.
 
-## Impacts in scope (38)
+## Impacts in scope (36)
 
 - [smart_contract] Critical: Any governance voting result manipulation
 - [smart_contract] Critical: Direct theft of any user funds, whether at-rest or in-motion, other than unclaimed yield
@@ -65,10 +65,9 @@ If an impact can be caused to any other asset managed by Chainlink that isn’t 
 - [smart_contract] High: Theft of protocol revenue unrelated to CCIP
 - [smart_contract] Medium: Griefing in the condition where the cost of carrying out attack is less than or equal to the damage
 - [smart_contract] Medium: Loss of protocol revenue unrelated to CCIP (i.e skipping all or part of protocol fees)
-- [smart_contract] Medium: Theft of protocol revenue for CCIP
 - [smart_contract] Medium: Unbounded gas consumption
 - [smart_contract] Low: Griefing in the condition where the cost of carrying out attack is more than the damage
-- [smart_contract] Low: Loss of protocol revenue for CCIP (i.e skipping all or part of protocol fees)
+- [smart_contract] Low: Loss or theft of protocol revenue for CCIP (i.e skipping all or part of protocol fees)
 - [smart_contract] Low: Smart contract fails to deliver expected return(s) but doesn’t result in loss of value
 - [websites_and_applications] Critical: Execute arbitrary system commands
 - [websites_and_applications] Critical: Injecting code that results in malicious interactions with an already-connected wallet such as modifying transaction arguments or parameters, substituting contract addresses, submitting malicious transactions
@@ -85,10 +84,9 @@ If an impact can be caused to any other asset managed by Chainlink that isn’t 
 - [websites_and_applications] Medium: Injecting/modifying the static content on the target application without Javascript (Reflected) such as reflected HTML injection or loading external site data
 - [websites_and_applications] Medium: Loss of protocol revenue unrelated to CCIP (i.e skipping all or part of protocol fees)
 - [websites_and_applications] Medium: Subdomain takeover
-- [websites_and_applications] Medium: Theft of protocol revenue for CCIP
 - [websites_and_applications] Low: Changing details of other users (including modifying browser local storage) without already-connected wallet interaction and with significant user interaction such as iframing leading to modifying the backend/browser state (demonstrate impact with PoC)
 - [websites_and_applications] Low: Griefing in the condition where the cost of carrying out attack is more than the damage
-- [websites_and_applications] Low: Loss of protocol revenue for CCIP (i.e skipping all or part of protocol fees)
+- [websites_and_applications] Low: Loss or theft of protocol revenue for CCIP (i.e skipping all or part of protocol fees)
 - [websites_and_applications] Low: Redirecting users to malicious websites (open redirect)
 - [websites_and_applications] Low: Temporarily disabling user's access to target resource
 

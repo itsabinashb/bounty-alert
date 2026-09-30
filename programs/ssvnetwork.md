@@ -77,7 +77,7 @@ Reward disbursements are administered by the SSV Network Grants Committee. While
 
 (none)
 
-## Known issues (5)
+## Known issues (7)
 
 - Cluster insolvency depends on liquidator liveness.
 
@@ -142,6 +142,27 @@ Mitigations:
 
 Accepted trade-off: add validators before the next oracle round.
 The opposite direction temporarily favors the cluster owner. After consuming a root, newly registered validators are accounted at the 32 ETH baseline EB only. Any above-baseline EB they carry on the beacon chain is not yet reflected on-chain until the next root is committed and consumed. This latency is accepted by design, but owners should fund for the EB that the next root will apply, not only the current baseline. (https://bugs.immunefi.com/magnus/863/projects/923/reports/76267)
+- Operator fee increase limit rounds up by one fee unit.
+
+Operator ETH fees are stored in raw units of 100,000 wei per block. `declareOperatorFee` computes the highest allowed new fee with ceiling division:
+
+```solidity
+uint64 maxAllowedFee = (operatorFee.raw() * (BPS_DENOMINATOR + sp.operatorMaxFeeIncrease) + BPS_DENOMINATOR - 1) / BPS_DENOMINATOR;
+```
+
+See [SSVOperators.sol](https://github.com/ssvlabs/ssv-network/tree/v2.0.0/contracts/modules/SSVOperators.sol) (declareOperatorFee line 109, limit line 131). When `oldRaw × (10,000 + operatorMaxFeeIncrease)` is not a multiple of 10,000, the accepted maximum is one raw unit (100,000 wei per block) above the exact percentage limit.
+
+Bounds:
+
+- One declaration can exceed the exact limit by at most one raw unit. At the default fee (raw 17,788) and a 10% limit, the ceiling allows 19,567 instead of 19,566, an increase of 10.0011% instead of 10%. Near the minimum fee (raw 100 on mainnet) the relative error is largest: raw 101 can move to 112 instead of 111, an increase of 10.89%.
+- In absolute terms the extra unit costs a cluster 100,000 wei per block per 32 ETH of effective balance for each affected operator: about 0.00000026 ETH per year for a 32 ETH validator, and about 0.0000168 ETH per year for a 2,048 ETH validator.
+- The rounding can compound across successive increases, because each rounded fee becomes the base of the next one. Both paths remain capped by `operatorMaxFee`, which is checked at declaration and at execution. Starting from raw 101 at a 10% limit, the ceiling path reaches the cap one 14-day declaration cycle before the floor path.
+
+Rationale for accepting:
+
+- The difference is negligible compared with the fee itself.
+- Every increase is public before it applies. `declareOperatorFee` emits `OperatorFeeDeclared`, and the new fee can only be executed after the declaration period (14 days on mainnet). Cluster owners see the exact new fee during that period and can decide whether to stay with the operator or move to another one.
+- The limit on the size of a single increase is a rate control, not a price guarantee. The absolute ceiling, `operatorMaxFee`, is enforced exactly. (https://bugs.immunefi.com/magnus/863/projects/923/reports/83904)
 - Overflows in operator/cluster accounting.
 Operator and cluster fee accounting uses `uint64` arithmetic throughout. An example is the cluster balance update in `ClusterLib.updateBalanceSSV`:
 
@@ -158,3 +179,26 @@ This is accepted as a residual theoretical risk under the following rationale:
 - Current protocol parameters (validator cap, fee bounds, network fee levels) keep all intermediate values comfortably within `uint64` for the foreseeable operational lifetime of the protocol.
 - Operators and cluster owners have strong economic incentives to withdraw earnings and settle balances regularly, which resets the relevant accumulators and keeps deltas small in practice.
 - Any future parameter changes (e.g., raising the validator cap or fees significantly) would need to re-evaluate this headroom before deployment. (https://bugs.immunefi.com/magnus/863/projects/923/reports/66362)
+- Per-operator validator capacity is a shared, first-come resource.
+
+`validatorsPerOperatorLimit` (3,000) bounds the number of ETH validators an operator can run. The ETH counter `operator.ethValidatorCount` is checked on registration, on reactivation and on migration of a legacy cluster to ETH. See [OperatorLib.sol](https://github.com/ssvlabs/ssv-network/tree/v2.0.0/contracts/libraries/OperatorLib.sol) (registration line 213, reactivation line 322, migration line 375). The limit is set at initialization only ([SSVNetwork.sol](https://github.com/ssvlabs/ssv-network/tree/v2.0.0/contracts/SSVNetwork.sol) line 81) and has no governance setter.
+
+Registration against a public operator is permissionless: the caller check only runs when `operator.whitelisted` is true (OperatorLib.sol line 183). Any actor can therefore fill a public operator's remaining capacity. Capacity is allocated first-come, with no per-owner share and no reservation.
+
+This has two consequences, both accepted:
+
+- New registrations can be blocked. Once an operator's `ethValidatorCount` reaches the limit, nobody else can register validators with it.
+- Migration and reactivation can be blocked. Registration does not count the legacy validators an operator still carries in `operator.validatorCount`, so the ETH counter can reach the limit while legacy validators are waiting to migrate. `migrateClusterToETH` then reverts with `ExceedValidatorLimitWithData(operatorId)` for a legacy cluster that uses that operator, although migrating an active cluster only moves its validators from one counter to the other. `reactivate` has the same check.
+
+Rationale for accepting:
+
+- The attacker pays for as long as the slots are held. The occupying cluster must stay funded above the liquidation threshold and pays the operator's ETH fee and the network fee every block. The attacker gains nothing from it.
+- It corrects itself. If the occupying cluster stops being funded, any liquidator can liquidate it, which decrements `ethValidatorCount` (OperatorLib.sol line 255) and frees the capacity.
+- Operators can stop a refill. An operator owner can make the operator private, so only whitelisted addresses can register against it.
+- No funds are at risk. A blocked legacy cluster keeps running on its legacy SSV balance. Its owner can liquidate it themselves at any time (`liquidateSSV` skips the liquidation test when the caller is the cluster owner) and recover the full SSV balance, or can remove the validators and register them with another operator set.
+- The exposure shrinks over time. Legacy SSV clusters can no longer be created, so the migration leg ends when the transition completes. At block 25,907,586 there were 151 active legacy clusters with 418 validators, no operator carrying legacy validators was within 900 registrations of the limit, and the closest target needed 2,562 registrations, about 0.57 ETH of standing collateral and about 0.095 ETH per day to hold.
+
+Operational guidance:
+
+- Owners of legacy SSV clusters should migrate early. Before migrating, check each operator's `ethValidatorCount` (`SSVNetworkViews.getOperatorById`) against the cluster's validator count.
+- Operators still serving legacy clusters close to the limit can go private until those clusters have migrated. (https://bugs.immunefi.com/magnus/863/projects/923/reports/88326)
