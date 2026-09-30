@@ -1,0 +1,301 @@
+# Audit Comp | Puffer Finance
+
+- Page: https://immunefi.com/bug-bounty/pufferfinance-boost/scope/
+- Max bounty: $200,000
+- KYC required: no
+- Paused: no
+- Invite only: no
+- Program type: Smart Contract
+- PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium, smart_contract - low
+- End date: 2024-03-07T08:00:00.000Z
+
+## Assets in scope (4)
+
+- [smart_contract] https://etherscan.io/address/0x3C28B7c7Ba1A1f55c9Ce66b263B33B204f2126eA#code — [TimeLock.sol] - [289 nSLOC]
+- [smart_contract] https://etherscan.io/address/0x7276925e42f9c4054afa2fad80fa79520c453d6a — [PufferDepositor.sol] - [208]
+- [smart_contract] https://etherscan.io/address/0xd9a442856c234a39a81a089c06451ebaa4306a72 (primacy of impact)
+- [smart_contract] https://etherscan.io/address/0xd9a442856c234a39a81a089c06451ebaa4306a72 — [PufferVault.sol] - [295]
+
+## Asset notes
+
+Puffer Finance’s codebase can be found at https://github.com/PufferFinance/pufETH/tree/main 
+
+- There is a minor edit in PufferDepositor.sol github which doesn't match the deployed code. The code is basically the same functions, just the permit is moved to a separate file and the rest of the changes are related to that move. The deployed code is the determinator of whether a bug is valid.
+
+Puffer Depositor swap functions are in scope, but due to them being paused bugs will only be considered if they can bypass the pause mechanism. They technically pause in 2 days from now (Feb 21 2024) but we will consider them to already be paused at the beginning of this program.
+
+
+**Whitehat Educational Resources & Technical Info:**
+
+- Documentation: https://docs.puffer.fi/
+
+- [Decoding Puffer: The Future of Ethereum Restaking](https://medium.com/@puffer.fi/decoding-puffer-the-future-of-ethereum-restaking-28a8d7ee53da)
+- [Ethereum Restaking Redefined: A Deep Dive with Puffer’s CTO](https://medium.com/@puffer.fi/ethereum-restaking-redefined-a-deep-dive-with-puffers-cto-at-devconnect-2023-11f30c7a38e9)
+- [How Puffer’s Secure-Signer Reduces Slashing Risk](https://medium.com/@puffer.fi/how-puffers-secure-signer-reduces-slashing-risk-5f24dc2c57c)
+- [Demystify the Access Control Mechanism in Puffer Protocol](https://blocksec.com/blog/demystify-the-access-control-mechanism-in-puffer-protocol)
+
+
+**Non-Technical Resources:**
+
+- [Puffer Finance hits $850 million in TVL, now second-largest liquid restaking protocol](https://www.theblock.co/post/277137/puffer-finance-hits-850-million-in-tvl-now-second-largest-liquid-restaking-protocol)
+- [The Crunchy Carrot Campaign and Beyond](https://medium.com/@puffer.fi/the-crunchy-carrot-campaign-and-beyond-6bf2c5432923)
+- [Puffer Finance Raises $5.5M to Redefine Liquid ETH Staking](https://medium.com/@puffer.fi/a-push-for-decentralization-puffer-finance-raises-5-5m-to-redefine-liquid-eth-staking-936a61b750f7)
+- [Securing Ethereum Through Slash-Resistant and Decentralized Liquid Staking](https://medium.com/@puffer.fi/puffer-finance-securing-ethereum-through-slash-resistant-and-decentralized-liquid-staking-9da124d58752)
+- [Making a Splash in the LST Market](https://medium.com/@puffer.fi/puffer-finance-making-a-splash-in-the-lst-market-723b36a748c8)
+
+
+
+**Is this an upgrade of an existing system? If so, which? And what are the main differences?**
+
+- No, this is the first deployment we have made as part of our product offering. Upgrades to come later. 
+
+
+
+**Which parts of the code are you most concerned about?**
+
+- The vault logic of Open Zeppelin’s that we have overridden
+  - We are not fully compliant with ERC 4626, because we have overridden some functionality. Namely, we have overriden the maxWithdraw() function, and we are not returning a value of 0, even though withdrawals are currently paused. The specs of ERC 4626 require global and user-specific limits to be factored into the result of this function, which we do not abide by. Similarly, maxRedeem() has the same non-compliance with ERC 4626 specs.
+- withdraw() and redeem() are disabled
+- EigenLayer integration
+
+
+
+**What attack vectors are you most concerned about?**
+
+- We’ve upgraded the logic dealing with the vault’s total assets, so perhaps the logic to calculate the shares each user has within the vault can be examined closely to ensure the vault still works as intended and there are no attacks to mess with the original accounting code of the vault 
+
+
+**Which part(s) of the system do you want whitehats to attempt to break the most?**
+
+- Being able to steal, DoS, or lock up funds
+
+**Are there any assumed invariants that you want whitehats to attempt to break?**
+
+- No unauthorized parties should be able to move or withdraw funds from the vault
+
+
+
+**What ERC20 / ERC721 / ERC777 / ERC1155 token standards are supported? Which are not?**
+
+- Rebasing ERC20 (we will allow stETH and wstETH deposits into our vault)
+
+
+
+**What monitoring systems may you want to use as a reason to invalidate or downgrade an otherwise valid bug report?**
+
+Monitoring systems are only a valid reason to downgrade a bug if there is 100% certainty that the bug would be detected and fully prevented. Immunefi’s full policy and reasoning can be [read here](https://immunefisupport.zendesk.com/hc/en-us/articles/19430444320401-Pre-Impact-Bug-Monitoring).
+
+- We are implementing BlockSec Phalcon and Hexagate monitoring to pause the contracts in case of any hack attempts on the contracts. The monitoring criteria is a work in progress and we are setting up tests in place to make sure the monitoring works as intended. 
+
+
+
+**What Roles are there, and what capacities do they have?**
+
+- We have 3 different multisigs, the Community multisig, the Operations multisig, and the Pauser multisig. You may review their capacities within the following doc: https://blocksec.com/blog/demystify-the-access-control-mechanism-in-puffer-protocol
+
+
+
+
+
+**Are there trusted roles for which you would consider any bugs invalid, even if the roles are not intended to have that capacity?**
+
+- Since the multisig parties  are trusted to behave honestly, we would consider bugs where multisig members  can do malicious things as invalid
+
+
+**What external dependencies are there?**
+
+- Open Zeppelin Contracts and Open Zeppelin Upgradeable Contracts
+
+
+**Are there any unusual points about your protocol that may confuse whitehats?**
+
+- There is currently no way to withdraw or redeem assets from our vault. This is because that functionality will come later on in our product roadmap. 
+
+
+**What is the test suite setup information?**
+
+- Use forge test
+- See README: https://github.com/PufferFinance/pufETH/blob/main/README.md 
+
+**Public Disclosure of Known Issues**
+
+Bug reports covering previously-discovered bugs (listed below) are not eligible for a reward within this program. This includes known issues that the project is aware of but has consciously decided not to “fix”, necessary code changes, or any implemented operational mitigating procedures that can lessen potential risk. 
+
+- Inflation attack on erc4626 vaults: https://blog.openzeppelin.com/a-novel-defense-against-erc4626-inflation-attacks 
+
+**Previous Audits**
+
+Puffer Finance’s completed audit reports can be found below. Any unfixed vulnerabilities  mentioned in these reports are not eligible for a reward.
+
+- Slow Mist: https://github.com/slowmist/Knowledge-Base/blob/master/open-report-V2/smart-contract/SlowMist%20Audit%20Report%20-%20pufETH_en-us.pdf
+- BlockSec: https://github.com/blocksecteam/audit-reports/blob/main/solidity/blocksec_puffer_v1.0-signed.pdf
+- QuantStamp: https://github.com/PufferFinance/pufETH/blob/main/audits/Quantstamp-pufETH-v1.pdf  
+
+### Asset In Scope Policies
+
+**Asset Accuracy Assurance**
+
+Bugs found on assets incorrectly listed in-scope will be considered valid and be rewarded.
+
+**Private Known Issues Reward Policy**
+
+Private known issues, meaning known issues that were not publicly disclosed, are valid, but are downgraded one severity level.
+
+**Known Issue Assurance**
+
+Puffer Finance commits to providing Known Issue Assurance to bug submissions through their program. This means that Puffer Finance will either disclose known issues publicly, or at the very least, privately via a self-reported bug submission. 
+
+In a potential scenario of a mediation, this allows for a more objective and streamlined process, in order to prove that an issue is known. Otherwise, assuming the bug report is valid, it would result in the report being considered as in-scope, and due a reward.
+
+**Primacy of Impact vs Primacy of Rules**
+
+Puffer Finance adheres to the Primacy of Impact for all impacts.
+
+Primacy of Impact means that the impact is prioritized rather than a specific asset. This encourages security researchers to report on all bugs with an in-scope impact, even if the affected assets are not in scope. For more information, please see [Best Practices: Primacy of Impact ](https://immunefisupport.zendesk.com/hc/en-us/articles/12340245635089-Best-Practices-Primacy-of-Impact)
+
+When submitting a report on Immunefi’s dashboard, the security researcher should select the Primacy of Impact asset placeholder. If the team behind this project has multiple programs, those other programs are not covered under Primacy of Impact for this program. Instead, check if those other projects have a bug bounty program on Immunefi.
+
+If the project has any testnet and/or mock files, those will not be covered under Primacy of Impact.
+
+## Impacts in scope (11)
+
+- [smart_contract] Critical: Direct theft of any user funds, whether at-rest or in-motion, other than unclaimed yield
+- [smart_contract] Critical: Permanent freezing of funds
+- [smart_contract] Critical: Protocol insolvency
+- [smart_contract] High: Permanent freezing of unclaimed yield
+- [smart_contract] High: Temporary freezing of funds for at least 1 hour
+- [smart_contract] High: Theft of unclaimed yield
+- [smart_contract] Medium: Block stuffing
+- [smart_contract] Medium: Griefing (e.g. no profit motive for an attacker, but damage to the users or the protocol)
+- [smart_contract] Medium: Theft of gas
+- [smart_contract] Medium: Unbounded gas consumption
+- [smart_contract] Low: Contract fails to deliver promised returns, but doesn't lose value
+
+## Impact notes
+
+Only the following impacts are accepted within this bug bounty program. All other impacts are not considered as in-scope, even if they affect something in the assets in scope table.
+
+**Proof of Concept (PoC) Requirements**
+
+A PoC, demonstrating the bug's impact, is required for this program and has to comply with the [Immunefi PoC Guidelines and Rules](https://immunefisupport.zendesk.com/hc/en-us/articles/9946217628561-Proof-of-Concept-PoC-Guidelines-and-Rules).
+
+**Temporary Freezing of Funds**
+
+If the minimum threshold of temporary freezing for at least 1 hour is not met then the report will be downgraded to Medium severity.
+
+
+
+### Miscellaneous Policies
+
+**Eligibility Criteria**
+
+Security researchers who wish to participate must adhere to the rules of engagement set forth in this program and cannot be:
+
+- On OFACs SDN list 
+- Security Auditors from the audit firms that did the audit reviews of the contract (they must go through the existing business partnership for the bug report)
+- Employees of Puffer Finance, both past or present
+
+
+
+**Responsible Publication**
+
+Whitehats may publish their bug reports after they have been fixed & paid, or closed as invalid, with the following exceptions:
+
+
+- Bug reports in mediation may not be published until mediation has concluded and the bug report is resolved.
+
+Immunefi may publish bug reports submitted to this audit competition and a leaderboard of the participants and their earnings.
+
+**Feasibility Limitations**
+
+The project may be receiving reports that are valid (the bug and attack vector are real) and cite assets and impacts that are in scope, but there may be obstacles or barriers to executing the attack in the real world. In other words, there is a question about how feasible the attack really is. Conversely, there may also be mitigation measures that projects can take to prevent the impact of the bug, which are not feasible or would require unconventional action and hence, should not be used as reasons for downgrading a bug's severity.
+
+Therefore, Immunefi has developed a set of [feasibility limitation standards](https://immunefisupport.zendesk.com/hc/en-us/articles/16913132495377-Feasibility-Limitation-Standards) which by default states what security researchers, as well as projects, can or cannot cite when reviewing a bug report.
+
+**Immunefi Standard Badge**
+
+By adhering to Immunefi’s best practice recommendations, Puffer Finance has satisfied the requirements for the [Immunefi Standard Badge](https://immunefisupport.zendesk.com/hc/en-us/articles/15006865432209).
+
+## Rewards
+
+- [smart_contract] Critical: level=critical, payout=USD $200,000, pocRequired=True
+- [smart_contract] High: level=high, payout=USD $50,000, pocRequired=True
+- [smart_contract] Medium: level=medium, payout=USD $2,000, pocRequired=True
+- [smart_contract] Low: level=low, payout=USD $1,000, pocRequired=True
+
+## Reward notes
+
+The following reward terms are a summary, for the full details read our [Puffer Finance Audit Competition Reward Distribution Terms](https://immunefisupport.zendesk.com/hc/en-us/articles/22778454162321-Puffer-Audit-Competition-Reward-Terms).
+
+There is a guaranteed reward pool of $50,000.
+
+On top of this there are additional rewards per unique bug found. These rewards are only split among those who find them:
+
+- Additional Rewards per unique Critical bug: $200k
+- Additional Rewards per unique High bug: $50k
+- Additional Rewards per unique Medium bug: $2k 
+- Additional Rewards per unique Low bug: $1k 
+
+Rewards are distributed according to the impact of the vulnerability based on the [Immunefi Vulnerability Severity Classification System V2.3](https://immunefi.com/immunefi-vulnerability-severity-classification-system-v2-3/). 
+
+**Duplicate Reward Policy**
+
+Rewards from the guaranteed rewards pool are distributed evenly among all finders
+
+While additional rewards per unique bug finding are split with 80% going to the chief-finder and 20% being shared equally among all duplicates.
+The chief-finder is whoever proves the highest severity level of the bug first.
+
+**Reward Payment Terms**
+
+Payouts are handled by the Puffer Finance team directly and are denominated in USD. However, payments are done in USDC.
+
+Rewards will be distributed all at once based on Immunefi’s distribution formula after the event has concluded and the final bug reports have been resolved.
+
+## Out of scope (program-specific)
+
+(none)
+
+## Out of scope and rules
+
+Puffer Depositor swap functions are in scope, but due to them being paused bugs will only be considered if they can bypass the pause mechanism. They technically pause in 2 days from now (Feb 21 2024) but we will consider them to already be paused at the beginning of this program.
+
+
+These impacts are out of scope for this bug bounty program. 
+
+**All Categories:**
+
+- Impacts requiring attacks that the reporter has already exploited themselves, leading to damage
+- Impacts caused by attacks requiring access to leaked keys/credentials
+- Impacts caused by attacks requiring access to privileged addresses (governance, strategist) except in such cases where the contracts are intended to have no privileged access to functions that make the attack possible
+- Impacts relying on attacks involving the depegging of an external stablecoin where the attacker does not directly cause the depegging due to a bug in code
+- Mentions of secrets, access tokens, API keys, private keys, etc. in Github will be considered out of scope without proof that they are in-use in production
+- Best practice recommendations
+- Feature requests
+- Impacts on test files and configuration files unless stated otherwise in the bug bounty program
+
+**Blockchain/DLT & Smart Contract Specific:**
+
+- Incorrect data supplied by third party oracles
+- Not to exclude oracle manipulation/flash loan attacks
+- Impacts requiring basic economic and governance attacks (e.g. 51% attack)
+- Lack of liquidity impacts
+- Impacts from Sybil attacks
+- Impacts involving centralization risks
+
+**Prohibited Activities:**
+
+- Any testing on mainnet or public testnet deployed code; all testing should be done on local-forks of either public testnet or mainnet
+- Any testing with pricing oracles or third-party smart contracts
+- Attempting phishing or other social engineering attacks against our employees and/or customers
+- Any testing with third-party systems and applications (e.g. browser extensions) as well as websites (e.g. SSO providers, advertising networks)
+- Any denial of service attacks that are executed against project assets
+- Automated testing of services that generates significant amounts of traffic
+- Public disclosure of an unpatched vulnerability in an embargoed bounty
+
+## Prohibited activities (program-specific)
+
+(none)
+
+## Known issues (0)
+
+(none)

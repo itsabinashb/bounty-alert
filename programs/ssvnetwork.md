@@ -1,0 +1,160 @@
+# SSV Network
+
+- Page: https://immunefi.com/bug-bounty/ssvnetwork/scope/
+- Max bounty: $250,000
+- KYC required: yes
+- Paused: no
+- Invite only: no
+- Program type: Smart Contract
+- PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium, smart_contract - low
+- End date: (none)
+
+## Assets in scope (3)
+
+- [smart_contract] https://etherscan.io/address/0xDD9BC35aE942eF0cFa76930954a156B3fF30a4E1 — SSV Network
+- [smart_contract] https://etherscan.io/address/0xafE830B6Ee262ba11cce5F32fDCd760FFE6a66e4 — SSV Network View
+- [smart_contract] https://immunefi.com — Primacy of Impact (primacy of impact)
+
+## Asset notes
+
+(none)
+
+## Impacts in scope (10)
+
+- [smart_contract] Critical: Direct theft of any user funds, whether at-rest or in-motion, other than unclaimed yield
+- [smart_contract] Critical: Permanent freezing of funds
+- [smart_contract] Critical: Protocol insolvency
+- [smart_contract] High: Permanent freezing of unclaimed yield
+- [smart_contract] High: Temporary freezing of funds
+- [smart_contract] High: Theft of unclaimed yield
+- [smart_contract] Medium: Block stuffing
+- [smart_contract] Medium: Griefing (e.g. no profit motive for an attacker, but damage to the users or the protocol)
+- [smart_contract] Medium: Theft of gas
+- [smart_contract] Low: Contract fails to deliver promised returns, but doesn't lose value
+
+## Impact notes
+
+(none)
+
+## Rewards
+
+- [smart_contract] Critical: maxReward=$250,000, minReward=$50,000, rewardCalculationPercentage=10, rewardModel=range
+- [smart_contract] High: fixedReward=$30,000, rewardModel=fixed
+- [smart_contract] Medium: fixedReward=$10,000, rewardModel=fixed
+- [smart_contract] Low: fixedReward=$1,500, rewardModel=fixed
+
+## Reward notes
+
+*The advertised prize pool is dependent on the actual token price and can very continiously and extremely.*
+
+__Reward Determination and Calculation__
+Bounty rewards are adjudicated pursuant to the potential impact of the disclosed vulnerability as defined in the Impacts in Scope table. For vulnerabilities classified as Critical Smart Contract bugs, the reward shall be calculated as ten percent (10%) of the funds directly affected, up to a maximum ceiling of USD 250,000. The valuation of funds at risk is determined based on the specific time and date of the report submission. Notwithstanding the foregoing, a minimum floor reward of USD 50,000 shall be guaranteed for Critical reports to ensure continued incentive for the disclosure of high-impact vulnerabilities.
+
+__Repeatable Attack Limitations__
+In instances involving repeatable attacks on smart contracts, reward eligibility is restricted exclusively to the initial attack vector. This limitation remains in effect regardless of the contract’s architecture, including but not limited to its status as upgradable, pausable, or killable.
+
+__Exclusions Based on Previous Audits__
+The ssv.network has provided comprehensive audit review reports for public reference. Any vulnerability identified in these reports that remains unfixed, or any issue documented on docs.ssv.network or within any branch of the specified repository, is strictly ineligible for a reward.
+
+__Proof of Concept Requirements__
+A functional Proof of Concept (PoC) is a condition precedent for reward eligibility across Critical, High, Medium, and Low severity levels for Smart Contracts. All submissions must strictly adhere to the Immunefi-wide Proof of Concept Guidelines and Rules. Any bug report submitted without a valid, compliant PoC will be denied a reward in its entirety.
+
+__Disclosure and Aggregate Pool Limits__
+The public disclosure of any vulnerability is prohibited without the express authorization of the SSV DAO Grants Committee. The total cumulative reward pool for this program is capped at 150,000 SSV tokens. This aggregate limit is absolute and shall not be exceeded, even if the calculated USD value of an individual award exceeds the market value of the remaining tokens in the pool. In such an event, the maximum possible payout is limited to the balance of SSV tokens remaining in the program treasury.
+
+__Reward Payment and Valuation Terms__
+Reward disbursements are administered by the SSV Network Grants Committee. While rewards are denominated in United States Dollars (USD), settlement shall be executed exclusively in SSV tokens. The conversion rate is determined by the average market price reported by CoinMarketCap.com and CoinGecko.com at the precise time of report submission. No adjustments shall be made for market liquidity or slippage. As a non-binding example, if a reward is valued at USD 5,000 and the average market price is USD 1.75 per token, the final disbursement shall be 2,857.142857 SSV tokens.
+
+## Out of scope (program-specific)
+
+(none)
+
+## Out of scope and rules
+
+(none)
+
+## Prohibited activities (program-specific)
+
+(none)
+
+## Known issues (5)
+
+- Cluster insolvency depends on liquidator liveness.
+
+ETH cluster accounting settles operator and network fees before storing the updated cluster balance. In the effective-balance path, `ClusterLib.updateBalanceWithEB` computes pending usage and floors the balance at zero:
+
+```solidity
+cluster.balance = usage > cluster.balance ? 0 : cluster.balance - usage;
+```
+
+The same behavior exists in the state-mutating `updateClusterBalance` flow: operator and network fee deltas are applied first, and if the accrued usage exceeds the cluster balance, the in-memory balance is set to `0`. After that, active ETH clusters are checked against the liquidation rules and can be auto-liquidated in the same transaction.
+
+This is an accepted liveness dependency, not a missing arithmetic check. The protocol has two liquidation signals:
+
+- `minimumLiquidationCollateral`: an absolute collateral floor.
+- `minimumBlocksBeforeLiquidation`: the burn-rate-based liquidation threshold, scaled by operator fees, network fee, and cluster vUnits.
+
+These signals only protect the system when an actor actually calls `liquidate` or a path such as `updateClusterBalance` that performs the auto-liquidation check. Liquidators are therefore a core off-chain service for the protocol. If no liquidator or updater acts while a cluster moves below the minimum collateral or liquidation threshold, the contract does not autonomously stop time or liquidate the cluster.
+
+Operational assumptions and mitigations:
+
+- Liquidator services must continuously monitor both signals, not only zero balances.
+- Liquidators should use view-computed balances that include pending operator and network fees, because stored cluster balances can be stale between interactions.
+- Cluster owners should maintain a buffer above the larger of the minimum collateral floor and the burn-rate threshold, especially around EB updates, fee changes, and long periods without cluster interaction.
+- Protocol parameter changes to fees, `minimumLiquidationCollateral`, or `minimumBlocksBeforeLiquidation` must preserve enough time and bounty for liquidators to act under normal network conditions. (https://bugs.immunefi.com/magnus/863/projects/923/reports/77910)
+- Depositing to the cluster can prevent legit cluster operations.
+Every cluster-related function takes the current cluster object as a caller-supplied input parameter. The caller must pass the exact state that was emitted by the last executed cluster function; if the on-chain cluster state has changed since that emission, the call reverts. This is by design: the pattern avoids extra gas costs by letting the caller supply and prove the current state.
+
+Because `deposit` is permissionless, any actor can deposit even 1 wei to a cluster. That mutates the cluster object. A transaction that front-runs a legitimate cluster owner call (withdraw, liquidation, validator registration, etc.) with a 1-wei deposit will cause the owner's transaction to revert, since the cluster hash it carries is now stale.
+
+This is a design trade-off, not a bug, and it is accepted for the following reasons:
+
+- No sustained economic incentive. Repeatedly front-running a cluster requires running competitive block-inclusion infrastructure. The cost of maintaining that consistently outweighs any benefit, since the attacker gains nothing from the deposit itself and only delays the target operation by one transaction.
+- Liquidations are self-correcting. Liquidators are off-chain services operating continuously to preserve cluster solvency. A single front-run delays one liquidation attempt by one block; the liquidator retries with the updated cluster state. The liquidation threshold and minimum collateral parameters are sized to absorb short delays without creating insolvency windows that make front-running economically attractive.
+- Affected operations are retriable. Withdraw, register validators, and similar calls are owner-initiated and can simply be resubmitted with the updated cluster state. There is no permanent loss or irreversible failure from a single front-run. (https://bugs.immunefi.com/magnus/863/projects/923/reports/67215)
+- Extracting fees from a cluster when an operator is removed.
+When an operator is removed, `removeOperator()` first settles the operator's accrued SSV and ETH earnings, then resets active state via `_resetOperatorState()`. That reset clears block, balances, fees, and validator counts, but intentionally does not clear `snapshot.index` or `ethSnapshot.index`. See [SSVOperators.sol](https://github.com/ssvlabs/ssv-network/tree/v2.0.0/contracts/modules/SSVOperators.sol) (removeOperator line 81, _resetOperatorState line 349).
+
+Cluster accounting continues to include the removed operator's frozen index. In `OperatorLib.updateClusterData`, removed operators are skipped for future fee accrual (block and fee are zero, so no new earnings accumulate), but their preserved index is still added to `clusterIndex` when computing the cluster's outstanding balance. See [OperatorLib.sol](https://github.com/ssvlabs/ssv-network/tree/v2.0.0/contracts/libraries/OperatorLib.sol) (skip condition line 245, index addition line 260). The same logic applies in withdraw and view paths: with `ethSnapshot.block == 0` and `ethFee == 0`, future accrual is zero, but the frozen `ethSnapshot.index` remains part of the cluster's running index.
+
+This is by design. The frozen index represents fees the operator earned up to the point of removal but that the cluster has not yet settled. Clusters holding multiple operators can still operate with reduced coverage after a removal; they are not force-liquidated. Settled or not, the amount owed to the removed operator is preserved in the index until the cluster next interacts with the protocol and settles the delta.
+
+This behavior is documented in [FLOWS.md](https://github.com/ssvlabs/ssv-network/tree/v2.0.0/docs/FLOWS.md) and [SPEC.md](https://github.com/ssvlabs/ssv-network/tree/v2.0.0/docs/SPEC.md). (https://bugs.immunefi.com/magnus/863/projects/923/reports/75571)
+- Liquidations between root commitments. EB drift between root commitments.
+Background: EB roots are committed periodically (~8 hours in production). A committed root is a point-in-time snapshot; it is not updated synchronously with every validator addition or removal. `updateClusterBalance` is permissionless for any caller holding a valid proof against the latest committed root.
+
+Risk: remove validators, then withdraw aggressively.
+Validator removals reduce the on-chain `validatorCount` immediately, but the latest committed root still reflects EB from before the removal. Any above-baseline EB is not proportionally reduced by validator removal. If an owner removes many validators and then withdraws down near the liquidation threshold based only on the new lower validator count, any caller can submit `updateClusterBalance` with the stale-but-valid high-EB root. That raises the effective fees and liquidation threshold. If the cluster becomes underfunded, the protocol auto-liquidation fires and the caller receives the remaining cluster balance.
+
+Example sequence:
+- T0: Oracle snapshots cluster at 10,000 ETH EB, 100 validators
+- T1: Root committed (latestCommittedBlock set)
+- T2: Owner removes many validators; on-chain count drops immediately
+- T3: Owner withdraws based on lower count; cluster left near liquidation threshold
+- T4: Any caller submits proof from the T1 root (still valid, still reflects high EB)
+- T5: Auto-liquidation triggers; caller receives remaining cluster balance
+
+Mitigations:
+- Before large removals, check whether the latest committed root has already been consumed by the cluster.
+- After large removals, do not withdraw near the liquidation threshold until a fresh post-removal root has been committed and consumed.
+- Size withdrawals using the latest unconsumed root EB, not the new validator count alone or the value from `SSVNetworkViews.getEffectiveBalance`.
+- High-EB clusters should maintain a conservative buffer through at least the next oracle round.
+
+Accepted trade-off: add validators before the next oracle round.
+The opposite direction temporarily favors the cluster owner. After consuming a root, newly registered validators are accounted at the 32 ETH baseline EB only. Any above-baseline EB they carry on the beacon chain is not yet reflected on-chain until the next root is committed and consumed. This latency is accepted by design, but owners should fund for the EB that the next root will apply, not only the current baseline. (https://bugs.immunefi.com/magnus/863/projects/923/reports/76267)
+- Overflows in operator/cluster accounting.
+Operator and cluster fee accounting uses `uint64` arithmetic throughout. An example is the cluster balance update in `ClusterLib.updateBalanceSSV`:
+
+```solidity
+PackedSSV usage = PackedSSV.wrap((newIndex - cluster.index) * cluster.validatorCount + networkFee);
+```
+
+Intermediate products like `(newIndex - cluster.index) * cluster.validatorCount` are computed in `uint64`, so sufficiently large index deltas or validator counts could in principle overflow.
+
+We ran simulations across the full range of current protocol parameters — maximum validators per operator (3,000), current SSV and ETH network fees, and the configured min/max operator fee bounds — and found no overflow under realistic operating conditions. An operator managing 3,000 validators and never withdrawing accumulated earnings for more than 10 years stays within `uint64` range. That scenario is already extreme well beyond any expected operational pattern.
+
+This is accepted as a residual theoretical risk under the following rationale:
+
+- Current protocol parameters (validator cap, fee bounds, network fee levels) keep all intermediate values comfortably within `uint64` for the foreseeable operational lifetime of the protocol.
+- Operators and cluster owners have strong economic incentives to withdraw earnings and settle balances regularly, which resets the relevant accumulators and keeps deltas small in practice.
+- Any future parameter changes (e.g., raising the validator cap or fees significantly) would need to re-evaluate this headroom before deployment. (https://bugs.immunefi.com/magnus/863/projects/923/reports/66362)
