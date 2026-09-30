@@ -14,16 +14,22 @@ import difflib
 import hashlib
 import json
 import os
+import re
 import subprocess
 import sys
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
 SOURCE_URL = "https://immunefi.com/public-api/bounties.json"
 PROGRAM_URL = "https://immunefi.com/bug-bounty/{slug}/scope/"
-PROGRAMS_DIR = Path(__file__).resolve().parent / "programs"
+ROOT = Path(__file__).resolve().parent
+PROGRAMS_DIR = ROOT / "programs"
+REPOS_FILE = ROOT / "repos.json"  # last seen commit of every in-scope GitHub branch
+GITHUB_API = "https://api.github.com"
+MAX_FILES_IN_ALERT = 20
 MIN_EXPECTED_PROGRAMS = 50  # below this, assume a bad fetch and change nothing
 USER_AGENT = "Mozilla/5.0 (compatible; immunefi-scope-tracker)"
 SEVERITY_ORDER = {"critical": 0, "high": 1, "medium": 2, "low": 3, "none": 4}
@@ -137,8 +143,9 @@ def git(*args):
 
 
 def commit_and_push(message):
-    git("add", "-A", "programs")
-    if not git("status", "--porcelain", "programs"):
+    paths = ["programs"] + (["repos.json"] if REPOS_FILE.exists() else [])
+    git("add", "-A", *paths)
+    if not git("status", "--porcelain", *paths):
         return None
     git("commit", "-m", message)
     if git("remote"):
@@ -225,6 +232,181 @@ def build_alert(change, sha):
     return message
 
 
+# ---------------------------------------------------------------- code tracking
+# For every in-scope GitHub link that follows a branch (not a pinned commit or
+# tag), remember the branch's latest commit. When it moves, ask GitHub which
+# files changed and alert if any of them are inside the in-scope path.
+
+GITHUB_LINK = re.compile(
+    r"^https?://(?:www\.)?github\.com/([^/\s#?]+)/([^/\s#?]+)/?(?:(tree|blob)/([^#?\s]+))?/?(?:[#?].*)?$", re.I
+)
+COMMIT_SHA = re.compile(r"[0-9a-f]{7,40}", re.I)
+
+
+def parse_github_link(url):
+    """Return (owner, repo, [(branch, path), ...]) or None if not a trackable branch link.
+
+    Branch names can contain '/', so '/tree/a/b/c' could be branch 'a' with path
+    'b/c' or branch 'a/b' with path 'c'. All options are returned; GitHub tells
+    us which branch really exists. An empty branch means the default branch.
+    """
+    m = GITHUB_LINK.match(url.strip())
+    if not m:
+        return None
+    owner, repo, kind, rest = m.groups()
+    repo = repo.removesuffix(".git")
+    if not kind:
+        return owner, repo, [("", "")]
+    parts = [urllib.parse.unquote(s) for s in rest.split("/") if s]
+    if not parts or COMMIT_SHA.fullmatch(parts[0]):
+        return None  # pinned to a commit: in-scope code can't change
+    options = [("/".join(parts[:i]), "/".join(parts[i:])) for i in range(1, min(len(parts), 4) + 1)]
+    return owner, repo, options
+
+
+def github_headers(token):
+    return {"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"}
+
+
+def fetch_branch_heads(wanted, token):
+    """wanted: {(owner, repo): {branch, ...}} -> {(owner, repo): {branch or '': (branch_name, sha)}}"""
+    items = sorted(wanted.items())
+    heads = {}
+    for start in range(0, len(items), 40):  # ~40 repos per GraphQL request
+        batch = items[start : start + 40]
+        queries = []
+        for i, ((owner, repo), branches) in enumerate(batch):
+            refs = " ".join(
+                f"b{j}: ref(qualifiedName: {json.dumps('refs/heads/' + b)}) {{ target {{ oid }} }}"
+                for j, b in enumerate(sorted(branches))
+            )
+            queries.append(
+                f"r{i}: repository(owner: {json.dumps(owner)}, name: {json.dumps(repo)}) "
+                f"{{ defaultBranchRef {{ name target {{ oid }} }} {refs} }}"
+            )
+        body = json.dumps({"query": "query { " + " ".join(queries) + " }"}).encode()
+        resp = json.loads(http(f"{GITHUB_API}/graphql", data=body, headers=github_headers(token)))
+        data = resp.get("data")
+        if data is None:
+            raise RuntimeError(f"GitHub GraphQL error: {str(resp.get('errors'))[:300]}")
+        for i, ((owner, repo), branches) in enumerate(batch):
+            r = data.get(f"r{i}")
+            if not r:
+                continue  # repo deleted, private or renamed
+            found = {}
+            if r.get("defaultBranchRef"):
+                found[""] = (r["defaultBranchRef"]["name"], r["defaultBranchRef"]["target"]["oid"])
+            for j, b in enumerate(sorted(branches)):
+                if r.get(f"b{j}"):
+                    found[b] = (b, r[f"b{j}"]["target"]["oid"])
+            heads[(owner, repo)] = found
+    return heads
+
+
+def find_watched_branches(programs, token):
+    """Return {"owner/repo@branch": {"sha": ..., "programs": {slug: {"name": ..., "paths": set}}}}."""
+    links, wanted = [], {}
+    for p in programs:
+        for asset in p.get("assets") or []:
+            parsed = parse_github_link(asset.get("url") or "")
+            if parsed:
+                owner, repo, options = parsed
+                key = (owner.lower(), repo.lower())
+                links.append((p["slug"], p.get("project") or p["slug"], key, options))
+                wanted.setdefault(key, set()).update(branch for branch, _ in options if branch)
+
+    heads = fetch_branch_heads(wanted, token)
+    watched = {}
+    for slug, name, key, options in links:
+        for branch, path in options:
+            if branch in heads.get(key, {}):
+                branch_name, sha = heads[key][branch]
+                entry = watched.setdefault(f"{key[0]}/{key[1]}@{branch_name}", {"sha": sha, "programs": {}})
+                entry["programs"].setdefault(slug, {"name": name, "paths": set()})["paths"].add(path.strip("/"))
+                break
+        # no match: the link points at a tag or a deleted branch, so it can't move
+    return watched
+
+
+def in_scope(filename, paths):
+    if not filename:
+        return False
+    return "" in paths or any(filename == p or filename.startswith(p + "/") for p in paths)
+
+
+def code_alerts(key, old_sha, entry, token):
+    repo, branch = key.split("@", 1)
+    try:
+        compare = json.loads(http(f"{GITHUB_API}/repos/{repo}/compare/{old_sha}...{entry['sha']}", headers=github_headers(token)))
+        files, link = compare.get("files") or [], compare.get("html_url")
+        commits, rewritten = compare.get("total_commits"), compare.get("status") in ("diverged", "behind")
+    except urllib.error.HTTPError:
+        # Old commit is gone (force-push) or repo moved: we can't diff, so link the new commit.
+        files, commits, rewritten = None, None, True
+        link = f"https://github.com/{repo}/commit/{entry['sha']}"
+
+    messages = []
+    for slug, info in sorted(entry["programs"].items()):
+        paths = info["paths"]
+        if files is None:
+            changed = None
+        else:
+            changed = [f for f in files if in_scope(f["filename"], paths) or in_scope(f.get("previous_filename"), paths)]
+            if not changed:
+                continue  # branch moved, but nothing inside the in-scope path changed
+
+        summary = f"`{repo}` · branch `{branch}`"
+        if commits:
+            summary += f" · {commits} new commit{'s' if commits != 1 else ''}"
+        if rewritten:
+            summary += " · history was rewritten (force-push)"
+        lines = [f"**New code in scope: {info['name']}**", summary]
+        if "" not in paths:
+            lines.append("In-scope paths: " + ", ".join(f"`{p}`" for p in sorted(paths)))
+
+        if changed is None:
+            lines.append("Couldn't compute the file list; the previous commit no longer exists.")
+        else:
+            status = {"added": "A", "removed": "D", "renamed": "R"}
+            rows = [
+                f"{status.get(f.get('status'), 'M')} {f['filename']} (+{f.get('additions', 0)} -{f.get('deletions', 0)})"
+                for f in changed[:MAX_FILES_IN_ALERT]
+            ]
+            lines.append("```\n" + "\n".join(rows) + "\n```")
+            if len(changed) > MAX_FILES_IN_ALERT:
+                lines.append(f"...and {len(changed) - MAX_FILES_IN_ALERT} more files.")
+            if len(files) >= 300:
+                lines.append("GitHub lists at most 300 changed files; open the link for all of them.")
+        lines.append(f"Code diff: {link}")
+
+        message = "\n".join(lines)
+        if len(message) > 2000:
+            message = message[:1900] + "\n```\n(truncated)\n" + f"Code diff: {link}"
+        messages.append(message)
+    return messages
+
+
+def check_code(programs):
+    """Returns (first_run, watched_count, alert_messages). Updates repos.json."""
+    token = os.environ.get("GITHUB_TOKEN")
+    if not token:
+        print("GITHUB_TOKEN not set; skipping code tracking.")
+        return False, 0, []
+
+    watched = find_watched_branches(programs, token)
+    first_run = not REPOS_FILE.exists()
+    previous = {} if first_run else json.loads(REPOS_FILE.read_text())
+
+    messages = []
+    for key, entry in sorted(watched.items()):
+        old_sha = previous.get(key)
+        if old_sha and old_sha != entry["sha"]:
+            messages += code_alerts(key, old_sha, entry, token)
+
+    REPOS_FILE.write_text(json.dumps({k: e["sha"] for k, e in sorted(watched.items())}, indent=1) + "\n")
+    return first_run, len(watched), messages
+
+
 # ---------------------------------------------------------------- main
 
 def main():
@@ -250,19 +432,31 @@ def main():
             path.unlink()
             changes.append(("removed", name, path.stem, old, ""))
 
-    if not changes:
-        print("No scope changes.")
-        return
+    try:
+        code_first_run, watched_count, code_messages = check_code(programs)
+    except Exception as e:  # a GitHub hiccup must never stop scope alerts
+        print(f"Code tracking skipped this run: {e}", file=sys.stderr)
+        code_first_run, watched_count, code_messages = False, 0, []
 
-    names = ", ".join(c[1] for c in changes[:5]) + (f" +{len(changes) - 5} more" if len(changes) > 5 else "")
-    sha = commit_and_push(f"Initial snapshot of {len(changes)} programs" if first_run else f"Scope update: {names}")
+    if first_run:
+        message = f"Initial snapshot of {len(changes)} programs"
+    elif changes:
+        names = ", ".join(c[1] for c in changes[:5]) + (f" +{len(changes) - 5} more" if len(changes) > 5 else "")
+        message = f"Scope update: {names}"
+    else:
+        message = f"Code update ({len(code_messages)} alert(s))" if code_messages else "Update tracked branch commits"
+    sha = commit_and_push(message)
 
     if first_run:
         discord_post(f"Immunefi scope tracker started. Watching {len(programs)} programs; you'll get an alert here when any scope changes.")
-        return
-    for change in changes:
-        discord_post(build_alert(change, sha))
-    print(f"{len(changes)} program(s) changed.")
+    else:
+        for change in changes:
+            discord_post(build_alert(change, sha))
+    if code_first_run:
+        discord_post(f"Code tracking started. Watching {watched_count} in-scope GitHub branches; you'll get an alert here when new code lands in scope.")
+    for m in code_messages:
+        discord_post(m)
+    print(f"{len(changes)} scope change(s), {len(code_messages)} code alert(s).")
 
 
 if __name__ == "__main__":

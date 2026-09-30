@@ -26,6 +26,7 @@ jobs:
       - name: Check scopes and alert
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          GITHUB_TOKEN: ${{ github.token }}  # built in; used to check in-scope repos for new commits
         run: |
           git config user.name "scope-tracker"
           git config user.email "scope-tracker@users.noreply.github.com"
