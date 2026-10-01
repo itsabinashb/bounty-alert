@@ -102,6 +102,8 @@ An issue with no material effect on a supported production service is Informatio
 - A malicious miner can always withhold blocks during its own tenure, so that behavior alone does not demonstrate a DoS vulnerability.  
 - Default timeouts and resource guards must remain enabled because they determine the effect of the attack. An underpriced transaction that reaches a default timeout and is rejected while other transactions continue to confirm does not establish B2 or B3. Reserving virtual address space alone does not demonstrate memory exhaustion; the proof of concept must produce an out-of-memory (OOM) condition or process termination under the recommended configuration [https://docs.stacks.co/operate/run-a-node](https://docs.stacks.co/operate/run-a-node).  
 - A report may describe multiple distinct attack vectors. Each vector will be graded using its own demonstrated impact and recovery; evidence from separate vectors will not be combined. Multiple steps required to execute one attack form a single vector will be assessed together. The report is classified at the highest severity established by any eligible vector.
+- In any report which argues that a DoS attack can turn into a complete chain halt and consensus failure by preventing chain progress for an entire PoX prepare phase, we will only consider the DoS vector itself and not the chain impacts.
+  - It is well known - and by design - that the chain will not make progress past a completely empty prepare phase.
 
 ## Critical Finding Limits
 

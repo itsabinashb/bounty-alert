@@ -9,16 +9,12 @@
 - PoC required for: smart_contract - critical
 - End date: (none)
 
-## Assets in scope (8)
+## Assets in scope (4)
 
-- [smart_contract] https://bscscan.com/address/0x44487a445a7595446309464A82244B4bD4e325D5#code — MetaRouter
 - [smart_contract] https://bscscan.com/address/0x5c97D726bf5130AE15408cE32bc764e458320D2f#code — MetaRouterGateway
-- [smart_contract] https://etherscan.io/address/0xf621Fb08BBE51aF70e7E0F4EA63496894166Ff7F#code — MetaRouter
 - [smart_contract] https://etherscan.io/address/0xfCEF2Fe72413b65d3F393d278A714caD87512bcd#code — MetaRouterGateway
 - [smart_contract] https://polygonscan.com/address/0xAb83653fd41511D638b69229afBf998Eb9B0F30c#code — MetaRouterGateway
-- [smart_contract] https://polygonscan.com/address/0xa260E3732593E4EcF9DdC144fD6C4c5fe7077978#code — MetaRouter
 - [smart_contract] https://snowtrace.io/address/0x4cfA66497Fa84D739a0f785FBcEe9196f1C64e4a#code — MetaRouterGateway
-- [smart_contract] https://snowtrace.io/address/0x6F0f6393e45fE0E7215906B6f9cfeFf53EA139cf#code — MetaRouter
 
 ## Asset notes
 
@@ -35,7 +31,7 @@ Only those in the Assets in Scope table are considered as in-scope of the bug bo
 
 ## Rewards
 
-- [smart_contract] Critical: fixedReward=$100,000, rewardModel=fixed
+- [smart_contract] Critical: fixedReward=$100,000, rewardCalculationPercentage=10, rewardModel=fixed
 
 ## Reward notes
 
