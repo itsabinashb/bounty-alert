@@ -29,7 +29,6 @@ ROOT = Path(__file__).resolve().parent
 PROGRAMS_DIR = ROOT / "programs"
 REPOS_FILE = ROOT / "repos.json"  # last seen commit of every in-scope GitHub branch
 GITHUB_API = "https://api.github.com"
-MAX_FILES_IN_ALERT = 20
 MIN_EXPECTED_PROGRAMS = 50  # below this, assume a bad fetch and change nothing
 USER_AGENT = "Mozilla/5.0 (compatible; immunefi-scope-tracker)"
 SEVERITY_ORDER = {"critical": 0, "high": 1, "medium": 2, "low": 3, "none": 4}
@@ -363,26 +362,35 @@ def code_alerts(key, old_sha, entry, token):
         lines = [f"**New code in scope: {info['name']}**", summary]
         if "" not in paths:
             lines.append("In-scope paths: " + ", ".join(f"`{p}`" for p in sorted(paths)))
+        lines.append(f"Code diff: {link}")
 
         if changed is None:
             lines.append("Couldn't compute the file list; the previous commit no longer exists.")
-        else:
-            status = {"added": "A", "removed": "D", "renamed": "R"}
-            rows = [
-                f"{status.get(f.get('status'), 'M')} {f['filename']} (+{f.get('additions', 0)} -{f.get('deletions', 0)})"
-                for f in changed[:MAX_FILES_IN_ALERT]
-            ]
-            lines.append("```\n" + "\n".join(rows) + "\n```")
-            if len(changed) > MAX_FILES_IN_ALERT:
-                lines.append(f"...and {len(changed) - MAX_FILES_IN_ALERT} more files.")
-            if len(files) >= 300:
-                lines.append("GitHub lists at most 300 changed files; open the link for all of them.")
-        lines.append(f"Code diff: {link}")
+            messages.append("\n".join(lines))
+            continue
 
-        message = "\n".join(lines)
-        if len(message) > 2000:
-            message = message[:1900] + "\n```\n(truncated)\n" + f"Code diff: {link}"
-        messages.append(message)
+        lines.append(f"Changed files ({len(changed)}):")
+        if len(files) >= 300:
+            lines.append("GitHub lists at most 300 changed files; open the code diff for all of them.")
+        status = {"added": "A", "removed": "D", "renamed": "R"}
+        rows = [
+            f"{status.get(f.get('status'), 'M')} /{f['filename']} (+{f.get('additions', 0)} -{f.get('deletions', 0)})"
+            for f in changed
+        ]
+        messages += split_into_messages("\n".join(lines), rows, f"**New code in scope: {info['name']}** (continued)")
+    return messages
+
+
+def split_into_messages(header, rows, continued_title, limit=1990):
+    """Put rows in code blocks across as few Discord messages (2000-char limit) as possible."""
+    messages, current_header, current_rows = [], header, []
+    for row in rows:
+        size = len(current_header) + len("\n```\n") + sum(len(r) + 1 for r in current_rows) + len(row) + len("\n```")
+        if current_rows and size > limit:
+            messages.append(current_header + "\n```\n" + "\n".join(current_rows) + "\n```")
+            current_header, current_rows = continued_title, []
+        current_rows.append(row[: limit - len(continued_title) - 10])
+    messages.append(current_header + "\n```\n" + "\n".join(current_rows) + "\n```")
     return messages
 
 
