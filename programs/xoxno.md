@@ -44,7 +44,7 @@ Rewards are distributed according to the impact of the vulnerability based on th
 
 __Reward Calculation for Critical Level Reports__
 
-For critical smart contract bugs, the reward amount is 10% of the funds directly affected up to a maximum of USD 20 000. The calculation of the amount of funds at risk is based on the time and date the bug report is submitted. However, a minimum reward of USD 2 500 is to be rewarded in order to incentivize security researchers against withholding a critical bug report.
+For critical smart contract bugs, the reward amount is 10% of the funds directly affected up to a maximum of USD 20,000. The calculation of the amount of funds at risk is based on the time and date the bug report is submitted. However, a minimum reward of USD 5,000 is to be rewarded in order to incentivize security researchers against withholding a critical bug report.
 
 __Repeatable Attack Limitations__
 
@@ -53,7 +53,7 @@ __Repeatable Attack Limitations__
 
 __Reward Calculation for High Level Reports__
 
-- High impacts concerning theft/permanent freezing of unclaimed yield are rewarded within a range of USD 1 250 to USD 2 500 with the reward calculated based on 100% of the funds at risk, though capped at the maximum high reward. 
+- High impacts concerning theft/permanent freezing of unclaimed yield are rewarded within a range of USD 3,500 to USD 5,000 with the reward calculated based on 100% of the funds at risk, though capped at the maximum high reward. 
 - In the event of temporary freezing, the reward doubles from the full frozen value for every additional 24h that the funds are temporarily frozen, up until a max cap of the high reward. 
 
 __Reward Payment Terms__
