@@ -9,19 +9,17 @@
 - PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium, smart_contract - low
 - End date: (none)
 
-## Assets in scope (2)
+## Assets in scope (1)
 
 - [smart_contract] https://docs.folks.finance/developer/contracts — Core
-- [smart_contract] https://docs.xapp.folks.finance/developers/contracts — Core
 
 ## Asset notes
 
 In the Github link in the Assets in Scope table, only Exact Match Verified smart contracts are considered as in-scope of the bug bounty program.
 
-## Impacts in scope (11)
+## Impacts in scope (10)
 
 - [smart_contract] Critical: Direct theft of any user funds, whether at-rest or in-motion, other than unclaimed yield
-- [smart_contract] Critical: Manipulation of governance voting result deviating from voted outcome and resulting in a direct change from intended effect of original results
 - [smart_contract] Critical: Permanent freezing of funds
 - [smart_contract] Critical: Protocol insolvency
 - [smart_contract] High: Permanent freezing of unclaimed yield
@@ -55,15 +53,7 @@ All vulnerabilities marked in the following Github repository [https://github.co
 
 Bug reports related solely to external incentives distributed on top of the protocol are downgraded in severity by one level. 
 
-Bug reports covering previously-discovered bugs are not eligible for any reward through the bug bounty program. If a bug report covers a known issue, it may be rejected together with proof of the issue being known before escalation of the bug report via Immunefi. Previous known issues can be found at https://github.com/Folks-Finance/folks-finance-xchain-contracts/issues?q=is%3Aissue+is%3Aclosed. 
-
-In addition, below are known issues that the project is aware of but has consciously decided not to “fix”:
-
-- Griefing through consuming external rate limits of tokens e.g. Circle CCTP rate limits for USDC
-- Griefing through consuming internal rate limits where we have the ability to respond by temporarily boosting capacity
-- Dust positions not being liquidated because of gas fees
-- Manipulation of stable borrow rate to get cheaper borrow
-- Liquidation leading to bad debt when we are prioritising the certainty of a lesser amount of bad debt against the risk of incurring a larger amount of bad debt
+Bug reports covering previously-discovered bugs are not eligible for any reward through the bug bounty program. If a bug report covers a known issue, it may be rejected together with proof of the issue being known before escalation of the bug report via Immunefi.
 
 __KYC__ shall be completed for bug bounty hunters submitting a vulnerability report and requesting a reward for Critical and High Smart Contracts vulnerabilities. The basic information needed is full name, residential address, and passport details (DOB, issuing country and passport number). Based on the basic information submitted, Folks Finance team may request further information at its sole discretion for compliance with applicable
 Laws.
