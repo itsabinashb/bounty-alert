@@ -101,6 +101,19 @@ This impact is measured by the following oracle(s), ensure your PoC satisfies at
   - threshold: the net change in the denom's spendable balances, summed across every account the block touches, differs by ≥ 1 base unit from the authorized mints and burns in the block.
   - measurement: query spendable balances of the legitimate asset (native, token-factory, contract-issued, or IBC voucher denom) for every account the block touches before and after, sum the authorized mints (including vouchers for relayed packets) and burns, and confirm any created balance is transferable by the attacker.
 
+For the Critical impact **"Theft / unauthorized extraction of funds"**, which is defined as where an attacker moves or withdraws value they do not own, bug reports covering this impact may be downgraded to High severity where any of the following conditions applies:
+
+- The attack requires an optional or non-default module, or an attacker-deployed contract (TipDecorator chain, x/accounts lockup, CosmWasm + IBC-hooks, etc.).
+- The attack requires being the account owner or withdrawer, or a contrived trigger (a forced timeout plus reentrant submessages, a victim contract relying on staticcall safety, etc.).
+- The impact is single-victim and isolated per transaction.
+
+This impact is measured by the following oracle(s), ensure your PoC satisfies at least one of the following:
+
+- For any chain (cosmos-sdk, cosmos/evm, wasmd, ibc-go, etc)
+  - condition: a victim's funds move without their authorization
+  - threshold: the victim's balance (or escrow held for them) falls by ≥ 1 base unit more than the transfers and fees the victim authorized, while the net change in spendable balances across all touched accounts is 0.
+  - measurement: query the victim and every recipient (attacker, module, fee collector, or third party) before and after, inspect the block's messages, signatures, and relayed packets, and for EVM or nested-message routes (ICA/authz/precompile) run a differential (`eth_call` or control account) in which the same path debits no victim without the flaw.
+
 For the High impact **"Chain halt / liveness failure"**, it is defined as where the whole chain stops producing or finalizing blocks, so no transactions can land until operators ship a coordinated fix. This happens when a single attacker-reachable input drives every validator into the same fatal error or unbounded work while applying a block, so the network stalls on one height all at once.
 
 Bug reports covering this impact may be downgraded to Medium severity where any of the following conditions applies:
@@ -152,19 +165,6 @@ This impact is measured by the following oracle(s), ensure your PoC satisfies at
   - condition: an account, client, or channel stays unusable after recovery
   - threshold: the operation still fails after the trigger clears and all nodes restart, while the same operation succeeds on the control.
   - measurement: after a full restart, attempt the `x/bank` spend, `x/staking` withdrawal, module-account function, `MsgUpdateClient`, channel handshake, or packet ack/refund against the affected account/client/channel and a control, and query balances, client status (`Frozen`/`Expired`), and escrow.
-
-For the High impact **"Theft / unauthorized extraction of funds"**, which is defined as where an attacker moves or withdraws value they do not own, bug reports covering this impact may be downgraded to Medium severity where any of the following conditions applies:
-
-- The attack requires an optional or non-default module, or an attacker-deployed contract (TipDecorator chain, x/accounts lockup, CosmWasm + IBC-hooks, etc.).
-- The attack requires being the account owner or withdrawer, or a contrived trigger (a forced timeout plus reentrant submessages, a victim contract relying on staticcall safety, etc.).
-- The impact is single-victim and isolated per transaction.
-
-This impact is measured by the following oracle(s), ensure your PoC satisfies at least one of the following:
-
-- For any chain (cosmos-sdk, cosmos/evm, wasmd, ibc-go, etc)
-  - condition: a victim's funds move without their authorization
-  - threshold: the victim's balance (or escrow held for them) falls by ≥ 1 base unit more than the transfers and fees the victim authorized, while the net change in spendable balances across all touched accounts is 0.
-  - measurement: query the victim and every recipient (attacker, module, fee collector, or third party) before and after, inspect the block's messages, signatures, and relayed packets, and for EVM or nested-message routes (ICA/authz/precompile) run a differential (`eth_call` or control account) in which the same path debits no victim without the flaw.
 
 For the High impact **"Loss of cryptoeconomic security"**, it is defined as where a misbehaving validator escapes the penalties (slashing) or breaks the signature guarantees that secure the chain economically, without crashing anything, weakening the deterrents that keep validators honest.
 
