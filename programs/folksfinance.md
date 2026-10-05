@@ -1,7 +1,7 @@
 # Folks Finance
 
 - Page: https://immunefi.com/bug-bounty/folksfinance/scope/
-- Max bounty: $200,000
+- Max bounty: $100,000
 - KYC required: yes
 - Paused: no
 - Invite only: no
@@ -9,13 +9,35 @@
 - PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium, smart_contract - low
 - End date: (none)
 
-## Assets in scope (1)
+## Assets in scope (23)
 
-- [smart_contract] https://docs.folks.finance/developer/contracts — Core
+- [smart_contract] https://lora.algokit.io/mainnet/application/1040271396 — Oracle
+- [smart_contract] https://lora.algokit.io/mainnet/application/1134695678 — xALGO
+- [smart_contract] https://lora.algokit.io/mainnet/application/1202382736 — Ultraswap Up Loan Type
+- [smart_contract] https://lora.algokit.io/mainnet/application/1202382829 — Ultraswap Down Loan Type
+- [smart_contract] https://lora.algokit.io/mainnet/application/1258515734 — GOLD$ Pool
+- [smart_contract] https://lora.algokit.io/mainnet/application/1258524099 — SILVER$ Pool
+- [smart_contract] https://lora.algokit.io/mainnet/application/2611131944 — xALGO Pool
+- [smart_contract] https://lora.algokit.io/mainnet/application/3184317016 — ALGO Pool (Isolated)
+- [smart_contract] https://lora.algokit.io/mainnet/application/3184324594 — USDC Pool (Isolated)
+- [smart_contract] https://lora.algokit.io/mainnet/application/3184325123 — TINY Pool (Isolated)
+- [smart_contract] https://lora.algokit.io/mainnet/application/3184333108 — Algorand Ecosystem Loan Type
+- [smart_contract] https://lora.algokit.io/mainnet/application/3343137163 — FOLKS Pool (Isolated)
+- [smart_contract] https://lora.algokit.io/mainnet/application/3514794123 — WBTC Pool
+- [smart_contract] https://lora.algokit.io/mainnet/application/3514795114 — WETH POOL
+- [smart_contract] https://lora.algokit.io/mainnet/application/971333964 — Oracle Adapter
+- [smart_contract] https://lora.algokit.io/mainnet/application/971350278 — Pool Manager
+- [smart_contract] https://lora.algokit.io/mainnet/application/971353536 — Deposits Escrow
+- [smart_contract] https://lora.algokit.io/mainnet/application/971368268 — ALGO Pool
+- [smart_contract] https://lora.algokit.io/mainnet/application/971372237 — USDC Pool
+- [smart_contract] https://lora.algokit.io/mainnet/application/971373361 — goBTC Pool
+- [smart_contract] https://lora.algokit.io/mainnet/application/971373611 — goETH Pool
+- [smart_contract] https://lora.algokit.io/mainnet/application/971388781 — General Loan Type
+- [smart_contract] https://lora.algokit.io/mainnet/application/971389489 — ALGO Efficiency Loan Type
 
 ## Asset notes
 
-In the Github link in the Assets in Scope table, only Exact Match Verified smart contracts are considered as in-scope of the bug bounty program.
+(none)
 
 ## Impacts in scope (10)
 
@@ -36,9 +58,9 @@ In the Github link in the Assets in Scope table, only Exact Match Verified smart
 
 ## Rewards
 
-- [smart_contract] Critical: maxReward=$200,000, minReward=$50,000, rewardCalculationPercentage=10, rewardModel=range
-- [smart_contract] High: maxReward=$50,000, minReward=$10,000, rewardModel=range
-- [smart_contract] Medium: fixedReward=$5,000, rewardModel=fixed
+- [smart_contract] Critical: maxReward=$100,000, minReward=$25,000, rewardCalculationPercentage=10, rewardModel=range
+- [smart_contract] High: maxReward=$50,000, minReward=$5,000, rewardModel=range
+- [smart_contract] Medium: fixedReward=$2,500, rewardModel=fixed
 - [smart_contract] Low: fixedReward=$1,000, rewardModel=fixed
 
 ## Reward notes

@@ -3,7 +3,7 @@
 - Page: https://immunefi.com/bug-bounty/burrow/scope/
 - Max bounty: $250,000
 - KYC required: yes
-- Paused: no
+- Paused: yes
 - Invite only: no
 - Program type: Smart Contract
 - PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium

@@ -3,7 +3,7 @@
 - Page: https://immunefi.com/bug-bounty/reffinance/scope/
 - Max bounty: $250,000
 - KYC required: no
-- Paused: no
+- Paused: yes
 - Invite only: no
 - Program type: Smart Contract
 - PoC required for: (none)

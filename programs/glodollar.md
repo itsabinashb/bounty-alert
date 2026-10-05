@@ -3,7 +3,7 @@
 - Page: https://immunefi.com/bug-bounty/glodollar/scope/
 - Max bounty: $50,000
 - KYC required: yes
-- Paused: no
+- Paused: yes
 - Invite only: no
 - Program type: Smart Contract
 - PoC required for: smart_contract - critical, smart_contract - high

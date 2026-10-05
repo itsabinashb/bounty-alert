@@ -9,7 +9,7 @@
 - PoC required for: smart_contract - critical, smart_contract - high
 - End date: (none)
 
-## Assets in scope (34)
+## Assets in scope (32)
 
 - [smart_contract] https://github.com/silo-finance/silo-contracts-v3/blob/master/silo-core/contracts/Silo.sol
 - [smart_contract] https://github.com/silo-finance/silo-contracts-v3/blob/master/silo-core/contracts/SiloConfig.sol
@@ -22,8 +22,6 @@
 - [smart_contract] https://github.com/silo-finance/silo-contracts-v3/blob/master/silo-core/contracts/interestRateModel/kink/DynamicKinkModel.sol
 - [smart_contract] https://github.com/silo-finance/silo-contracts-v3/blob/master/silo-core/contracts/interestRateModel/kink/DynamicKinkModelConfig.sol
 - [smart_contract] https://github.com/silo-finance/silo-contracts-v3/blob/master/silo-core/contracts/interestRateModel/kink/DynamicKinkModelFactory.sol
-- [smart_contract] https://github.com/silo-finance/silo-contracts-v3/blob/master/silo-core/contracts/leverage/LeverageRouter.sol
-- [smart_contract] https://github.com/silo-finance/silo-contracts-v3/blob/master/silo-core/contracts/leverage/LeverageUsingSiloFlashloanWithGeneralSwap.sol
 - [smart_contract] https://github.com/silo-finance/silo-contracts-v3/blob/master/silo-core/contracts/silo-router/SiloRouterV2.sol
 - [smart_contract] https://github.com/silo-finance/silo-contracts-v3/blob/master/silo-core/contracts/silo-router/SiloRouterV2Implementation.sol
 - [smart_contract] https://github.com/silo-finance/silo-contracts-v3/blob/master/silo-core/contracts/utils/ShareDebtToken.sol
