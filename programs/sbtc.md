@@ -40,9 +40,9 @@
 Rewards are distributed based on the vulnerability's impact, as defined in the Impacts in Scope section. If there is any discrepancy between the classification in the Impacts in Scope section and the Immunefi Vulnerability Severity Classification System, the classification in the Impacts in Scope section will take precedence.
 
 Stipulations:
-- Non-Critical vulnerabilities that can be objectively determined to affect <1% of users may be downgraded by 1 severity.
-- Non-Critical impacts that depend on execution involving a malicious signer will be downgraded by 1 severity level.
-- Non-Critical impacts on availability (e.g., denial-of-service) that depend on execution involving a malicious signer will be downgraded by 1 or more severity levels, to no lower than Low.
+- Vulnerabilities that can be objectively determined to affect <1% of users may be downgraded by 1 severity.
+- Impacts that depend on execution involving a malicious signer may be downgraded by 1 severity level.
+- Impacts on availability (e.g., denial-of-service) that depend on execution involving a malicious signer will be downgraded by 1 or more severity levels, to no lower than Low.
 
 Malicious signer threat model: An attacker operates one or more signers whose public keys are members of the current on-chain sBTC signer set. The attacker controls those signers' legitimate credentials. They may run modified software, deviate from the protocol, and craft, replay, withhold, or reorder messages.
 
