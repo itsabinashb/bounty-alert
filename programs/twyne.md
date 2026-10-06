@@ -9,12 +9,11 @@
 - PoC required for: smart_contract - critical, smart_contract - high
 - End date: (none)
 
-## Assets in scope (16)
+## Assets in scope (17)
 
 - [smart_contract] https://etherscan.io/address/0x0aF56aFBDDCb140323445BD7211Ba90E54e5FD1C — aPT22Oct2026 Wrapper
 - [smart_contract] https://etherscan.io/address/0x0acd3A3c8Ab6a5F7b5A594C88DFa28999dA858aC — Vault Manager
 - [smart_contract] https://etherscan.io/address/0x229fE10bC00bBE99Ac99703647D4f74F31605e91 — Aave V3 Deleverage Operator
-- [smart_contract] https://etherscan.io/address/0x335AB81f1C3d9f72639004d3e982902458CF29b3 — Euler Leverage Operator
 - [smart_contract] https://etherscan.io/address/0x451949bde57aBe2F5DBD4758Cd50C6DCfC093A4C — Aave V3 Leverage Operator
 - [smart_contract] https://etherscan.io/address/0x75029a47f28550C93Ad5A3BbD2d9b5315204B561 — aWSTETH Intermediate Credit Vault
 - [smart_contract] https://etherscan.io/address/0x7613D202Af490c3d1cE1873b0a7022a34E89815f — eWSTETH Intermediate Credit Vault
@@ -25,6 +24,8 @@
 - [smart_contract] https://etherscan.io/address/0xFaBA8f777996C0C28fe9e6554D84cB30ca3e1881 — awstETH Wrapper
 - [smart_contract] https://etherscan.io/address/0xa1517cCe0bE75700A8838EA1cEE0dc383cd3A332 — Collateral Vault Factory
 - [smart_contract] https://etherscan.io/address/0xb001f039D76bA48E577A17c04b6940DB37aF8648 — Euler Oracle Router
+- [smart_contract] https://etherscan.io/address/0xb7a7Cf5EB16C124562857632F8f86Ed627e6cc35 — Aave V3 Leverage Operator
+- [smart_contract] https://etherscan.io/address/0xd07e1dd26f415fed3e8c490623a80ab55cf7bdbb — Euler Leverage Operator
 - [smart_contract] https://etherscan.io/address/0xef39D6493884C4C84D38a4bFF879Ce16CEdE702a — Twyne EVC
 - [smart_contract] https://immunefi.com/ — Primacy of Impact (primacy of impact)
 
@@ -78,7 +79,7 @@ The calculation of the net amount rewarded is based on the average price between
 
 ## Out of scope (program-specific)
 
-- Reverts originating from operator contracts that solely prevent the execution of batched transactions shall be deemed out of scope.
+- Reverts in/through Operator contracts that solely prevent the execution of batched transactions shall be deemed out of scope.
 
 ## Out of scope and rules
 
