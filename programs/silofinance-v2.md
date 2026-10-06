@@ -9,7 +9,7 @@
 - PoC required for: smart_contract - critical, smart_contract - high
 - End date: (none)
 
-## Assets in scope (32)
+## Assets in scope (29)
 
 - [smart_contract] https://github.com/silo-finance/silo-contracts-v3/blob/master/silo-core/contracts/Silo.sol
 - [smart_contract] https://github.com/silo-finance/silo-contracts-v3/blob/master/silo-core/contracts/SiloConfig.sol
@@ -28,7 +28,6 @@
 - [smart_contract] https://github.com/silo-finance/silo-contracts-v3/blob/master/silo-core/contracts/utils/ShareProtectedCollateralToken.sol
 - [smart_contract] https://github.com/silo-finance/silo-contracts-v3/blob/master/silo-vaults/contracts/IdleVault.sol
 - [smart_contract] https://github.com/silo-finance/silo-contracts-v3/blob/master/silo-vaults/contracts/IdleVaultsFactory.sol
-- [smart_contract] https://github.com/silo-finance/silo-contracts-v3/blob/master/silo-vaults/contracts/PublicAllocator.sol
 - [smart_contract] https://github.com/silo-finance/silo-contracts-v3/blob/master/silo-vaults/contracts/SiloVault.sol
 - [smart_contract] https://github.com/silo-finance/silo-contracts-v3/blob/master/silo-vaults/contracts/SiloVaultsFactory.sol
 - [smart_contract] https://github.com/silo-finance/silo-contracts-v3/blob/master/silo-vaults/contracts/incentives/VaultIncentivesModule.sol
@@ -38,8 +37,6 @@
 - [smart_contract] https://sonicscan.org/address/0x435Ab368F5fCCcc71554f4A8ac5F5b922bC4Dc06 — Silo.sol - Silo Lending
 - [smart_contract] https://sonicscan.org/address/0x4e125E605FDcf3B07BDE441DECf8EDAd423D5DC6 — SiloVaultsFactory.sol - Silo Vaults
 - [smart_contract] https://sonicscan.org/address/0x4e9dE3a64c911A37f7EB2fCb06D1e68c3cBe9203 — SiloFactory.sol - Silo Lending
-- [smart_contract] https://sonicscan.org/address/0x8509b92145Bb2645F47c6847Bb61A46bE61AE3F2 — InterestRateModelV2.sol - Silo Lending
-- [smart_contract] https://sonicscan.org/address/0xC95149D52dA227cfeb0425ac6803086Db5A193b7 — PublicAllocator.sol  - Silo Vaults
 - [smart_contract] https://sonicscan.org/address/0xDED4aC8645619334186f28B8798e07ca354CFa0e — Example of SiloVault.sol - Silo Vaults
 - [smart_contract] https://sonicscan.org/address/0xE83fDb15b5efeD3E3D3FD2a086219c33686b7231 — ShareDebtToken.sol - Silo Lending
 - [smart_contract] https://sonicscan.org/address/0xff1d0359CAd3BC603584A63D852D884BF5b17A67 — SiloRouterV2.sol
