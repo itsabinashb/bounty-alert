@@ -101,7 +101,7 @@ This impact is measured by the following oracle(s), ensure your PoC satisfies at
   - threshold: the net change in the denom's spendable balances, summed across every account the block touches, differs by ≥ 1 base unit from the authorized mints and burns in the block.
   - measurement: query spendable balances of the legitimate asset (native, token-factory, contract-issued, or IBC voucher denom) for every account the block touches before and after, sum the authorized mints (including vouchers for relayed packets) and burns, and confirm any created balance is transferable by the attacker.
 
-For the Critical impact **"Theft / unauthorized extraction of funds"**, which is defined as where an attacker moves or withdraws value they do not own, bug reports covering this impact may be downgraded to High severity where any of the following conditions applies:
+For the High impact **"Theft / unauthorized extraction of funds"**, which is defined as where an attacker moves or withdraws value they do not own, bug reports covering this impact may be downgraded to High severity where any of the following conditions applies:
 
 - The attack requires an optional or non-default module, or an attacker-deployed contract (TipDecorator chain, x/accounts lockup, CosmWasm + IBC-hooks, etc.).
 - The attack requires being the account owner or withdrawer, or a contrived trigger (a forced timeout plus reentrant submessages, a victim contract relying on staticcall safety, etc.).
@@ -156,7 +156,7 @@ This impact is measured by the following oracle(s), ensure your PoC satisfies at
 For the High impact **"Permanent locking / freezing of funds or clients"**, which is defined as where user funds, an account, or a non-malicious cross-chain connection become permanently unusable with no automatic recovery, where typically only a chain upgrade or a governance intervention can release them, bug reports covering this impact may be downgraded to Medium severity where any of the following conditions applies:
 
 - The issue requires an optional or non-default module (ICA host, x/accounts lockup, x/rate-limiting, ICS02 precompile, transfer-v2 forwarding, erc20 middleware, etc.).
-- The issue requires a self-inflicted or contrived configuration or trigger (genesis export/import, forwarded-hop timeout, client-ID collision, etc.).
+- The issue requires a self-inflicted or contrived configuration or trigger (genesis export/import, forwarded-hop timeout, client-ID collision, knowing an account address before it is created, etc.).
 - The scope of the impact is limited to a single account, client, or path and is recoverable via governance or a chain upgrade.
 
 This impact is measured by the following oracle(s), ensure your PoC satisfies at least one of the following:
@@ -485,7 +485,7 @@ All Categories
 
 * Architectural critiques without immediate exploitability.
 
-* Vulnerabilities caused by user error or misconfiguration by the user, going against documented operational procedures.
+* Vulnerabilities caused by user error or misconfiguration by the user, going against documented operational procedures. An example of this would be RPC endpoints intended for debug or developer/non-production usage only
 
 * Vulnerabilities requiring privileged access to a local network or machine, without demonstrating how that access is gained.
 

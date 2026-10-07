@@ -48,7 +48,7 @@ All vaults deployed using `CollateralVaultFactory` are considered in scope
 
 ## Rewards
 
-- [smart_contract] Critical: maxReward=$50,000, minReward=$20,000, rewardCalculationPercentage=10, rewardModel=range
+- [smart_contract] Critical: maxReward=$50,000, minReward=$10,000, rewardCalculationPercentage=10, rewardModel=range
 - [smart_contract] High: maxReward=$10,000, minReward=$3,000, rewardModel=range
 
 ## Reward notes

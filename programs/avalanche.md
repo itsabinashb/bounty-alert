@@ -67,22 +67,18 @@ Even if a bug is considered out-of-scope but you feel it should be disclosed pri
 
 Blockchain/DLT - ICM Services: Excluding tests
 
-## Impacts in scope (23)
+## Impacts in scope (19)
 
 - [blockchain_dlt] Critical: Ability to exfiltrate a node's staking keys (TLS or BLS) without direct machine access
 - [blockchain_dlt] Critical: Direct loss of funds
 - [blockchain_dlt] Critical: Network not being able to confirm new transactions (total network shutdown)
 - [blockchain_dlt] Critical: Permanent freezing of funds (fix requires hardfork)
 - [blockchain_dlt] Critical: Unintended permanent chain split requiring hard fork (network partition requiring hard fork)
-- [blockchain_dlt] High: Ability to circumvent P2P network message throttling
 - [blockchain_dlt] High: Ability to produce a disproportionate number of blocks compared to the amount of controlled stake (High) Assuming the blockchain is using the Snowman++ congestion control mechanism.
 - [blockchain_dlt] High: Causing network processing nodes to process transactions from the mempool beyond set parameters
-- [blockchain_dlt] High: Delay message handling of other validators due to sending messages over the P2P network
-- [blockchain_dlt] High: Temporary freezing of network transactions by delaying one block by 500% or more of the average block time of the preceding 24 hours beyond standard difficulty adjustments
 - [blockchain_dlt] High: Unintended chain split (network partition)
 - [blockchain_dlt] Medium: A bug in the respective layer 1 network code that results in unintended smart contract behavior with no concrete funds at direct risk
 - [blockchain_dlt] Medium: Ability to display arbitrary logs to users
-- [blockchain_dlt] Medium: Increasing network processing node resource consumption by at least 30% without brute force actions, compared to the preceding 24 hours
 - [blockchain_dlt] Medium: Shutdown of greater than or equal to 30% of network processing nodes without brute force actions, but does not shut down the network
 - [blockchain_dlt] Low: Modification of transaction fees outside of design parameters
 - [smart_contract] Critical: Direct theft of any user funds, whether at-rest or in-motion, other than unclaimed yield
