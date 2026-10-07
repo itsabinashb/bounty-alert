@@ -18,7 +18,7 @@
 
 ## Asset notes
 
-The smart contract regarding native xDAI bridging (XDaiForeignBridge and HomeBridgeErcToNative)  can be found at [https://github.com/gnosischain/tokenbridge-contracts/tree/xdaibridge-upgrade-sda](https://github.com/gnosischain/tokenbridge-contracts/tree/xdaibridge-upgrade-sda). The smart contracts regarding arbitrary ERC20 bridging (ForeignOmnibridge and HomeOmnibridge) can be found at [https://github.com/gnosischain/omnibridge/tree/master](https://github.com/gnosischain/omnibridge/tree/master).
+The smart contract regarding native xDAI bridging (XDaiForeignBridge and HomeBridgeErcToNative)  can be found at [https://github.com/gnosischain/tokenbridge-contracts/tree/xdaibridge](https://github.com/gnosischain/tokenbridge-contracts/tree/xdaibridge). The smart contracts regarding arbitrary ERC20 bridging (ForeignOmnibridge and HomeOmnibridge) can be found at [https://github.com/gnosischain/omnibridge/tree/master](https://github.com/gnosischain/omnibridge/tree/master).
 
 Only those in the Assets in Scope table are considered as in-scope of the bug bounty program.
 

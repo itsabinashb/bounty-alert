@@ -157,8 +157,9 @@ Payouts are handled by the __deBridge__ team directly and are denominated in USD
 ## Out of scope (program-specific)
 
 - Best practice critiques
-  - Centralization risks
-  - Gas optimizations
+- Centralization risks
+- Gas optimizations
+- we do not support non standard tokens or make any promise/guarantee on the execution of processes outside of debridge gate. Our internal solver operates on DLN infrastructure not deprecated DePORT and DeAssets. The risks of non-standard tokens are therefore not something we will accept as a valid issue.
 
 ## Out of scope and rules
 
