@@ -9,12 +9,10 @@
 - PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium, smart_contract - low
 - End date: (none)
 
-## Assets in scope (23)
+## Assets in scope (21)
 
 - [smart_contract] https://lora.algokit.io/mainnet/application/1040271396 — Oracle
 - [smart_contract] https://lora.algokit.io/mainnet/application/1134695678 — xALGO
-- [smart_contract] https://lora.algokit.io/mainnet/application/1202382736 — Ultraswap Up Loan Type
-- [smart_contract] https://lora.algokit.io/mainnet/application/1202382829 — Ultraswap Down Loan Type
 - [smart_contract] https://lora.algokit.io/mainnet/application/1258515734 — GOLD$ Pool
 - [smart_contract] https://lora.algokit.io/mainnet/application/1258524099 — SILVER$ Pool
 - [smart_contract] https://lora.algokit.io/mainnet/application/2611131944 — xALGO Pool
@@ -116,6 +114,6 @@ __Smart Contracts and Blockchain__
 
 (none)
 
-## Known issues (0)
+## Known issues (1)
 
-(none)
+- An attacker sends some fAsset, whose pool's collateral cap is zero, to a loan such that it prevents the loan from being closed out. Other similar examples such as when an escrow has opted into a different asset prior to being used (https://lora.algokit.io/mainnet/application/971388781)

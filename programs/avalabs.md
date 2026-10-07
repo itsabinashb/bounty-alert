@@ -3,7 +3,7 @@
 - Page: https://immunefi.com/bug-bounty/avalabs/scope/
 - Max bounty: $10,000
 - KYC required: yes
-- Paused: no
+- Paused: yes
 - Invite only: no
 - Program type: Websites and Applications
 - PoC required for: websites_and_applications - critical, websites_and_applications - high, websites_and_applications - medium, websites_and_applications - low

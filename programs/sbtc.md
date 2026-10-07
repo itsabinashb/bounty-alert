@@ -6,7 +6,7 @@
 - Paused: no
 - Invite only: no
 - Program type: Smart Contract, Blockchain/DLT
-- PoC required for: blockchain_dlt - critical, smart_contract - critical, blockchain_dlt - high, smart_contract - high, blockchain_dlt - medium, blockchain_dlt - low
+- PoC required for: blockchain_dlt - critical, smart_contract - critical, blockchain_dlt - high, smart_contract - high
 - End date: (none)
 
 ## Assets in scope (5)
@@ -21,15 +21,11 @@
 
 (none)
 
-## Impacts in scope (11)
+## Impacts in scope (7)
 
 - [blockchain_dlt] Critical: Direct loss of funds
 - [blockchain_dlt] Critical: Permanent freezing of funds (fix requires hardfork)
 - [blockchain_dlt] High: The sBTC signers not being able to confirm new transactions (a sustained total sBTC shutdown)
-- [blockchain_dlt] Medium: Emily API crash preventing correct processing of sBTC deposits/withdrawals
-- [blockchain_dlt] Medium: Temporarily freezing sBTC transactions
-- [blockchain_dlt] Low: Denial of service caused by brute-force or simple resource exhaustion (for example, by connection flooding)
-- [blockchain_dlt] Low: Modification of STX transaction fees outside of design parameters
 - [smart_contract] Critical: Direct theft of any user funds, whether at-rest or in-motion, other than unclaimed yield
 - [smart_contract] Critical: Permanent freezing of funds
 - [smart_contract] Critical: Protocol insolvency
@@ -39,7 +35,7 @@
 
 Rewards are distributed based on the vulnerability's impact, as defined in the Impacts in Scope section. If there is any discrepancy between the classification in the Impacts in Scope section and the Immunefi Vulnerability Severity Classification System, the classification in the Impacts in Scope section will take precedence.
 
-Stipulations:
+Stipulations: 
 - Vulnerabilities that can be objectively determined to affect <1% of users may be downgraded by 1 severity.
 - Impacts that depend on execution involving a malicious signer may be downgraded by 1 severity level.
 - Impacts on availability (e.g., denial-of-service) that depend on execution involving a malicious signer will be downgraded by 1 or more severity levels, to no lower than Low.
@@ -50,8 +46,6 @@ Malicious signer threat model: An attacker operates one or more signers whose pu
 
 - [blockchain_dlt] Critical: maxReward=$250,000, minReward=$25,000, rewardCalculationPercentage=10, rewardModel=range
 - [blockchain_dlt] High: maxReward=$25,000, minReward=$5,000, rewardModel=range
-- [blockchain_dlt] Medium: maxReward=$5,000, minReward=$1,000, rewardModel=range
-- [blockchain_dlt] Low: fixedReward=$1,000, rewardModel=fixed
 - [smart_contract] Critical: maxReward=$250,000, minReward=$25,000, rewardCalculationPercentage=10, rewardModel=range
 - [smart_contract] High: maxReward=$25,000, minReward=$5,000, rewardModel=range
 

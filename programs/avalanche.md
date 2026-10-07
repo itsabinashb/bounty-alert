@@ -3,7 +3,7 @@
 - Page: https://immunefi.com/bug-bounty/avalanche/scope/
 - Max bounty: $100,000
 - KYC required: yes
-- Paused: no
+- Paused: yes
 - Invite only: no
 - Program type: Smart Contract, Blockchain/DLT
 - PoC required for: blockchain_dlt - critical, blockchain_dlt - high, blockchain_dlt - medium, blockchain_dlt - low, smart_contract - critical, smart_contract - high, smart_contract - medium
