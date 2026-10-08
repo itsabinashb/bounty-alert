@@ -9,11 +9,13 @@
 - PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium, websites_and_applications - critical, websites_and_applications - high, websites_and_applications - medium, websites_and_applications - low, smart_contract - low
 - End date: (none)
 
-## Assets in scope (10)
+## Assets in scope (12)
 
 - [smart_contract] https://github.com/ensdomains/ens-contracts/wiki/ENS-Contract-Deployments — Smart Contracts
 - [smart_contract] https://immunefi.com — Primacy of Impact (primacy of impact)
 - [websites_and_applications] https://app.ens.domains/ — ENS app
+- [websites_and_applications] https://basics.ensdao.org/
+- [websites_and_applications] https://docs.ens.domains/
 - [websites_and_applications] https://ens.domains — ENS landing page
 - [websites_and_applications] https://github.com/ensdomains/ens-app-v3 — ENS app source code
 - [websites_and_applications] https://github.com/ensdomains/ens-metadata-service — ENS Metadata service source code
@@ -280,7 +282,15 @@ It is recommended to keep an eye on the audits secction, as the listed audits ar
 
 - Taking over broken links from sources that are no longer considered active, such as links related to meeting minutes, past events etc., as this content is left up for archival purposes and should not be changed. 
 
-- Products funded or maintained by the DAO that are not on the published asset list are excluded regardless of impact
+- Products funded or maintained by the DAO that are not on the published asset list are excluded regardless of impact.
+
+**Beta and Preview Environments**
+
+Web applications deployed under dev.ens.domains, and any subdomain thereof, are subject to the following scope limitation: only Critical severity impacts are in scope. High, Medium and Low severity impacts affecting these subdomains are out of scope and not eligible for a reward.
+
+For the avoidance of doubt, this limitation takes precedence over the Primacy of Impact provision. Assets deployed under dev.ens.domains are not brought into full scope by virtue of being owned or operated by ENS.
+
+This limitation applies to web applications only. No smart contracts are deployed under these subdomains, and smart contracts remain in full scope wherever they are deployed.
 
 ## Out of scope and rules
 
