@@ -45,8 +45,8 @@
 - [smart_contract] High: Permanent freezing of unclaimed yield
 - [smart_contract] High: Temporary freezing of funds for at least 48 hours
 - [smart_contract] High: Theft of unclaimed yield
-- [smart_contract] Medium: Griefing (e.g. no profit motive for an attacker, but damage to the users or the protocol)
-- [smart_contract] Medium: Smart contract unable to operate due to lack of token funds
+- [smart_contract] Medium: Griefing (e.g. no profit motive for an attacker, but damage to the users or the protocol) - excludes freezing of funds
+- [smart_contract] Medium: Protocol unable to operate due to lack of token funds
 - [smart_contract] Medium: Temporary freezing of funds for at least 24 hours
 - [smart_contract] Low: Contract fails to deliver promised returns, but doesn't lose value
 

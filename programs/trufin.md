@@ -9,11 +9,10 @@
 - PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium
 - End date: (none)
 
-## Assets in scope (3)
+## Assets in scope (2)
 
 - [smart_contract] https://explorer.solana.com/address/6EZAJVrNQdnBJU6ULxXSDaEoK6fN7C3iXTCkZKRWDdGM?cluster=devnet — Solana staker and whitelist contracts on testnet
 - [smart_contract] https://github.com/TruFin-io/smart-contracts-solana-public — Solana staker and whitelist contracts on GitHub
-- [smart_contract] https://immunefi.com/ — Primacy of Impact (primacy of impact)
 
 ## Asset notes
 
@@ -42,9 +41,9 @@
 
 ## Rewards
 
-- [smart_contract] Critical: fixedReward=$20,000, primacy=primacy_of_impact, rewardCalculationPercentage=0, rewardModel=fixed
-- [smart_contract] High: fixedReward=$10,000, primacy=primacy_of_impact, rewardModel=fixed
-- [smart_contract] Medium: fixedReward=$3,000, primacy=primacy_of_impact, rewardModel=fixed
+- [smart_contract] Critical: fixedReward=$20,000, primacy=primacy_of_rules, rewardCalculationPercentage=0, rewardModel=fixed
+- [smart_contract] High: fixedReward=$10,000, primacy=primacy_of_rules, rewardModel=fixed
+- [smart_contract] Medium: fixedReward=$3,000, primacy=primacy_of_rules, rewardModel=fixed
 
 ## Reward notes
 
