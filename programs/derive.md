@@ -3,7 +3,7 @@
 - Page: https://immunefi.com/bug-bounty/derive/scope/
 - Max bounty: $50,000
 - KYC required: no
-- Paused: no
+- Paused: yes
 - Invite only: no
 - Program type: Smart Contract
 - PoC required for: smart_contract - critical, smart_contract - high
