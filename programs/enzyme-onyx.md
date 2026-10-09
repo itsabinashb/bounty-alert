@@ -9,8 +9,9 @@
 - PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium
 - End date: (none)
 
-## Assets in scope (44)
+## Assets in scope (45)
 
+- [smart_contract] https://github.com/enzymefinance/protocol-onyx-dev/blob/d8a522d6ca58af9dbb831dad2b8045a88952e468/src/components/issuance/redeem-handlers/SyncRedeemHandler.sol — SyncRedeemHandler
 - [smart_contract] https://github.com/enzymefinance/protocol-onyx/blob/61ef53d2dfd17d83183d832529b148e6e15c26ab/src/components/automations/chainlink-cre/CreWorkflowConsumer.sol — CreWorkflowConsumer
 - [smart_contract] https://github.com/enzymefinance/protocol-onyx/blob/61ef53d2dfd17d83183d832529b148e6e15c26ab/src/components/lists/SharesOwnedAddressList.sol — SharesOwnedAddressList
 - [smart_contract] https://github.com/enzymefinance/protocol-onyx/blob/61ef53d2dfd17d83183d832529b148e6e15c26ab/src/infra/lists/address-list/OwnableAddressList.sol — OwnableAddressList
