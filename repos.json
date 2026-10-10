@@ -224,7 +224,7 @@
  "mux-world/mux-degen-protocol@main": "c5bfe81255fb0af8834709cffe019e9fd08efad8",
  "mux-world/mux-protocol@main": "0f70a70b9b3410c2ae7209900e5d2521635249d1",
  "mux-world/mux3-protocol@main": "57a8c6328a0ca106867b7c3341c6aa2de2c4dfd4",
- "nethermindeth/nethermind@master": "a82bd721d30448def2ed3870d786addca813f157",
+ "nethermindeth/nethermind@master": "1556bf0b5b7d052953839ecb0bc0d936bea5cefb",
  "nexusmutual/smart-contracts@master": "67f531208b693f8edbc6ea46528f164046ed1f0b",
  "nexusmutual/smart-contracts@release-candidate": "9e885628e9049025bd625cc4cf02d7a981d5c338",
  "offchainlabs/fund-distribution-contracts@main": "52bc4993724faee78b5a08798d5ea9851c509d5e",
@@ -355,6 +355,6 @@
  "wormhole-foundation/native-token-transfers@main": "250d810d42b005526e4fb7e3aea75d2d2ab8fdbb",
  "wormhole-foundation/wormhole-circle-integration@main": "234202543cc96ba593449ca1b9d7cb2b9499668d",
  "wormhole-foundation/wormhole@main": "a4a8409531da2cdf85fe517fe0f887313ae68550",
- "xoxno/rs-lending-xlm@main": "a0b6db875bcfddfffcf6d20ac739794cd103af82",
+ "xoxno/rs-lending-xlm@main": "1fd65fe7cad6018ad2b1a245773a1eb12f9b9884",
  "zerolend/governance@main": "60d255aca56f46fe9b26f012eee683e1aede2b33"
 }
