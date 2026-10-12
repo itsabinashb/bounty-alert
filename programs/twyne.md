@@ -57,7 +57,7 @@ Rewards are distributed according to the impact of the vulnerability based on th
 
 __Reward Calculation for Critical Level Reports__
 
-For critical smart contract bugs, the reward amount is 10% of the funds directly affected up to a maximum of USD 50 000. The calculation of the amount of funds at risk is based on the time and date the bug report is submitted. However, a minimum reward of USD 20 000 is to be rewarded in order to incentivize security researchers against withholding a critical bug report.
+For critical smart contract bugs, the reward amount is 10% of the funds directly affected up to a maximum of USD 50 000. The calculation of the amount of funds at risk is based on the time and date the bug report is submitted. However, a minimum reward of USD10 000 is to be rewarded in order to incentivize security researchers against withholding a critical bug report.
 
 __Repeatable Attack Limitations__
 

@@ -9,7 +9,7 @@
 - PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium
 - End date: (none)
 
-## Assets in scope (45)
+## Assets in scope (46)
 
 - [smart_contract] https://github.com/enzymefinance/protocol-onyx-dev/blob/d8a522d6ca58af9dbb831dad2b8045a88952e468/src/components/issuance/redeem-handlers/SyncRedeemHandler.sol — SyncRedeemHandler
 - [smart_contract] https://github.com/enzymefinance/protocol-onyx/blob/61ef53d2dfd17d83183d832529b148e6e15c26ab/src/components/automations/chainlink-cre/CreWorkflowConsumer.sol — CreWorkflowConsumer
@@ -54,6 +54,7 @@
 - [smart_contract] https://github.com/enzymefinance/protocol-onyx/blob/d1141ff017ec95d33ec46669f404413a0304edb7/src/ccip/DepositorWallet.sol — DepositorWallet
 - [smart_contract] https://github.com/enzymefinance/protocol-onyx/blob/d1141ff017ec95d33ec46669f404413a0304edb7/src/components/ccip/WalletsManager.sol — WalletsManager
 - [smart_contract] https://github.com/enzymefinance/protocol-onyx/blob/d1141ff017ec95d33ec46669f404413a0304edb7/src/factories/DeterministicBeaconFactory.sol — DeterministicBeaconFactory
+- [smart_contract] https://github.com/enzymefinance/protocol-onyx/blob/d8a522d6ca58af9dbb831dad2b8045a88952e468/src/components/issuance/redeem-handlers/SyncRedeemHandler.sol — SyncRedeemHandler
 - [smart_contract] https://github.com/enzymefinance/protocol-onyx/blob/df697194bdfbb883b6eff7a667b08debfcf467a0/src/utils/ValueHelpersLib.sol — ValueHelpersLib
 - [smart_contract] https://immunefi.com/ — Primacy of Impact (primacy of impact)
 
