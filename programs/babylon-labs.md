@@ -3,7 +3,7 @@
 - Page: https://immunefi.com/bug-bounty/babylon-labs/scope/
 - Max bounty: $500,000
 - KYC required: yes
-- Paused: no
+- Paused: yes
 - Invite only: no
 - Program type: Websites and Applications, Blockchain/DLT
 - PoC required for: blockchain_dlt - critical, blockchain_dlt - high, blockchain_dlt - medium, websites_and_applications - critical, websites_and_applications - high, websites_and_applications - medium, blockchain_dlt - low
