@@ -360,14 +360,31 @@ Out of Scope reports:
 - taking ETH/tokens accidentally sent directly to the contract outside intended protocol flows, without demonstrating how such funds can be introduced through valid protocol interactions. Common example: reports claiming an attacker can drain tokens from an adapter due to a missing onlyIntegrationManager check are invalid if the funds can only exist there via accidental direct transfers, or other non-protocol flows.
 - front-running contract initialization during deployment. Contracts are deployed via factory contracts, which invoke the init function in the same transaction as the deployment, preventing attackers from front-running the initialization step.
 - griefing queues by spamming requests, or by sending requests that revert on the execution. Both SingleAssetRedemptionQueueLib and GatedRedemptionQueueSharesWrapperLib have a mechanism to skip requests.
+- Convex ClaimRewards leaves reward tokens untracked
+- OneInchV5Adapter ungated batch callback reentrancy can consume later prefunded assets
+
 
 Known issues:
-1) Incorrect share price for depositors and redeemers if "auto-buyback of protocol fee shares" is used
+1 )Incorrect share price for depositors and redeemers if "auto-buyback of protocol fee shares" is used
 Issue: During deposit and redeem, if a fund has autoProtocolFeeSharesBuyback turned on, an incorrect share price is constructed as: pre-buyback GAV / post-buyback total supply.
 
 Effect: Results in too-high share price used to deposit or redeem shares
 
 Mitigation: while mis-pricing should generally be small, unless you are confident in assessing impact, avoid using autoProtocolFeeSharesBuyback .
+
+2) Incorrect redemption amount and beneficiary share loss if a Shares Splitter's redeemShares() is called
+Issue: When redeemShares() is called on a Shares Splitter, the splitter's shares are redeemed through the vault's redemption hook. The Comptroller infers the exit-fee charge from the redeemer's net share-balance change across that hook. If a fee that mints shares (e.g. ManagementFee or PerformanceFee) and an exit fee (ExitRateBurnFee or ExitRateDirectFee) settle in the same redemption, the incoming mint offsets the outgoing exit-fee shares, so the net-delta heuristic under-counts the exit charge and up to min(minted shares, exit-fee shares) extra shares are redeemed.
+
+Effect: The extra redeemed shares are drawn from the Shares Splitter's shared pool, reducing the other beneficiaries' claimable balances by up to min(minted shares, exit-fee shares) per call. Only reachable via a Shares Splitter's redeemShares() path; the standard claim path is unaffected.
+
+Mitigation: Do not call a Shares Splitter's redeemShares() — directly, programmatically, or via a block explorer; it is intentionally not exposed in the admin UI. Beneficiaries should claim their shares with claimToken and then, if they want the underlying assets, redeem those shares from their own account like any other holder.
+
+3) Stale high-water mark if a performance fee rounds to zero
+Issue: If the share price is above the high-water mark (HWM) but the performance fee is less than one base unit of the denomination asset, PerformanceFee.settle() rounds the fee to zero and returns early. It skips the HWM reset, so the HWM stays at its old value. In practice this only happens when total supply is down to the locked minimum shares of the MinSharesSupplyFee (every real depositor has exited) and only dust value remains in the vault. For example, 1 USDC base unit backing 1e6 shares.
+
+Effect: The stale HWM persists through the next deposit. On the next fee settlement, which anyone can trigger, the performance fee charges the historical per-share gain against the new depositor's principal. Fee shares go to the fee recipient and dilute the depositor, even though the vault made no new gain. Vaults with ongoing depositors are not affected.
+
+Mitigation: Managers should be aware that once every depositor has exited a vault with a performance fee, new deposits can be overcharged. Deploy a new vault rather than reopening a fully redeemed one.
 
 ## Out of scope and rules
 
