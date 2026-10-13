@@ -54,10 +54,11 @@
 
 However, only those in the Assets in Scope table are considered as in-scope of the bug bounty program.
 
-## Impacts in scope (29)
+## Impacts in scope (30)
 
 - [blockchain_dlt] Critical: Direct loss of funds, not including proposer/challenger bonds or fee vaults
 - [blockchain_dlt] High: Freezing of funds (fix requires L2 hardfork)
+- [blockchain_dlt] High: Malicious sequencer/batcher stealing user funds
 - [blockchain_dlt] High: Network not being able to confirm any new transactions, including deposits (Total network shutdown)
 - [blockchain_dlt] Medium: Direct theft or permanent loss of fee vault funds (excluding missed revenue, unrealized yield, or failure to collect fees from pending transactions)
 - [blockchain_dlt] Medium: Network not being able to confirm new transactions on L2, while forced-inclusion via L1 is still possible
@@ -145,6 +146,8 @@ __Blockchain / DLT__:
 - op-reth depends on several crates sourced from https://github.com/paradigmxyz/reth/. Issues which are responsibly disclosed to the upstream reth team or the Ethereum Foundation Bug Bounty Program (https://bbp-form.ethereum.org/) cannot be "replayed" against Optimism’s bug bounty program if the vulnerability has already been made public. If the vulnerability is disclosed to Optimism at the same time as upstream, the vulnerability is eligible for the bug bounty program.
  - All currently known issues with devp2p here: [https://github.com/ethereum/devp2p/blob/master/rlpx.md#known-issues-in-the-current-version](https://github.com/ethereum/devp2p/blob/master/rlpx.md#known-issues-in-the-current-version)
 - There are scenarios where, if an attacker can predict an L1 reorg, they could exploit it to reorder dispute game transactions in a way that causes the honest challenger to respond incorrectly and therefore lose its bond — although the dispute game itself will still resolve correctly.
+- *Clarification regarding malicious sequencer/batcher bugs*: the Default Blockchain/DLT out-of-scope item "Impacts caused by attacks requiring access to leaked keys/credentials" in particular puts malicious sequencer/batcher bugs out of scope. However, we put a sub-class of these bugs back into scope with "Malicious sequencer/batcher stealing user funds".
+   - This **doesn't** generally move any derivation discrepancies that only a malicious sequencer/batcher can trigger in scope, like bugs where op-node, kona-node or kona-client disagree on the validity or interpretation of batcher transactions, frames, channels or batches. Only if the direct impact is stealing of user funds is such a bug in scope.
 
 __Smart Contracts__:
 - Vulnerabilities in the implementation of ‘custom token bridges’ which are written by third parties for bridging tokens to their network
