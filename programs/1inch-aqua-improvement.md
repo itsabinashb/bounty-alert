@@ -11,38 +11,38 @@
 
 ## Assets in scope (32)
 
-- [smart_contract] https://github.com/1inch/aqua/blob/main/src/Aqua.sol — Aqua - src/Aqua.sol
-- [smart_contract] https://github.com/1inch/aqua/blob/main/src/AquaRouter.sol — Aqua - src/AquaRouter.sol
-- [smart_contract] https://github.com/1inch/aqua/blob/main/src/libs/Balance.sol — Aqua - src/libs/Balances.sol
-- [smart_contract] https://github.com/1inch/solidity-utils/blob/master/contracts/libraries/Calldata.sol — Utils - contracts/libraries/Calldata.sol
-- [smart_contract] https://github.com/1inch/solidity-utils/blob/master/contracts/libraries/CalldataPtr.sol — Utils - contracts/libraries/CalldataPtr.sol
-- [smart_contract] https://github.com/1inch/solidity-utils/blob/master/contracts/libraries/ECDSA.sol — Utils - contracts/libraries/ECDSA.sol
-- [smart_contract] https://github.com/1inch/solidity-utils/blob/master/contracts/libraries/RevertReasonForwarder.sol — Utils - contracts/libraries/RevertReasonForwarder.sol
-- [smart_contract] https://github.com/1inch/solidity-utils/blob/master/contracts/libraries/SafeERC20.sol — Utils - contracts/libraries/SafeERC20.sol
-- [smart_contract] https://github.com/1inch/solidity-utils/blob/master/contracts/libraries/StringUtil.sol — Utils - contracts/libraries/StringUtil.sol
-- [smart_contract] https://github.com/1inch/solidity-utils/blob/master/contracts/libraries/Transient.sol — Utils - contracts/libraries/Transient.sol
-- [smart_contract] https://github.com/1inch/solidity-utils/blob/master/contracts/libraries/TransientLock.sol — Utils - contracts/libraries/TransientLock.sol
-- [smart_contract] https://github.com/1inch/solidity-utils/blob/master/contracts/libraries/UniERC20.sol — Utils - contracts/libraries/UniERC20.sol
-- [smart_contract] https://github.com/1inch/solidity-utils/blob/master/contracts/mixins/EthReceiver.sol — Utils - contracts/mixins/EthReceiver.sol
-- [smart_contract] https://github.com/1inch/solidity-utils/blob/master/contracts/mixins/Multicall.sol — Utils - contracts/mixins/Multicall.sol
-- [smart_contract] https://github.com/1inch/solidity-utils/blob/master/contracts/mixins/OnlyWethReceiver.sol — Utils - contracts/mixins/OnlyWethReceiver.sol
-- [smart_contract] https://github.com/1inch/solidity-utils/blob/master/contracts/mixins/Rescuable.sol — Utils - contracts/mixins/Rescuable.sol
-- [smart_contract] https://github.com/1inch/solidity-utils/blob/master/contracts/mixins/Simulator.sol — Utils - contracts/mixins/Simulator.sol
-- [smart_contract] https://github.com/1inch/swap-vm/blob/main/src/SwapVM.sol — Swap VM - src/SwapVM.sol
-- [smart_contract] https://github.com/1inch/swap-vm/blob/main/src/instructions/Balances.sol — Swap VM - src/instructions/Balances.sol
-- [smart_contract] https://github.com/1inch/swap-vm/blob/main/src/instructions/Controls.sol — Swap VM - src/instructions/Controls.sol
-- [smart_contract] https://github.com/1inch/swap-vm/blob/main/src/instructions/Decay.sol — Swap VM - src/instructions/Decay.sol
-- [smart_contract] https://github.com/1inch/swap-vm/blob/main/src/instructions/Extruction.sol — Swap VM - src/instructions/Extruction.sol
-- [smart_contract] https://github.com/1inch/swap-vm/blob/main/src/instructions/Fee.sol — Swap VM - src/instructions/Fee.sol
-- [smart_contract] https://github.com/1inch/swap-vm/blob/main/src/instructions/PeggedSwap.sol — Swap VM - src/instructions/PeggedSwap.sol
-- [smart_contract] https://github.com/1inch/swap-vm/blob/main/src/instructions/XYCConcentrate.sol — Swap VM - src/instructions/XYCConcentrate.sol
-- [smart_contract] https://github.com/1inch/swap-vm/blob/main/src/instructions/XYCSwap.sol — Swap VM - src/instructions/XYCSwap.sol
-- [smart_contract] https://github.com/1inch/swap-vm/blob/main/src/libs/MakerTraits.sol — Swap VM - src/libs/MakerTraits.sol
-- [smart_contract] https://github.com/1inch/swap-vm/blob/main/src/libs/PeggedSwapMath.sol — Swap VM - src/libs/PeggedSwapMath.sol
-- [smart_contract] https://github.com/1inch/swap-vm/blob/main/src/libs/TakerTraits.sol — Swap VM - src/libs/TakerTraits.sol
-- [smart_contract] https://github.com/1inch/swap-vm/blob/main/src/libs/VM.sol — Swap VM - src/libs/VM.sol
-- [smart_contract] https://github.com/1inch/swap-vm/blob/main/src/opcodes/AquaOpcodes.sol — Swap VM - src/opcodes/AquaOpcodes.sol
-- [smart_contract] https://github.com/1inch/swap-vm/blob/main/src/routers/AquaSwapVMRouter.sol — Swap VM - src/routers/AquaSwapVMRouter.sol
+- [smart_contract] https://github.com/1inch/aqua/blob/v1.0.0/src/Aqua.sol — Aqua - src/Aqua.sol - new
+- [smart_contract] https://github.com/1inch/aqua/blob/v1.0.0/src/AquaRouter.sol — Aqua - src/AquaRouter.sol - new
+- [smart_contract] https://github.com/1inch/aqua/blob/v1.0.0/src/libs/Balance.sol — Aqua - src/libs/Balances.sol - new
+- [smart_contract] https://github.com/1inch/solidity-utils/blob/6.9.16/contracts/libraries/Calldata.sol — Utils - contracts/libraries/Calldata.sol - new
+- [smart_contract] https://github.com/1inch/solidity-utils/blob/7.0.0/contracts/libraries/CalldataPtr.sol — Utils - contracts/libraries/CalldataPtr.sol - new
+- [smart_contract] https://github.com/1inch/solidity-utils/blob/7.0.0/contracts/libraries/ECDSA.sol — Utils - contracts/libraries/ECDSA.sol - new
+- [smart_contract] https://github.com/1inch/solidity-utils/blob/7.0.0/contracts/libraries/RevertReasonForwarder.sol — Utils - contracts/libraries/RevertReasonForwarder.sol - new
+- [smart_contract] https://github.com/1inch/solidity-utils/blob/7.0.0/contracts/libraries/SafeERC20.sol — Utils - contracts/libraries/SafeERC20.sol - new
+- [smart_contract] https://github.com/1inch/solidity-utils/blob/7.0.0/contracts/libraries/StringUtil.sol — Utils - contracts/libraries/StringUtil.sol - new
+- [smart_contract] https://github.com/1inch/solidity-utils/blob/7.0.0/contracts/libraries/Transient.sol — Utils - contracts/libraries/Transient.sol - new
+- [smart_contract] https://github.com/1inch/solidity-utils/blob/7.0.0/contracts/libraries/TransientLock.sol — Utils - contracts/libraries/TransientLock.sol - new
+- [smart_contract] https://github.com/1inch/solidity-utils/blob/7.0.0/contracts/libraries/UniERC20.sol — Utils - contracts/libraries/UniERC20.sol - new
+- [smart_contract] https://github.com/1inch/solidity-utils/blob/7.0.0/contracts/mixins/EthReceiver.sol — Utils - contracts/mixins/EthReceiver.sol - new
+- [smart_contract] https://github.com/1inch/solidity-utils/blob/7.0.0/contracts/mixins/Multicall.sol — Utils - contracts/mixins/Multicall.sol - new
+- [smart_contract] https://github.com/1inch/solidity-utils/blob/7.0.0/contracts/mixins/OnlyWethReceiver.sol — Utils - contracts/mixins/OnlyWethReceiver.sol - new
+- [smart_contract] https://github.com/1inch/solidity-utils/blob/7.0.0/contracts/mixins/Rescuable.sol — Utils - contracts/mixins/Rescuable.sol - new
+- [smart_contract] https://github.com/1inch/solidity-utils/blob/7.0.0/contracts/mixins/Simulator.sol — Utils - contracts/mixins/Simulator.sol - new
+- [smart_contract] https://github.com/1inch/swap-vm/blob/v1.0.2/src/SwapVM.sol — Swap VM - src/SwapVM.sol - new
+- [smart_contract] https://github.com/1inch/swap-vm/blob/v1.0.2/src/instructions/Balances.sol — Swap VM - src/instructions/Balances.sol - new
+- [smart_contract] https://github.com/1inch/swap-vm/blob/v1.0.2/src/instructions/Controls.sol — Swap VM - src/instructions/Controls.sol - new
+- [smart_contract] https://github.com/1inch/swap-vm/blob/v1.0.2/src/instructions/Decay.sol — Swap VM - src/instructions/Decay.sol - new
+- [smart_contract] https://github.com/1inch/swap-vm/blob/v1.0.2/src/instructions/Extruction.sol — Swap VM - src/instructions/Extruction.sol - new
+- [smart_contract] https://github.com/1inch/swap-vm/blob/v1.0.2/src/instructions/Fee.sol — Swap VM - src/instructions/Fee.sol - new
+- [smart_contract] https://github.com/1inch/swap-vm/blob/v1.0.2/src/instructions/PeggedSwap.sol — Swap VM - src/instructions/PeggedSwap.sol - new
+- [smart_contract] https://github.com/1inch/swap-vm/blob/v1.0.2/src/instructions/XYCConcentrate.sol — Swap VM - src/instructions/XYCConcentrate.sol - new
+- [smart_contract] https://github.com/1inch/swap-vm/blob/v1.0.2/src/instructions/XYCSwap.sol — Swap VM - src/instructions/XYCSwap.sol - new
+- [smart_contract] https://github.com/1inch/swap-vm/blob/v1.0.2/src/libs/MakerTraits.sol — Swap VM - src/libs/MakerTraits.sol - new
+- [smart_contract] https://github.com/1inch/swap-vm/blob/v1.0.2/src/libs/PeggedSwapMath.sol — Swap VM - src/libs/PeggedSwapMath.sol - new
+- [smart_contract] https://github.com/1inch/swap-vm/blob/v1.0.2/src/libs/TakerTraits.sol — Swap VM - src/libs/TakerTraits.sol - new
+- [smart_contract] https://github.com/1inch/swap-vm/blob/v1.0.2/src/libs/VM.sol — Swap VM - src/libs/VM.sol - new
+- [smart_contract] https://github.com/1inch/swap-vm/blob/v1.0.2/src/opcodes/AquaOpcodes.sol — Swap VM - src/opcodes/AquaOpcodes.sol - new
+- [smart_contract] https://github.com/1inch/swap-vm/blob/v1.0.2/src/routers/AquaSwapVMRouter.sol — Swap VM - src/routers/AquaSwapVMRouter.sol - new
 
 ## Asset notes
 
@@ -66,8 +66,6 @@
 - [smart_contract] Low: maxReward=$25,000, minReward=$100, rewardModel=range
 
 ## Reward notes
-
-***Note: The program applies only to the latest tag/releases.***
 
 #### Proof of Concept (PoC) Requirements
 
@@ -105,6 +103,8 @@ This license applies only to the assets explicitly listed in scope and does not 
 Publishing or distributing modified versions of Aqua source code, binaries, or compiled artifacts in any form is prohibited, both during and after the embargoed period. After coordinated disclosure, only minimal technical details necessary to describe the vulnerability or fix may be shared, and only with prior written approval from 1inch consistent with the Responsible Publication policy above.
 
 Each proposal should describe the rationale and expected impact, identify affected contracts or components, outline minimal tests and benchmarks, and, if relevant, note any migration considerations. A good PoC typically includes clear before/after evidence, a minimal reproducible example, and a brief implementation outline demonstrating how the change would be applied.
+
+Improvement proposals are accepted only for the aqua and swap-vm repositories. The solidity-utils repository is excluded from improvement proposals. Improvement proposals may be applied to the main branch.
 
 Immunefi Mediations are not possible with this bug bounty program as it only covers improvement suggestions. Any request for mediation will be closed. 
 

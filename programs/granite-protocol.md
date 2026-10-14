@@ -47,7 +47,7 @@
 
 (none)
 
-## Impacts in scope (25)
+## Impacts in scope (24)
 
 - [smart_contract] Critical: Direct theft of any user funds, whether at-rest or in-motion, other than unclaimed yield
 - [smart_contract] Critical: Manipulation of governance voting result deviating from voted outcome and resulting in a direct change from intended effect of original results
@@ -82,7 +82,6 @@
 - Voting
 - Making trades
 - Withdrawals, etc.
-- [websites_and_applications] Critical: Taking down the application/website
 - [websites_and_applications] High: New markets added to Granite's front end
 - [websites_and_applications] Medium: Redirecting users to malicious websites (open redirect)
 
@@ -96,9 +95,9 @@
 - [smart_contract] High: maxReward=$25,000, minReward=$5,000, rewardModel=range
 - [smart_contract] Medium: fixedReward=$2,500, rewardModel=fixed
 - [smart_contract] Low: fixedReward=$1,000, rewardModel=fixed
-- [websites_and_applications] Critical: maxReward=$25,000, minReward=$10,000, otherImpactMaxReward=$0, primacy=primacy_of_rules, rewardModel=range
-- [websites_and_applications] High: maxReward=$10,000, minReward=$5,000, primacy=primacy_of_rules, rewardModel=range
-- [websites_and_applications] Medium: maxReward=$5,000, minReward=$1,000, primacy=primacy_of_rules, rewardModel=range
+- [websites_and_applications] Critical: maxReward=$4,000, minReward=$2,000, otherImpactMaxReward=$0, primacy=primacy_of_rules, rewardModel=range
+- [websites_and_applications] High: maxReward=$2,000, minReward=$1,000, primacy=primacy_of_rules, rewardModel=range
+- [websites_and_applications] Medium: maxReward=$1,000, minReward=$500, primacy=primacy_of_rules, rewardModel=range
 
 ## Reward notes
 
@@ -128,7 +127,7 @@ The calculation of the net amount rewarded is based on the average price between
 
 ## Out of scope (program-specific)
 
-(none)
+Availability-only issues, including application downtime, crashes, denial of service, or resource exhaustion, that do not result in loss of funds, exposure of sensitive data, unauthorized actions, or privilege escalation, are considered out of scope.
 
 ## Out of scope and rules
 

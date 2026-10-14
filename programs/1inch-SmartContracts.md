@@ -11,14 +11,14 @@
 
 ## Assets in scope (8)
 
-- [smart_contract] https://github.com/1inch/cross-chain-swap — Cross-chain Swap
-- [smart_contract] https://github.com/1inch/delegating — Delegating Contracts
-- [smart_contract] https://github.com/1inch/farming — Farming Contracts
-- [smart_contract] https://github.com/1inch/fusion-protocol — Limit Order Settlement
-- [smart_contract] https://github.com/1inch/limit-order-protocol — Limit Order Protocol
-- [smart_contract] https://github.com/1inch/solana-crosschain-protocol — Solana Crosschain
-- [smart_contract] https://github.com/1inch/solana-fusion — Solana Fusion
-- [smart_contract] https://github.com/1inch/token-plugins — Token-plugins
+- [smart_contract] https://github.com/1inch/cross-chain-swap/tree/1.1.0 — Cross-chain Swap - new
+- [smart_contract] https://github.com/1inch/delegating/tree/2.0.0 — Delegating Contracts - new
+- [smart_contract] https://github.com/1inch/farming/tree/4.0.0 — Farming Contracts - new
+- [smart_contract] https://github.com/1inch/fusion-protocol/tree/3.1.1 — Limit Order Settlement - new
+- [smart_contract] https://github.com/1inch/limit-order-protocol/tree/4.3.4 — Limit Order Protocol - new
+- [smart_contract] https://github.com/1inch/solana-crosschain-protocol/tree/1.1.0 — Solana Crosschain - new
+- [smart_contract] https://github.com/1inch/solana-fusion/tree/1.0.0-release — Solana Fusion - new
+- [smart_contract] https://github.com/1inch/token-plugins/tree/2.0.0 — Token-plugins - new
 
 ## Asset notes
 
