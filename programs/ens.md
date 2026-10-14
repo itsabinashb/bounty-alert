@@ -2,7 +2,7 @@
 
 - Page: https://immunefi.com/bug-bounty/ens/scope/
 - Max bounty: $250,000
-- KYC required: no
+- KYC required: yes
 - Paused: no
 - Invite only: no
 - Program type: Websites and Applications, Smart Contract
