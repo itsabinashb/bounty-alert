@@ -42,7 +42,7 @@
 - [smart_contract] High: Permanent freezing of funds
 - [smart_contract] High: Permanent freezing of unclaimed yield
 - [smart_contract] High: Theft of unclaimed yield
-- [smart_contract] Medium: A bug in the respective layer 0/1/2 network code that results in unintended smart contract behavior with no concrete funds at direct risk
+- [smart_contract] Medium: A bug in the Stacks node or Clarity VM, with no concrete funds at direct risk, that either: makes a deployed contract execute differently from what its source code specifies under Clarity's documented semantics (for example, returning a wrong value, writing the wrong state, or skipping a check the code performs), or: lets someone other than the contract's deployer make that contract permanently unable to execute.
 - [smart_contract] Medium: Block stuffing
 - [smart_contract] Low: Contract fails to deliver promised returns, but doesn't lose value
 - [smart_contract] Low: Modification of transaction fees outside of design parameters
@@ -154,6 +154,9 @@ Payouts are handled by the _Stacks Endowment team_ directly and are denominated 
 - Any DoS attack relying on the fact that Rejectable transactions are a DoS vector (known issue)
 - Any or attacks or testing on 3rd party services, including but not limited to AWS or Datadog
 - Any sub-optimal default configuration changes
+- Any bugs whose only effect are that a transaction fails or is not included in a block. These are correctness bugs, not security issues, and we track them publicly. Feel free to open a public Issue on our repo. These kinds of bugs include:
+  - Static analysis accepting code that then fails at runtime.
+  - Runtime errors that are reported differently from how they should be reported.
 - Any phishing, social engineering, or related attacks against the Stacks ecosystem or any members or customers thereof
 - Any reporting of findings that are already public or known to us, including but not limited to:
   - Open or closed [GitHub PRs](https://www.github.com/stacks-network/stacks-core/pulls)
