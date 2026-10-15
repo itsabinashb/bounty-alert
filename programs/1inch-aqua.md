@@ -9,7 +9,7 @@
 - PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium, smart_contract - low
 - End date: (none)
 
-## Assets in scope (33)
+## Assets in scope (32)
 
 - [smart_contract] https://github.com/1inch/aqua/blob/v1.0.0/src/Aqua.sol — Aqua - src/Aqua.sol - new
 - [smart_contract] https://github.com/1inch/aqua/blob/v1.0.0/src/AquaRouter.sol — Aqua - src/AquaRouter.sol - new
@@ -28,7 +28,6 @@
 - [smart_contract] https://github.com/1inch/solidity-utils/blob/7.0.0/contracts/mixins/OnlyWethReceiver.sol — Utils - contracts/mixins/OnlyWethReceiver.sol - new
 - [smart_contract] https://github.com/1inch/solidity-utils/blob/7.0.0/contracts/mixins/Rescuable.sol — Utils - contracts/mixins/Rescuable.sol - new
 - [smart_contract] https://github.com/1inch/solidity-utils/blob/7.0.0/contracts/mixins/Simulator.sol — Utils - contracts/mixins/Simulator.sol - new
-- [smart_contract] https://github.com/1inch/swap-vm/blob/main/src/routers/AquaSwapVMRouter.sol — Swap VM - src/routers/AquaSwapVMRouter.sol
 - [smart_contract] https://github.com/1inch/swap-vm/blob/v1.0.2/src/SwapVM.sol — Swap VM - src/SwapVM.sol - new
 - [smart_contract] https://github.com/1inch/swap-vm/blob/v1.0.2/src/instructions/Balances.sol — Swap VM - src/instructions/Balances.sol - new
 - [smart_contract] https://github.com/1inch/swap-vm/blob/v1.0.2/src/instructions/Controls.sol — Swap VM - src/instructions/Controls.sol - new

@@ -173,10 +173,19 @@ in disqualification.
 
 (none)
 
-## Known issues (5)
+## Known issues (6)
 
 - Flat admin role — every authenticated manager admin has full privileges; segregation of duties is enforced by the Slack approval step, not by RBAC. (https://immunefi.com/bug-bounty/dawn/information/)
 - LocalStorage JWT storage in the manager (accepted XSS trade-off behind the VPN). (https://immunefi.com/bug-bounty/dawn/information/)
 - No replay-window/timestamp check on the Slack interactive webhook signature (idempotency guard makes replay a no-op state-wise). (https://immunefi.com/bug-bounty/dawn/information/)
 - Seeded default admin (admin@usd.tel) created on first boot; rotated on deploy by process, not code. (https://immunefi.com/bug-bounty/dawn/information/)
+- USDTelExchangeRate (0x15a6f1f2705b3916b5b1d2b19b10f320778744c1, BNB Smart Chain) is stale, its stored rate is above the vault's current NAV, and it cannot be corrected. It has been replaced by a new deployment.
+
+The old USDTelExchangeRate feed has not received a rate update since 2026-08-06 00:00:20 UTC. Its last posted value, 1009565510281362300 (about 1.00957), is higher than the vault's current NAV. The contract only accepts non-decreasing rates: setExchangeRate reverts on any decrease, and there is no admin override. So no role (owner, updater or the owning Safe) can lower the stored value. This is the intended, documented design of the feed. Correcting a feed whose stored rate is too high requires a new deployment, not an admin action. The same monotonic, no-override design applies to the replacement feed.
+
+The feed is informational only. It holds no funds or tokens and makes no external calls, and no on-chain contract or integration reads getExchangeRate(). The stale and overstated value therefore cannot cause loss or freezing of funds.
+
+Resolution: the feed has been replaced by USDinfraExchangeRate at 0x8b7eA48F5F528F5bCf256f75623dA98152Ec95f3 (BNB Smart Chain). It is owned by the same Safe and updated through the same separate updater role. The old contract is no longer maintained and will be removed from the program's scope.
+
+This known issue covers reports that the old feed is stale, that its rate is above NAV, or that no role can correct it. (https://bscscan.com/address/0x15a6f1f2705b3916b5b1d2b19b10f320778744c1)
 - ripcord is a coordination signal, not an enforced kill switch — the API does not block reads/writes when it is true; integrators are trusted to act. (https://immunefi.com/bug-bounty/dawn/information/)

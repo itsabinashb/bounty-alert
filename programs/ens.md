@@ -294,9 +294,8 @@ This limitation applies to web applications only. No smart contracts are deploye
 
 
 
-The HCA session key is a delegated signer with a bounded grant: a fixed validity window, a single resolver, a single payment token, and owner signed ceilings on the gas refund. Within that grant the session key acts for the owner by design. A browser compromise that extracts the session key therefore allows an attacker to act with that granted authority until the session expires, including spending the account's approved balance on the actions the grant permits and claiming gas refunds up to the owner signed ceilings. This is accepted design and is not eligible.
-
-In scope is any weakness that lets a session key act outside that grant: operating past its stated validity, reaching a resolver or token it was not granted, claiming a refund above the owner signed ceilings, escalating to account owner authority, or producing a state change the grant does not cover.
+The HCA session key is a delegated signer with limited authority: a fixed expiry, a single resolver, and owner-signed limits on each gas refund. One token is authorized for funding the HCA from the owner's wallet and paying gas refunds. Registration payments can use any token accepted by the authorized registrar. Within that grant the session key acts for the owner by design. A browser compromise that extracts the session key therefore allows an attacker to act with that granted authority until the session expires, including spending the account's approved balance on the actions the grant permits and claiming gas refunds up to the owner signed ceilings. This is accepted design and is not eligible.
+In scope is any weakness that lets a session key act outside that grant: operating after expiry, accessing an unauthorized resolver or bypassing those token restrictions, claiming a refund above the owner signed ceilings, escalating to account owner authority, or producing a state change the grant does not cover.
 
 ## Out of scope and rules
 
