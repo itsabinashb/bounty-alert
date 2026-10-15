@@ -1,7 +1,7 @@
 # Lombard Finance
 
 - Page: https://immunefi.com/bug-bounty/lombard-finance/scope/
-- Max bounty: $250,000
+- Max bounty: $500,000
 - KYC required: yes
 - Paused: no
 - Invite only: no
@@ -70,7 +70,9 @@
 
 The scope references GitHub URLs to specific contract source files. The same contracts are deployed across multiple chains — deployed addresses can be found in our public mainnet.json files.
 
-**EVM chains:** Ethereum, BNB Chain, Base, Berachain, Sonic, Morph, Etherlink, Ink, Katana, TAC, Scroll, BOB, Avalanche, Monad, Stable, MegaETH — https://github.com/lombard-finance/evm-smart-contracts/blob/main/mainnet.json
+**EVM chains:** Ethereum, BNB Chain, Base, Berachain, Sonic, Morph, Etherlink, Katana, TAC, Scroll, BOB, Avalanche, Monad, Stable, MegaETH — https://github.com/lombard-finance/evm-smart-contracts/blob/main/mainnet.json
+
+**Solana** — https://github.com/lombard-finance/sol-svm-contracts/blob/main/mainnet.json
 
 **Sui** — https://github.com/lombard-finance/sui-move-contracts/blob/main/mainnet.json
 
@@ -116,7 +118,7 @@ Only the following impacts are accepted within this bug bounty program. All othe
 
 ## Rewards
 
-- [smart_contract] Critical: maxReward=$250,000, minReward=$50,000, primacy=primacy_of_impact, rewardCalculationPercentage=10, rewardModel=range
+- [smart_contract] Critical: maxReward=$500,000, minReward=$50,000, primacy=primacy_of_impact, rewardCalculationPercentage=10, rewardModel=range
 - [smart_contract] High: maxReward=$50,000, minReward=$10,000, primacy=primacy_of_impact, rewardModel=range
 - [smart_contract] Medium: fixedReward=$2,500, rewardModel=fixed
 - [smart_contract] Low: fixedReward=$1,000, rewardModel=fixed
@@ -142,11 +144,11 @@ __Reward Calculation for High Level Reports__
 - High vulnerabilities concerning theft/permanent freezing of unclaimed yield/royalties are rewarded within a range of $10,000 to $50,000 depending on the funds at risk, capped at the maximum high reward.  
 - In the event of temporary freezing, the reward doubles from the full frozen value for every additional [24h] that the funds are temporarily frozen, up until a max cap of the high reward. This is because as the duration of the freezing lengthens, the potential for greater damage and subsequent reputational harm intensifies. Thus, by increasing the reward proportionally with the frozen duration, the project ensures stronger incentives for bug disclosure of this nature.
 
-__For critical web/apps bug reports will be rewarded with USD 30 000, only if the impact leads to:__
-- A loss of funds involving an attack that does not require any user action
-- Private key or private key generation leakage leading to unauthorized access to user funds 
+__Critical web/app reports are rewarded only when the report demonstrates that the impact puts users' funds at risk:
+- USD 30,000 for a loss of users' funds through an attack that does not require any user action, or for private key or private key generation leakage leading to unauthorized access to users' funds
+- USD 15,000 for any other Critical impact that leads to a loss of users' funds
 
-All other impacts that would be classified as Critical would be rewarded a flat amount of USD 15 000. The rest of the severity levels are paid out according to the Impact in Scope table.  
+An impact that cannot affect users' funds is assessed at a severity below Critical.The rest of the severity levels are paid out according to the Impact in Scope table.
 
 __Reward Payment Terms__
 

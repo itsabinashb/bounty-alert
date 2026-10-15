@@ -1,7 +1,7 @@
 # MagpieXYZ
 
 - Page: https://immunefi.com/bug-bounty/magpiexyz/scope/
-- Max bounty: $200,000
+- Max bounty: $50,000
 - KYC required: no
 - Paused: no
 - Invite only: no
@@ -42,9 +42,9 @@ If an Critical and High impact can be caused to any other asset managed by Magpi
 
 ## Rewards
 
-- [smart_contract] Critical: maxReward=$200,000, primacy=primacy_of_impact, rewardCalculationPercentage=10, rewardModel=up_to
-- [smart_contract] High: maxReward=$50,000, primacy=primacy_of_impact, rewardModel=up_to
-- [smart_contract] Medium: fixedReward=$5,000, rewardModel=fixed
+- [smart_contract] Critical: maxReward=$50,000, primacy=primacy_of_impact, rewardCalculationPercentage=10, rewardModel=up_to
+- [smart_contract] High: maxReward=$10,000, primacy=primacy_of_impact, rewardModel=up_to
+- [smart_contract] Medium: fixedReward=$4,000, rewardModel=fixed
 - [smart_contract] Low: fixedReward=$1,000, rewardModel=fixed
 
 ## Reward notes
