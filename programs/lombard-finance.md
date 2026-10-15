@@ -9,7 +9,7 @@
 - PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium, smart_contract - low, websites_and_applications - critical, websites_and_applications - medium, websites_and_applications - high
 - End date: (none)
 
-## Assets in scope (52)
+## Assets in scope (53)
 
 - [smart_contract] https://etherscan.io/address/0x055E84e7FE8955E2781010B866f10Ef6E1E77e59 — Proxy Upgrade Timelock
 - [smart_contract] https://etherscan.io/address/0x1De9fcfeDF3E51266c188ee422fbA1c7860DA0eF — StakedLBTCOracle
@@ -41,6 +41,7 @@
 - [smart_contract] https://github.com/lombard-finance/evm-smart-contracts/blob/main/contracts/stakeAndBake/depositor/veda/ERC4626VaultWrapper.sol — BTCe
 - [smart_contract] https://github.com/lombard-finance/evm-smart-contracts/blob/main/contracts/stakeAndBake/veda/ERC4626VaultTokenWrapper.sol — BTCe
 - [smart_contract] https://github.com/lombard-finance/evm-smart-contracts/blob/main/contracts/strategy/BlocklistOracle.sol — BlocklistOracle (0xc94B1E74aa3B5695D25b323cd0333fc2dBaada16 on Ethereum) — sanctions/blocklist gate for strategy deposits and redemptions
+- [smart_contract] https://github.com/lombard-finance/evm-smart-contracts/blob/main/contracts/strategy/MultiAssetWithAsyncRedemptionStrategy.sol — Strategy (0xf14F678d9c05798ba61652a950a05D74aD2E0A6C on Ethereum) — BTCoc vault and share token: deposits, async redemptions, price per share and fees
 - [smart_contract] https://github.com/lombard-finance/evm-smart-contracts/blob/main/contracts/strategy/shards/Shard.sol — Strategy Shard (0xDde9898A9f80aF2d9fbBb48B92FB2677a3b62dFD on Ethereum) — holds strategy assets and executes allowlisted calls to yield venues
 - [smart_contract] https://github.com/lombard-finance/evm-smart-contracts/blob/main/contracts/strategy/validators/MerkleAllowlistValidator.sol — MerkleAllowlistValidator (0x5D84449068792B56663e4796A5AC117D90D06602 on Ethereum) — merkle allowlist gating shard-exec calls
 - [smart_contract] https://github.com/lombard-finance/evm-smart-contracts/tree/main/contracts/strategy/converters — Strategy Asset Converters (0x6647Bf1C4214096B97145E0B23CF41C54A46CDd3 BTC.b, 0xecc0282C71bA63d58c0dD2282125566045A8F777 StakedLBTC on Ethereum) — value deposit assets into base units for PPS
@@ -142,7 +143,7 @@ __Repeatable Attack Limitations__
 __Reward Calculation for High Level Reports__
 
 - High vulnerabilities concerning theft/permanent freezing of unclaimed yield/royalties are rewarded within a range of $10,000 to $50,000 depending on the funds at risk, capped at the maximum high reward.  
-- In the event of temporary freezing, the reward doubles from the full frozen value for every additional [24h] that the funds are temporarily frozen, up until a max cap of the high reward. This is because as the duration of the freezing lengthens, the potential for greater damage and subsequent reputational harm intensifies. Thus, by increasing the reward proportionally with the frozen duration, the project ensures stronger incentives for bug disclosure of this nature.
+- In the event of temporary freezing, the reward doubles from the full frozen value for every additional [24h] that the funds are temporarily frozen, up until a max cap of the high reward. This is because as the duration of the freezing lengthens, the potential for greater damage and subsequent reputational harm intensifies. Thus, by increasing the reward proportionally with the frozen duration, the project ensures stronger incentives for bug disclosure of this nature
 
 __Critical web/app reports are rewarded only when the report demonstrates that the impact puts users' funds at risk:
 - USD 30,000 for a loss of users' funds through an attack that does not require any user action, or for private key or private key generation leakage leading to unauthorized access to users' funds
