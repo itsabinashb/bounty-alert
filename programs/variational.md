@@ -22,7 +22,7 @@
 
 (none)
 
-## Impacts in scope (29)
+## Impacts in scope (30)
 
 - [smart_contract] Critical: Direct theft of any user funds, whether at-rest or in-motion, other than unclaimed yield
 - [smart_contract] Critical: Permanent freezing of funds
@@ -42,6 +42,7 @@
 - Modifying transaction arguments or parameters
 - Substituting contract addresses
 - Submitting malicious transactions
+- [websites_and_applications] Critical: Quoting and economic logic: Exploitable implementation or design flaws in Variational-operated quoting, pricing, execution, margin, liquidation, funding, accounting, or settlement systems are in scope where they demonstrably enable unauthorized extraction or loss of user, OLP, or protocol treasury funds, or protocol insolvency. This includes off-chain services, APIs, web applications, and smart contracts.
 - [websites_and_applications] Critical: Retrieve sensitive data/files from a running server, such as:
 - /etc/shadow
 - database passwords
@@ -90,7 +91,7 @@
 - [smart_contract] Critical: maxReward=$100,000, minReward=$10,000, primacy=primacy_of_impact, rewardCalculationPercentage=10, rewardModel=range
 - [smart_contract] High: maxReward=$25,000, minReward=$3,500, rewardModel=range
 - [smart_contract] Medium: fixedReward=$3,500, rewardModel=fixed
-- [websites_and_applications] Critical: maxReward=$50,000, minReward=$10,000, primacy=primacy_of_impact, rewardModel=range
+- [websites_and_applications] Critical: maxReward=$50,000, minReward=$10,000, otherImpactMaxReward=$10,000, primacy=primacy_of_impact, rewardModel=range
 - [websites_and_applications] High: fixedReward=$10,000, rewardModel=fixed
 - [websites_and_applications] Medium: fixedReward=$2,000, rewardModel=fixed
 - [websites_and_applications] Low: fixedReward=$1,000, rewardModel=fixed
