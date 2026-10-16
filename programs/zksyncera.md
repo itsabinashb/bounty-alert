@@ -213,7 +213,7 @@ Rewards for critical smart contract bug reports will be further capped at 10% of
 
 For the project's bug bounty program, high-severity smart contract vulnerability rewards are determined according to an internal set of criteria established by the team. These criteria take into account the exploitability, impact, and probability of the vulnerability occurring, with special consideration given to bug reports that require multiple conditions not currently in place. There is a minimum reward of __USD 20,000__ for high-severity level vulnerabilities, and the maximum reward is capped at 100% of the affected funds, up to the max high cap, whichever is lower.
 
-Payouts are handled by the ZKsync team directly and are denominated in USD. However, payouts are done in USDC (ZKsync Era). ZKsync commits to honoring payouts according to the terms set out in this program at the time of report submission, and to treat this program as the agreement and source of truth concerning bug reports and responsible disclosures. 
+Payouts are handled by the ZKsync team directly and are denominated in USD. However, payouts are done in USDC (Ethereum mainnet). ZKsync commits to honoring payouts according to the terms set out in this program at the time of report submission, and to treat this program as the agreement and source of truth concerning bug reports and responsible disclosures. 
 
 For the purposes of determining report validity, this is a Primacy of Impact program. 
 

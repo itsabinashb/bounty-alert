@@ -199,6 +199,6 @@ These impacts are out of scope for this bug bounty program.
 
 (none)
 
-## Known issues (0)
+## Known issues (1)
 
-(none)
+- Go batch-settlement VerifyDeposit was returning balance + deposit in verify extra before the deposit was mined, so AfterVerifyHook could cache unconfirmed escrow and later approve over-escrow vouchers. (https://github.com/x402-foundation/x402/pull/2883)

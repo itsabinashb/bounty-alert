@@ -55,23 +55,29 @@ All folders and files labeled with the words “test”, “mock/mocks”, or �
 
 ## Rewards
 
-- [smart_contract] Critical: maxReward=$500,000, minReward=$25,000, rewardCalculationPercentage=10, rewardModel=range
+- [smart_contract] Critical: maxReward=$500,000, minReward=$10,000, rewardCalculationPercentage=10, rewardModel=range
 - [smart_contract] High: maxReward=$100,000, minReward=$5,000, rewardModel=range
 - [websites_and_applications] Critical: maxReward=$50,000, minReward=$5,000, otherImpactMaxReward=$0, rewardModel=range
 - [websites_and_applications] High: maxReward=$10,000, minReward=$5,000, rewardModel=range
 
 ## Reward notes
 
-Rewards are distributed according to the impact of the vulnerability based on the [Immunefi Vulnerability Severity Classification System V2.2](https://immunefi.com/immunefi-vulnerability-severity-classification-system-v2-2). This is a simplified 5-level scale, with separate scales for websites/apps and smart contracts/blockchains, encompassing everything from consequence of exploitation to privilege required to likelihood of a successful exploit.
+Rewards are distributed according to the impact of the vulnerability based on the [Immunefi Vulnerability Severity Classification System V2.3](https://immunefi.com/immunefi-vulnerability-severity-classification-system-v2-3/). This is a simplified 4-level scale, with separate scales for websites/apps and smart contracts/blockchains, encompassing everything from consequence of exploitation to privilege required to likelihood of a successful exploit.
+
+Where the rules on this program page differ from the Severity Classification System V2.3, the rules on this page take precedence.
 
 __Reward Calculation for Critical Level Reports__
 
-For critical smart contract vulnerabilities, the reward is 10% of the directly affected funds, up to a maximum of USD 500,000. The calculation considers the funds at risk based on the bug report submission date and time. There is a minimum guaranteed reward of USD 25,000 to encourage reporting even for smaller valued critical bugs.
+For critical smart contract vulnerabilities, the reward is 10% of the directly affected funds, up to a maximum of USD 500,000. The calculation considers the funds at risk based on the bug report submission date and time. There is a minimum guaranteed reward of USD 10,000 to encourage reporting even for smaller valued critical bugs.
 
 
 __Reward Calculation for High Level Reports__
 
 For high smart contract impacts, the reward is capped at $100,000 and is based on 50% of the value of the affected funds. The calculation considers the funds at risk based on the bug report submission date and time. There is a minimum guaranteed reward of USD 5,000 to encourage reporting even for smaller valued high severity bugs.
+
+__Severity and Funds at Risk__
+
+The Severity Classification System V2.3 lists "Direct theft of any user funds" and "Permanent freezing of funds" as Critical without regard to the amount affected. On this program, that is overridden where the funds at risk are small and there is no direct path for the funds at risk to increase. Admin actions do not count as such a path. Examples are funds at risk that are limited by hard limits, or a deprecated contract that still holds funds but that no new users can enter. In these cases the funds actually at risk in the affected contracts at the time of submission are part of the severity rating, and the finding may be classified at a lower severity than its impact category alone suggests.
 
 __Secondary/Market Attack on Fluid__
 
@@ -123,6 +129,10 @@ __Scope Clarifications__
 - A vulnerability present in both the EVM and Solana codebases is treated as a single finding and rewarded once, not as two separate reports.
 
 - Deployed contract addresses are listed in [deployments.md](https://github.com/Instadapp/fluid-contracts-public/blob/main/deployments/deployments.md) in the public repository; funds at risk is assessed against the deployed contracts referenced there.
+
+__Deprecated Contracts__
+
+Contracts marked as deprecated in the public deployments file (https://github.com/Instadapp/fluid-contracts-public/blob/main/deployments/deployments.md) remain in scope for as long as they hold funds. For findings on deprecated contracts, the minimum reward is one tenth of the standard minimum: USD 1,000 for Critical and USD 500 for High.
 
 ## Out of scope (program-specific)
 
