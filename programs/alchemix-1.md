@@ -56,7 +56,7 @@ __Repeatable Attack Limitations__
 If the smart contract where the vulnerability exists can be upgraded or paused, only the initial attack will be considered for a reward.
 
 __Reward Calculation for High Level Reports__
-High impacts concerning theft/permanent freezing of unclaimed yield/royalties are rewarded with a range of 5,000 to 35,000 with the reward calculated based on 100% of the funds at risk, though capped at the maximum high reward.
+High impacts concerning theft/permanent freezing of unclaimed yield/royalties are rewarded with a range of 5,000 to 20,000 with the reward calculated based on 100% of the funds at risk, though capped at the maximum high reward.
 
 In the event of temporary freezing, the reward doubles from the full frozen vallue for every additional 24h that the funds are temporarily frozen, up until a max cap of the high reward.
 

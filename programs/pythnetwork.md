@@ -1,7 +1,7 @@
 # Pyth Network
 
 - Page: https://immunefi.com/bug-bounty/pythnetwork/scope/
-- Max bounty: $250,000
+- Max bounty: $125,000
 - KYC required: yes
 - Paused: no
 - Invite only: no
@@ -83,12 +83,12 @@ Specific mainnet contract addresses can be found on [https://docs.pyth.network/p
 
 ## Rewards
 
-- [smart_contract] Critical: maxReward=$250,000, minReward=$50,000, rewardCalculationPercentage=10, rewardModel=range
-- [smart_contract] High: maxReward=$50,000, minReward=$10,000, rewardModel=range
-- [smart_contract] Medium: maxReward=$10,000, minReward=$2,500, rewardModel=range
+- [smart_contract] Critical: maxReward=$125,000, minReward=$10,000, rewardCalculationPercentage=10, rewardModel=range
+- [smart_contract] High: maxReward=$50,000, minReward=$5,000, rewardModel=range
+- [smart_contract] Medium: maxReward=$10,000, minReward=$1,000, rewardModel=range
 - [smart_contract] Low: maxReward=$2,500, minReward=$1,000, rewardModel=range
-- [websites_and_applications] Critical: maxReward=$50,000, minReward=$20,000, otherImpactMaxReward=$30,000, rewardModel=range
-- [websites_and_applications] High: maxReward=$20,000, minReward=$5,000, rewardModel=range
+- [websites_and_applications] Critical: maxReward=$50,000, minReward=$5,000, otherImpactMaxReward=$30,000, rewardModel=range
+- [websites_and_applications] High: maxReward=$20,000, minReward=$2,500, rewardModel=range
 - [websites_and_applications] Medium: fixedReward=$2,500, rewardModel=fixed
 - [websites_and_applications] Low: fixedReward=$1,000, rewardModel=fixed
 
@@ -98,18 +98,7 @@ Rewards are distributed according to the impact of the vulnerability based on th
 
 __Reward Calculation for Critical Smart Contract Reports__
 
-For critical smart contract bugs, the reward amount is 10% of the funds directly affected up to a maximum of 250 000 USDC. The calculation of the amount of funds at risk is based on the time and date the bug report is submitted.  For the avoidance of doubt, directly affected funds calculation does not include downstream protocols or users of the Pyth protocol or any effects on the $PYTH token price.
-
-__Reward Calculation for Critical Websites and Applications Reports__
-
-For Critical web/apps bug reports will be rewarded with **USD 50 000**, only if the impact leads to:
-
-- A loss of funds involving an attack that does not require any user action
-- Unauthorized minting of tokens on-chain
-- Private key or private key generation leakage leading to unauthorized access to user funds
-- The impact occurs on a user facing application, generally hosted under pyth.network
-
-All other impacts that would be classified as **Critical** would be rewarded a flat amount of **USD 30 000**.
+For critical smart contract bugs, the reward amount is 10% of the funds directly affected up to a maximum of 125 000 USDC. The calculation of the amount of funds at risk is based on the time and date the bug report is submitted.  For the avoidance of doubt, directly affected funds calculation does not include downstream protocols or users of the Pyth protocol or any effects on the $PYTH token price.
 
 __Repeatable Attack Limitations__
 
