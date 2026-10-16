@@ -37,6 +37,8 @@
 
 We prioritize soundness vulnerabilities affecting Groth16 and Plonk proof types.
 
+The severity of a soundness or completeness finding may change due to the impact and scope of the finding, i.e. which types of programs are affected, and what types of incorrect execution becomes provable or what types of correct execution becomes unprovable.
+
 ## Rewards
 
 - [blockchain_dlt] Critical: maxReward=$100,000, minReward=$15,000, rewardCalculationPercentage=10, rewardModel=range
@@ -50,13 +52,13 @@ SP1 provides rewards in USDC on Ethereum, denominated in USD.
 ## Out of scope (program-specific)
 
 All reports must be valid on SP1's latest release commit, which can be found [here](https://github.com/succinctlabs/sp1/releases). The findings must be reproduced with production circuits and verification keys, with default production security checks. Findings that require Cargo features or paths intended solely for `experimental`, `mprotect`, debug, profiling, dummy, testing, benchmarking, or in-development circuits are out of scope. Findings on the usage of `proof_nonce` are also considered out of scope.
+We are in the process of marking proof verification with non-zero `exit_code` as experimental, and therefore all findings relating to non-zero `exit_code` is considered out of scope. 
 More precisely, the findings should use the compiler feature-set used to build the Docker images [here](https://github.com/succinctlabs/sp1-cluster/blob/main/.github/workflows/docker.yml); in particular, `sp1-prover/experimental` and `sp1-prover/mprotect` are off, `sp1-prover/native-gnark` is turned on, and they should demonstrate a completeness or soundness vulnerability in `sp1_sdk::prover::Prover::verify`.
 Proofs of concept should be able to run on an Apple M3 chip or similar hardware in ten minutes or less.
 
-
 The `whir`, `veil`, `spartan`, `pgspcs` crates within `slop` are out of scope. Findings that affect `slop` only as a standalone library and do not affect the in-scope proving and verification in SP1 are considered out of scope. 
 
-A bug bounty submission for a completeness vulnerability should demonstrate an inherent and deterministic incorrectness inside an AIR constraint, recursive circuit, or production verifier that makes a valid execution unprovable, or makes its correctly generated proof unverifiable. Failures that are specific to a prover backend or prover implementation, hardware, insufficient resources, concurrency, timeouts, environment variables, or user misconfiguration are out of scope.
+A bug bounty submission for a completeness vulnerability should demonstrate an inherent and deterministic incorrectness inside an AIR constraint, recursive circuit, or production verifier that makes a valid execution unprovable, or makes its correctly generated proof unverifiable. Failures that are specific to a prover backend or prover implementation, hardware, insufficient resources, concurrency, timeouts, environment variables, or user configuration are out of scope.
 
 All reports must be valid under the SP1 security model
 - https://docs.succinct.xyz/docs/sp1/security/security-model
@@ -67,6 +69,8 @@ This means that all eligible proofs of concept must use
 - An ELF produced by the provided SP1 toolchain.
 - Safe usage of precompiles and patched crates as explained in the documentation.
 - Must not request a `Core` proof for an ELF that invokes the `VERIFY_SP1_PROOF` syscall.
+
+Also, the PoC program should be generated through memory-safe Rust program, compiled through the usual SP1 zkvm entrypoint and libraries. In general, for a submission to be valid, it needs to work on all "general class of programs". As such, findings should be applicable for all programs that use a certain opcode or syscall in normal usecases. In short, the PoC's should be done with guest programs that are more standard, such as the Fibonacci ELF or the RSP program.
 
 Only production soundness failures and protocol-level completeness failures as defined above are eligible for the bounty. Findings on DoS of prover and the verifier, as well as service availability, are considered out of scope. 
 

@@ -3,7 +3,7 @@
 - Page: https://immunefi.com/bug-bounty/decentraland/scope/
 - Max bounty: $250,000
 - KYC required: yes
-- Paused: no
+- Paused: yes
 - Invite only: no
 - Program type: Smart Contract, Websites and Applications
 - PoC required for: smart_contract - high, smart_contract - medium, websites_and_applications - critical, websites_and_applications - high
