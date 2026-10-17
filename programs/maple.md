@@ -123,6 +123,6 @@ Payouts are handled by the __Maple__ team directly and are denominated in USD. H
 
 (none)
 
-## Known issues (0)
+## Known issues (1)
 
-(none)
+- Governor no longer used for loan impairments and all loans that are impaired are called first to ensure the next payment is for the full amount. (https://docs.maple.finance/technical-resources/loans/impairments#open-term-loans-impairments)
