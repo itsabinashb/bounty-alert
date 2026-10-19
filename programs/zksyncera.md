@@ -6,7 +6,7 @@
 - Paused: no
 - Invite only: no
 - Program type: Smart Contract, Blockchain/DLT
-- PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium, smart_contract - low, blockchain_dlt - critical, blockchain_dlt - high
+- PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium, blockchain_dlt - critical, blockchain_dlt - high
 - End date: (none)
 
 ## Assets in scope (132)
@@ -173,7 +173,7 @@ Hackers are encouraged to submit issues outside of the outlined Impacts and Asse
 
 If whitehats can demonstrate a critical and high impact for an asset not in scope, ZKsync encourages you to submit your bug report using the “primacy of impact exception” asset.
 
-## Impacts in scope (13)
+## Impacts in scope (12)
 
 - [blockchain_dlt] Critical: Direct loss of funds
 - [blockchain_dlt] High: Difference between implementation outside of the circuit and within the circuit, where the in-circuit implementation is accurate (e.g. overconstraint in the circuit)
@@ -187,7 +187,6 @@ If whitehats can demonstrate a critical and high impact for an asset not in scop
 - [smart_contract] Medium: Griefing (e.g. no profit motive for an attacker, but damage to the users or the protocol)
 - [smart_contract] Medium: Theft of gas
 - [smart_contract] Medium: Unbounded gas consumption
-- [smart_contract] Low: Contract fails to deliver promised returns, but doesn't lose value
 
 ## Impact notes
 
@@ -195,12 +194,11 @@ If whitehats can demonstrate a critical and high impact for an asset not in scop
 
 ## Rewards
 
-- [blockchain_dlt] Critical: fixedReward=$50,000, rewardCalculationPercentage=10, rewardModel=fixed
+- [blockchain_dlt] Critical: fixedReward=$20,000, rewardCalculationPercentage=10, rewardModel=fixed
 - [blockchain_dlt] High: fixedReward=$5,000, rewardModel=fixed
 - [smart_contract] Critical: maxReward=$300,000, minReward=$100,000, rewardCalculationPercentage=10, rewardModel=range
-- [smart_contract] High: maxReward=$50,000, minReward=$20,000, rewardModel=range
-- [smart_contract] Medium: fixedReward=$5,000, rewardModel=fixed
-- [smart_contract] Low: fixedReward=$1,000, rewardModel=fixed
+- [smart_contract] High: maxReward=$20,000, minReward=$10,000, rewardModel=range
+- [smart_contract] Medium: fixedReward=$2,000, rewardModel=fixed
 
 ## Reward notes
 

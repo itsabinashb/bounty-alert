@@ -347,6 +347,6 @@ The calculation of the net amount rewarded is based on the average price between
 
 Interacting with accounts that you do not own
 
-## Known issues (0)
+## Known issues (1)
 
-(none)
+- Zero-value transfer can reduce the recipient’s Comet principal (https://www.certora.com/reports/compound-comet-erc4626-wrapper)
