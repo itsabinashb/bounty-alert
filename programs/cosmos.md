@@ -101,7 +101,7 @@ This impact is measured by the following oracle(s), ensure your PoC satisfies at
   - threshold: the net change in the denom's spendable balances, summed across every account the block touches, differs by ≥ 1 base unit from the authorized mints and burns in the block.
   - measurement: query spendable balances of the legitimate asset (native, token-factory, contract-issued, or IBC voucher denom) for every account the block touches before and after, sum the authorized mints (including vouchers for relayed packets) and burns, and confirm any created balance is transferable by the attacker.
 
-For the High impact **"Theft / unauthorized extraction of funds"**, which is defined as where an attacker moves or withdraws value they do not own, bug reports covering this impact may be downgraded to High severity where any of the following conditions applies:
+For the Critical impact **"Theft / unauthorized extraction of funds"**, which is defined as where an attacker moves or withdraws value they do not own, bug reports covering this impact may be downgraded to High severity where any of the following conditions applies:
 
 - The attack requires an optional or non-default module, or an attacker-deployed contract (TipDecorator chain, x/accounts lockup, CosmWasm + IBC-hooks, etc.).
 - The attack requires being the account owner or withdrawer, or a contrived trigger (a forced timeout plus reentrant submessages, a victim contract relying on staticcall safety, etc.).
