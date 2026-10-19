@@ -5,11 +5,11 @@
 - KYC required: yes
 - Paused: no
 - Invite only: no
-- Program type: Blockchain/DLT, Smart Contract
+- Program type: Smart Contract, Blockchain/DLT
 - PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium, smart_contract - low, blockchain_dlt - critical, blockchain_dlt - high
 - End date: (none)
 
-## Assets in scope (131)
+## Assets in scope (132)
 
 - [blockchain_dlt] https://github.com/matter-labs/zksync-crypto/tree/main/crates/snark-wrapper — SNARK wrapper
 - [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/main/crates/zkevm_circuits/src — Supplementary code
@@ -142,6 +142,7 @@
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/system-contracts/contracts/precompiles/P256Verify.yul — P256Verify
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/system-contracts/contracts/precompiles/SHA256.yul — SHA256
 - [smart_contract] https://immunefi.com — Primacy of Impact (primacy of impact)
+- [smart_contract] https://www.tally.xyz/gov/zksync/proposal/39818012355511486328740463691883430307761328158522613751057493126514636439545?govId=eip155:324:0x76705327e682F2d96943280D99464Ab61219e34f — ZKsync Governance Proposal (Tally)
 
 ## Asset notes
 
