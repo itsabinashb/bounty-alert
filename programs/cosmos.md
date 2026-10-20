@@ -47,13 +47,13 @@ Other helpful links include:
 
 ## Impacts in scope (16)
 
+- [blockchain_dlt] Critical: Theft / unauthorized extraction of funds
 - [blockchain_dlt] Critical: Unauthorized minting or burning of user funds
 - [blockchain_dlt] High: Chain halt / liveness failure
 - [blockchain_dlt] High: Loss of cryptoeconomic security
 - [blockchain_dlt] High: Non-determinism / consensus fork / AppHash divergence
 - [blockchain_dlt] High: Permanent locking / freezing of funds or clients
 - [blockchain_dlt] High: Relayer / off-chain service key and wallet compromise
-- [blockchain_dlt] High: Theft / unauthorized extraction of funds
 - [blockchain_dlt] Medium: Privilege escalation / authorization bypass / unauthorized state mutation
 - [blockchain_dlt] Medium: Relayer / off-chain service fund exhaustion (economic griefing)
 - [blockchain_dlt] Medium: Relayer / off-chain service liveness failure (delivery DoS)

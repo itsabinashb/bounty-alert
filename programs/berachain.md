@@ -149,6 +149,10 @@ For bera-reth, our Berachain fork of the Rust Ethereum client, *any upstream bug
 Please report only bugs specific to Berachain's fork
 https://github.com/berachain/bera-reth
 
+For CometBFT, the consensus-layer dependency pinned by Beacon Kit, *any upstream bugs are out of scope*
+Please report only bugs specific to Berachain's fork
+https://github.com/berachain/cometbft
+
 
 - Incorrect data supplied by third-party oracles
   - Not to exclude oracle manipulation/flash loan attacks
