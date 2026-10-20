@@ -9,7 +9,7 @@
 - PoC required for: blockchain_dlt - critical, blockchain_dlt - high, smart_contract - critical, smart_contract - high, websites_and_applications - critical
 - End date: (none)
 
-## Assets in scope (20)
+## Assets in scope (18)
 
 - [blockchain_dlt] https://github.com/rsksmart/powpeg-node — powpeg-node
 - [blockchain_dlt] https://github.com/rsksmart/rsk-powhsm/releases/latest — PowHSM
@@ -25,8 +25,6 @@
 - [smart_contract] https://rootstock.blockscout.com/address/0xbe4d93b3afd9921cac66704ffd3caf662886fb73 — CollateralManagementContract
 - [smart_contract] https://rootstock.blockscout.com/address/0xd8D956312222d8acaBB58569cc960a93b1aa2f7a — BtcUtils
 - [smart_contract] https://rootstock.blockscout.com/token/0x2aCc95758f8b5F583470bA265Eb685a8f45fC9D5 — RIF Token
-- [websites_and_applications] https://github.com/rsksmart/2wp-api — 2wp-api
-- [websites_and_applications] https://github.com/rsksmart/2wp-app — 2wp-app
 - [websites_and_applications] https://github.com/rsksmart/bridges-core-sdk — bridges-core-sdk
 - [websites_and_applications] https://github.com/rsksmart/flyover-sdk — flyover-sdk
 - [websites_and_applications] https://github.com/rsksmart/liquidity-provider-server — liquidity-provider-server
