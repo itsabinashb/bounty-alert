@@ -155,7 +155,7 @@ Therefore, Immunefi has developed a set of feasibility limitation standards whic
 - [websites_and_applications] Critical: fixedReward=$25,000, otherImpactMaxReward=$10,000, rewardModel=fixed
 - [websites_and_applications] High: maxReward=$20,000, minReward=$5,000, rewardModel=range
 - [websites_and_applications] Medium: fixedReward=$2,500, primacy=primacy_of_rules, rewardModel=fixed
-- [websites_and_applications] Low: fixedReward=$1,000, primacy=primacy_of_rules, rewardModel=fixed
+- [websites_and_applications] Low: maxReward=$1,000, minReward=$100, primacy=primacy_of_rules, rewardModel=range
 
 ## Reward notes
 
