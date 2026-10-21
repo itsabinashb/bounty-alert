@@ -274,8 +274,8 @@
 - [blockchain_dlt] High: maxReward=$20,000, minReward=$10,000, rewardModel=range
 - [blockchain_dlt] Medium: maxReward=$5,000, minReward=$1,000, rewardModel=range
 - [smart_contract] Critical: maxReward=$100,000, minReward=$50,000, rewardCalculationPercentage=10, rewardModel=range
-- [smart_contract] High: maxReward=$25,000, minReward=$10,000, rewardModel=range
-- [smart_contract] Medium: maxReward=$5,000, minReward=$1,000, rewardModel=range
+- [smart_contract] High: maxReward=$20,000, minReward=$10,000, rewardModel=range
+- [smart_contract] Medium: maxReward=$2,000, minReward=$1,000, rewardModel=range
 
 ## Reward notes
 
