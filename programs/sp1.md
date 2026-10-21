@@ -60,6 +60,8 @@ The `whir`, `veil`, `spartan`, `pgspcs` crates within `slop` are out of scope. F
 
 A bug bounty submission for a completeness vulnerability should demonstrate an inherent and deterministic incorrectness inside an AIR constraint, recursive circuit, or production verifier that makes a valid execution unprovable, or makes its correctly generated proof unverifiable. Failures that are specific to a prover backend or prover implementation, hardware, insufficient resources, concurrency, timeouts, environment variables, or user configuration are out of scope.
 
+A bug bounty submission for a soundness vulnerability must include an end-to-end PoC demonstrating that the production verifier accepts a false claim about the program's execution, such as public outputs that cannot arise from any valid execution of the specified program consistent with the inputs bound by the verified statement. 
+
 All reports must be valid under the SP1 security model
 - https://docs.succinct.xyz/docs/sp1/security/security-model
 - https://docs.succinct.xyz/docs/sp1/security/safe-precompile-usage

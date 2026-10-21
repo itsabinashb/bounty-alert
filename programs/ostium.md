@@ -5,11 +5,11 @@
 - KYC required: yes
 - Paused: no
 - Invite only: no
-- Program type: Websites and Applications, Smart Contract
-- PoC required for: websites_and_applications - critical, websites_and_applications - high
+- Program type: Smart Contract, Websites and Applications
+- PoC required for: websites_and_applications - critical, websites_and_applications - high, smart_contract - critical, smart_contract - high
 - End date: (none)
 
-## Assets in scope (20)
+## Assets in scope (19)
 
 - [smart_contract] https://arbiscan.io/address/0x083F97BabF33D4abC03151B5DEc98170761f4025 — ProxyAdmin - Admin for upgradeable proxy contracts
 - [smart_contract] https://arbiscan.io/address/0x20D419a8e12C45f88fDA7c5760bb6923Cee27F98 — Vault - Vault for liquidity providers
@@ -30,7 +30,6 @@
 - [smart_contract] https://www.ostium.com/ — Primacy of Impact (primacy of impact)
 - [websites_and_applications] https://immunefi.com/ — Primacy of Impact (primacy of impact)
 - [websites_and_applications] https://ostium.app/ — App
-- [websites_and_applications] https://t.me/ostiumbot — Telegram App
 
 ## Asset notes
 

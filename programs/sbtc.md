@@ -40,7 +40,7 @@ Stipulations:
 - Impacts that depend on execution involving a malicious signer may be downgraded by 1 severity level.
 - Impacts on availability (e.g., denial-of-service) that depend on execution involving a malicious signer will be downgraded by 1 or more severity levels, to no lower than Low.
 
-Malicious signer threat model: An attacker operates one or more signers whose public keys are members of the current on-chain sBTC signer set. The attacker controls those signers' legitimate credentials. They may run modified software, deviate from the protocol, and craft, replay, withhold, or reorder messages.
+Malicious signer threat model: For a current on-chain sBTC signer set of *n* signers with a signing threshold of *m*, an attacker operates at most *n − m* signers whose public keys are members of that set. The attacker controls those signers' legitimate credentials. They may run modified software, deviate from the protocol, and craft, replay, withhold, or reorder messages. Attacks that require the attacker to operate more than *n − m* signers at any point are out of scope.
 
 ## Rewards
 
