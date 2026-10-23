@@ -1,7 +1,7 @@
 # SP1
 
 - Page: https://immunefi.com/bug-bounty/sp1/scope/
-- Max bounty: $100,000
+- Max bounty: $15,000
 - KYC required: no
 - Paused: no
 - Invite only: no
@@ -41,13 +41,17 @@ The severity of a soundness or completeness finding may change due to the impact
 
 ## Rewards
 
-- [blockchain_dlt] Critical: maxReward=$100,000, minReward=$15,000, rewardCalculationPercentage=10, rewardModel=range
-- [blockchain_dlt] High: maxReward=$15,000, minReward=$2,000, rewardModel=range
+- [blockchain_dlt] Critical: fixedReward=$15,000, rewardCalculationPercentage=0, rewardModel=fixed
+- [blockchain_dlt] High: maxReward=$5,000, minReward=$2,000, rewardModel=range
 - [blockchain_dlt] Medium: maxReward=$2,000, minReward=$1,000, rewardModel=range
 
 ## Reward notes
 
 SP1 provides rewards in USDC on Ethereum, denominated in USD.
+
+For High and Medium findings, the reward within the stated range is determined by the demonstrated technical impact, the breadth of affected programs and executions, and the conditions required to trigger the vulnerability. Reward amounts are independent of TVL, funds at risk, and market capitalization.
+
+Updated rewards apply to reports submitted after this update is published. Earlier reports remain subject to the terms in effect when they were submitted.
 
 ## Out of scope (program-specific)
 
