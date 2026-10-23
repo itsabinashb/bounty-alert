@@ -146,7 +146,7 @@ At Immunefi, we classify bugs on a simplified 4-level scale:
 - [smart_contract] Medium: fixedReward=$2,000, rewardModel=fixed
 - [websites_and_applications] Critical: maxReward=$3,000, minReward=$1,000, otherImpactMaxReward=$0, rewardModel=range
 - [websites_and_applications] High: fixedReward=$1,000, rewardModel=fixed
-- [websites_and_applications] Medium: fixedReward=$300, rewardModel=fixed
+- [websites_and_applications] Medium: fixedReward=$1,000, rewardModel=fixed
 
 ## Reward notes
 
@@ -163,11 +163,11 @@ Reward Cap for T Staking Contract Findings: Findings related to the T staking co
 
 __Payouts and Payout Requirements__
 
-Payouts are handled by the Threshold DAO team directly and are denominated in USD. However, payouts are made in T. [(https://www.coingecko.com/en/coins/threshold-network-token#markets).](https://www.coingecko.com/en/coins/threshold-network-token#markets) 
+Payouts are handled by the Threshold DAO team and denominated in USD. The DAO determines the payout asset in its sole discretion. Payouts will ordinarily be made in USDC, but the DAO may instead pay the USD-equivalent amount in T. Whitehats may not elect the payout asset.
 
-The calculation of the net amount rewarded is based on the average price between high and low for the day of the report submission as published on [CoinMarketCap.com](https://coinmarketcap.com/) Historical Data ([https://coinmarketcap.com/currencies/threshold/historical-data/](https://coinmarketcap.com/currencies/threshold/historical-data/)) for the T token. No adjustments are made based on liquidity availability. For avoidance of doubt, if the reward amount is USD 5 000 and the average price at the time of the bug report submission is USD 1.75 per token, then the reward will be 2857.142857 units of that token.
+If payment is made in T, the token amount will equal the USD-denominated reward divided by the reference price. The reference price will be the arithmetic mean of the hourly T/USD prices published by CoinGecko during the 24-hour period ending when the payout is calculated. Before payment, the DAO will provide the calculation timestamp, source data, reference price, and resulting token amount. If payment is not sent within 24 hours after calculation, the amount will be recalculated.
 
-Threshold Network commits to honoring payouts according to the terms set out in this program at the time of report submission, and to treat this program as the agreement and source of truth concerning bug reports and responsible disclosures.
+Threshold Network will honor the payout terms in effect when a report is submitted. Those terms constitute the governing agreement and source of truth for that report and its responsible disclosure.
 
 For the purposes of determining report validity, this is a Primacy of Rules program. 
 
@@ -212,11 +212,9 @@ Previous audits and known issues can be found at:
 
 (none)
 
-## Known issues (6)
+## Known issues (4)
 
-- Bridge: keep closeable wallets able to resolve in-flight sweeps (https://github.com/tlabs-xyz/tbtc-v2-security/pull/10)
-- Cross-chain redemption timeout (https://github.com/threshold-network/tbtc-v2/pull/920)
 - Rebate entries keyed by block timestamp — ambiguous cancel when multiple same-block redemptions (https://github.com/threshold-network/tbtc-v2/issues/935)
-- Sui: clarify minter capability revocation (https://github.com/threshold-network/tbtc-v2/pull/963)
 - TOB-TBTCACEXT-30 — block untrust and rotation while a vault has optimistic minting debt (https://github.com/threshold-network/tbtc-v2/commit/26820a400a5cfab068d98a7cdaedddd0e921c85f)
+- fix(sui): TOB-TBTCACEXT-23 — reject minting with a MinterCap whose minter was removed (https://github.com/threshold-network/tbtc-v2/commit/00b4a5382df6384df3899ae1bb8b5d33b85c1411)
 - reimbursement best-effort for relayers (https://github.com/threshold-network/tbtc-v2/pull/968)
