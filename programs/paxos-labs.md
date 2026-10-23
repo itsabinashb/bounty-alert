@@ -9,7 +9,7 @@
 - PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium
 - End date: (none)
 
-## Assets in scope (14)
+## Assets in scope (15)
 
 - [smart_contract] https://etherscan.io/address/0x353741aBa79974a90F88594f6CBd1a9c54651015#code — PAXGy Manager Contract.
 - [smart_contract] https://etherscan.io/address/0x397e38359f169748a02bc11f98D4f451FE88C1fd#code — PAXGy Accountant contract. Stores the NAV of the vault shares.
@@ -20,6 +20,7 @@
 - [smart_contract] https://etherscan.io/address/0x69e0BF658bE5600864A946b4e5B911736D248FB4 — PAXGy WithdrawQueue. Facilitates user withdrawals.
 - [smart_contract] https://etherscan.io/address/0x6E0A209672f6e357B2B5435AB6AEa2acbB4B8c6D#code — PAXGy DCD FeeModule. Determines deposit fees.
 - [smart_contract] https://etherscan.io/address/0x6c6494Fd9962eB98B94ffA48F6679058F820700e#code — PAXGy Token BoringVault. Custodies funds and deploys them into strategies.
+- [smart_contract] https://etherscan.io/address/0x91248711709bC6a09078Baf79Eb9f9bE5035870a#code — PAXGy FreezeListBeforeTransferHook. A hook that maintains the freeze list for PAXGy.
 - [smart_contract] https://etherscan.io/address/0x91FE06C6E9F97E7DE4580A280E03046155f8e1e3 — Transit BoringVault contract. Custodies funds from user orders and allows it to be routed to various venues based on secure permissions.
 - [smart_contract] https://etherscan.io/address/0xC444dA4DF6AF6A9A3891a720c1712a4188d899DD — PAXGy Roles Authority contract.
 - [smart_contract] https://etherscan.io/address/0xF34942E8612ccE476307B30a6246B43ce42B5D20#code — Transit Decoder contract. Used in conjunction with the Manager contract for secure permissions.
@@ -118,6 +119,10 @@ Impacts that require a chain-level or network-level event outside Paxos Labs' co
 **9. User error**
 
 Impacts caused by a user's own error are out of scope, such as sending funds to an incorrect recipient or destination address, using a smart contract wallet the user does not control on the destination chain, sending tokens directly to a contract outside its intended flows, or setting slippage or minimum-output parameters that do not protect the user. A vulnerability that makes the in-scope contracts ignore or miscalculate a parameter the user supplied remains in scope.
+
+**10. Compliance Error**
+
+Impacts around compliance such as freezing / user screening is out of scope.
 
 ## Out of scope and rules
 
