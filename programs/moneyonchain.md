@@ -151,6 +151,6 @@ The *Vendors functionality* is centrally managed, while some on-chain registrati
 
 ## Known issues (3)
 
-- All known issues, rejected and being worked on, regularly updated. AI friendly. (https://gist.github.com/nubis/9c24c0e2792e4dbb25db74f8f478756f)
+- All known issues, rejected and being worked on, regularly updated. AI friendly. (https://github.com/money-on-chain/known-issues)
 - GPT-5.5 findings on Aeropagus-Governance submitted as github issues (https://github.com/money-on-chain/Areopagus-Governance/issues)
 - GPT-5.5 findings on Amphiraos-Oracle submitted as github issues (https://github.com/money-on-chain/Amphiraos-Oracle/issues)
