@@ -9,10 +9,9 @@
 - PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium
 - End date: (none)
 
-## Assets in scope (27)
+## Assets in scope (24)
 
 - [smart_contract] https://docs.pareto.credit/developers/addresses/product/credit-vaults
-- [smart_contract] https://etherscan.io/address/0x06975bB418EFFB0029fe278A6fA15B92bb97496F — Bastion Trading Vault Strategy (Ethereum)
 - [smart_contract] https://etherscan.io/address/0x0b4F695B05902efc14344d19ED1d0B0E061C8A3E — Fasanara Digital Vault Queue (Ethereum)
 - [smart_contract] https://etherscan.io/address/0x14B8E918848349D1e71e806a52c13D4e0d3246E0 — Adaptive Frontier Vault Contract (Ethereum)
 - [smart_contract] https://etherscan.io/address/0x17E9Ab2992dfecBe779a06A92a6cDB9fE6aEeEf3 — FalconX Vault Strategy (Ethereum)
@@ -20,7 +19,6 @@
 - [smart_contract] https://etherscan.io/address/0x338e0a8008364a4d5139cB49E00e93bDb51290d6 — TwoPrime Vault Contract (Ethereum)
 - [smart_contract] https://etherscan.io/address/0x3Fc0265E92EeafED0cCd9F8621764Ce0981882cE — RockawayX Vault Strategy (Ethereum)
 - [smart_contract] https://etherscan.io/address/0x433D5B175148dA32Ffe1e1A37a939E1b7e79be4d — FalconX Vault Contract (Ethereum)
-- [smart_contract] https://etherscan.io/address/0x4462eD748B8F7985A4aC6b538Dfc105Fce2dD165 — Bastion Trading Vault Contract (Ethereum)
 - [smart_contract] https://etherscan.io/address/0x45054c6753b4bce40c5d54418dabc20b070f85be — Fasanara Digital Vault LP Token (Ethereum)
 - [smart_contract] https://etherscan.io/address/0x5cC24f44cCAa80DD2c079156753fc1e908F495DC — FalconX Vault Queue (Ethereum)
 - [smart_contract] https://etherscan.io/address/0x5eCF8bF9eae51c2FF47FAc8808252FaCd8e36797 — Adaptive Frontier Vault Queue (Ethereum)
@@ -31,7 +29,6 @@
 - [smart_contract] https://etherscan.io/address/0xBC6cffAFC8F98d7DF780cE05fA55e14781C1C14D — RockawayX Vault Queue (Ethereum)
 - [smart_contract] https://etherscan.io/address/0xC26A6Fa2C37b38E549a4a1807543801Db684f99C — FalconX Vault LP Token (Ethereum)
 - [smart_contract] https://etherscan.io/address/0xC35D078092872Ec1f2ae82bcd6f0b6b89F0850de — Fasanara Digital Vault Strategy (Ethereum)
-- [smart_contract] https://etherscan.io/address/0xC49b4ECc14aa31Ef0AD077EdcF53faB4201b724c — Bastion Trading Vault LP Token (Ethereum)
 - [smart_contract] https://etherscan.io/address/0xD1624bb76743dd8dC8D8043246e7338A5CD23772 — TwoPrime Vault LP (Ethereum)
 - [smart_contract] https://etherscan.io/address/0xa30bE796FB2BAbF9228359E86A041c14e29f86Fc — Adaptive Frontier Vault Strategy (Ethereum)
 - [smart_contract] https://etherscan.io/address/0xae7913c672c7F1f76C2a1a0Ac4de97d082681234 — Adaptive Frontier Vault LP Token (Ethereum)
