@@ -9,17 +9,20 @@
 - PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium, websites_and_applications - critical, websites_and_applications - high, websites_and_applications - medium, websites_and_applications - low, smart_contract - low
 - End date: (none)
 
-## Assets in scope (12)
+## Assets in scope (15)
 
-- [smart_contract] https://github.com/ensdomains/ens-contracts/wiki/ENS-Contract-Deployments — Smart Contracts
+- [smart_contract] https://github.com/ensdomains/contracts-v2 — ENSv2 Contracts
 - [smart_contract] https://immunefi.com — Primacy of Impact (primacy of impact)
 - [websites_and_applications] https://app.ens.domains/ — ENS app
 - [websites_and_applications] https://basics.ensdao.org/
 - [websites_and_applications] https://docs.ens.domains/
 - [websites_and_applications] https://ens.domains — ENS landing page
-- [websites_and_applications] https://github.com/ensdomains/ens-app-v3 — ENS app source code
+- [websites_and_applications] https://explorer.ens.domains/ — Explorer App
+- [websites_and_applications] https://github.com/ensdomains/apps-monorepo — Source code for manger and explorer and supporting backend services
+- [websites_and_applications] https://github.com/ensdomains/bigname — Indexer
 - [websites_and_applications] https://github.com/ensdomains/ens-metadata-service — ENS Metadata service source code
 - [websites_and_applications] https://github.com/ensdomains/ensdomains-landing — Ens landing page source code
+- [websites_and_applications] https://github.com/ensdomains/metadata-service-v2 — Source code for the metadata service
 - [websites_and_applications] https://immunefi.com — Primacy of Impact (primacy of impact)
 - [websites_and_applications] https://metadata.ens.domains/ — ENS Metadata service
 - [websites_and_applications] https://metadata.ens.domains/docs — ENS Metadata service
