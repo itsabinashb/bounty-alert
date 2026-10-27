@@ -412,8 +412,15 @@ Payouts are handled by the __GMX__ team directly and are denominated in USD. How
 
 (none)
 
-## Known issues (5)
+## Known issues (6)
 
+- ADL price wipe & swap lifting the trader PnL cap
+Is fixed in the release_2.2.1 branch
+
+Check these commits: 
+
+1. https://github.com/gmx-io/gmx-synthetics/commit/18b1a530fc08959dbbc8de62e9073e2b15931c63
+2. https://github.com/gmx-io/gmx-synthetics/commit/c58ea38aed904a92abfdfa37722b974551cda6af (https://github.com/gmx-io/gmx-synthetics/commit/18b1a530fc08959dbbc8de62e9073e2b15931c63)
 - Claiming and charging fees async process. Manual topup sometimes required. It is expected behaviour
 
 See attached script for monitoring
