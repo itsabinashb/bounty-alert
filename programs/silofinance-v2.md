@@ -109,7 +109,8 @@ Payouts are handled by the __Silo Finance__ team directly and are denominated in
 
 (none)
 
-## Known issues (2)
+## Known issues (3)
 
 - All issues publicly disclosed by audits reports hosted in smart contracts repository are considered known issues. (https://github.com/silo-finance/silo-contracts-v3/tree/master/audits)
 - For all known issues, read all audit reports before submitting a bounty report. (https://docs.silo.finance/docs/audits)
+- Liquidation flag can be left opened by batching liquidation tx (https://github.com/silo-finance/silo-contracts-v3/pull/1958)
