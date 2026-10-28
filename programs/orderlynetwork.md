@@ -3,7 +3,7 @@
 - Page: https://immunefi.com/bug-bounty/orderlynetwork/scope/
 - Max bounty: $100,000
 - KYC required: no
-- Paused: no
+- Paused: yes
 - Invite only: no
 - Program type: Smart Contract, Websites and Applications
 - PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium, smart_contract - low, websites_and_applications - critical, websites_and_applications - high, websites_and_applications - medium, websites_and_applications - low
