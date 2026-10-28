@@ -9,36 +9,41 @@
 - PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium, smart_contract - low, websites_and_applications - critical, websites_and_applications - high, websites_and_applications - medium
 - End date: (none)
 
-## Assets in scope (31)
+## Assets in scope (36)
 
-- [smart_contract] https://explorer.hiro.so/txid/SP1CGXWEAMG6P6FT04W66NVGJ7PQWMDAC19R7PJ0Y.pyth-governance-v3?chain=mainnet — pyth-governance-v3.clar
-- [smart_contract] https://explorer.hiro.so/txid/SP1CGXWEAMG6P6FT04W66NVGJ7PQWMDAC19R7PJ0Y.pyth-governance-v3?chain=mainnet — pyth-governance-v3.clar
-- [smart_contract] https://explorer.hiro.so/txid/SP1CGXWEAMG6P6FT04W66NVGJ7PQWMDAC19R7PJ0Y.pyth-oracle-v4?chain=mainnet — pyth-oracle-v4.clar
-- [smart_contract] https://explorer.hiro.so/txid/SP1CGXWEAMG6P6FT04W66NVGJ7PQWMDAC19R7PJ0Y.pyth-pnau-decoder-v3?chain=mainnet — pyth-pnau-decoder-v3.clar
-- [smart_contract] https://explorer.hiro.so/txid/SP1CGXWEAMG6P6FT04W66NVGJ7PQWMDAC19R7PJ0Y.pyth-storage-v4?chain=mainnet — pyth-storage-v4.clar
-- [smart_contract] https://explorer.hiro.so/txid/SP1CGXWEAMG6P6FT04W66NVGJ7PQWMDAC19R7PJ0Y.pyth-traits-v2?chain=mainnet — pyth-traits-v2.clar
-- [smart_contract] https://explorer.hiro.so/txid/SP1CGXWEAMG6P6FT04W66NVGJ7PQWMDAC19R7PJ0Y.wormhole-core-v4?chain=mainnet — wormhole-core-v4.clar
-- [smart_contract] https://explorer.hiro.so/txid/SP1CGXWEAMG6P6FT04W66NVGJ7PQWMDAC19R7PJ0Y.wormhole-traits-v2?chain=mainnet — wormhole-traits-v2.clar
-- [smart_contract] https://explorer.hiro.so/txid/SP26NGV9AFZBX7XBDBS2C7EC7FCPSAV9PKREQNMVS.borrower-v1?chain=mainnet — borrower-v1.clar
-- [smart_contract] https://explorer.hiro.so/txid/SP26NGV9AFZBX7XBDBS2C7EC7FCPSAV9PKREQNMVS.flash-loan-v1?chain=mainnet — flash-loan-v1.clar
-- [smart_contract] https://explorer.hiro.so/txid/SP26NGV9AFZBX7XBDBS2C7EC7FCPSAV9PKREQNMVS.governance-v1?chain=mainnet — governance-v1.clar
-- [smart_contract] https://explorer.hiro.so/txid/SP26NGV9AFZBX7XBDBS2C7EC7FCPSAV9PKREQNMVS.liquidator-v1?chain=mainnet — liquidator-v1.clar
-- [smart_contract] https://explorer.hiro.so/txid/SP26NGV9AFZBX7XBDBS2C7EC7FCPSAV9PKREQNMVS.liquidity-provider-v1?chain=mainnet — liquidity-provider-v1.clar
-- [smart_contract] https://explorer.hiro.so/txid/SP26NGV9AFZBX7XBDBS2C7EC7FCPSAV9PKREQNMVS.pyth-adapter-v1?chain=mainnet — pyth-adapter-v1.clar
-- [smart_contract] https://explorer.hiro.so/txid/SP26NGV9AFZBX7XBDBS2C7EC7FCPSAV9PKREQNMVS.withdrawal-caps-v1?chain=mainnet — withdrawal-caps-v1
-- [smart_contract] https://explorer.hiro.so/txid/SP35E2BBMDT2Y1HB0NTK139YBGYV3PAPK3WA8BRNA.constants-v1?chain=mainnet — constants-v1.clar
-- [smart_contract] https://explorer.hiro.so/txid/SP35E2BBMDT2Y1HB0NTK139YBGYV3PAPK3WA8BRNA.constants-v1?chain=mainnet — constants-v1.clar
-- [smart_contract] https://explorer.hiro.so/txid/SP35E2BBMDT2Y1HB0NTK139YBGYV3PAPK3WA8BRNA.linear-kinked-ir-v1?chain=mainnet — linear-kinked-ir-v1.clar
-- [smart_contract] https://explorer.hiro.so/txid/SP35E2BBMDT2Y1HB0NTK139YBGYV3PAPK3WA8BRNA.math-v1?chain=mainnet — math-v1.clar
-- [smart_contract] https://explorer.hiro.so/txid/SP35E2BBMDT2Y1HB0NTK139YBGYV3PAPK3WA8BRNA.meta-governance-v1?chain=mainnet — meta-governance-v1.clar
-- [smart_contract] https://explorer.hiro.so/txid/SP35E2BBMDT2Y1HB0NTK139YBGYV3PAPK3WA8BRNA.state-v1?chain=mainnet — state-v1.clar
-- [smart_contract] https://explorer.hiro.so/txid/SP3BJR4P3W2Y9G22HA595Z59VHBC9EQYRFWSKG743.constants-v1?chain=mainnet — constants-v2.clar
-- [smart_contract] https://explorer.hiro.so/txid/SP3BJR4P3W2Y9G22HA595Z59VHBC9EQYRFWSKG743.staking-v1?chain=mainnet — staking-v1.clar
+- [smart_contract] https://explorer.hiro.so/txid/0x0a9f1bf8fa6439cbcddbe5c05f486a1f1179ebdb91d99b13f1904c9ac8b223b5?chain=mainnet
+- [smart_contract] https://explorer.hiro.so/txid/0x132f1a6ffec5ab0d0184e738ff20f096f5b1f05f1b3e2d1aee478f6e819d593c?chain=mainnet
+- [smart_contract] https://explorer.hiro.so/txid/0x19e8500f37e6a82972afb08b3fd204db05c86d8d747fd776257b48877b156a38?chain=mainnet
+- [smart_contract] https://explorer.hiro.so/txid/0x57550ac4401f8e57c1c18d22eb246b4585b4ff35428a7cf8668e9b8e46473ecc?chain=mainnet
+- [smart_contract] https://explorer.hiro.so/txid/0x6069114a3275b983e864761c8fb4ea977facf7a20ec3d168f0b9e836ae9a58ca?chain=mainnet
+- [smart_contract] https://explorer.hiro.so/txid/0x86d1bb19ed9b103cf2c0840fd3eed16c8fa0b61a1d8cb728da547429eb771ddb?chain=mainnet
+- [smart_contract] https://explorer.hiro.so/txid/0x90b2b5ffaec838a58682514b89985abe17d99bb6104f6fc48e801c9a086044b6?chain=mainnet
+- [smart_contract] https://explorer.hiro.so/txid/0xa057ebce9c8c1501cf56b18185ea3eed4e35a72934446bb9599508637d476520?chain=mainnet
+- [smart_contract] https://explorer.hiro.so/txid/0xc4bc67a8a9ddd84e92a818eea1a921c5cb464299d39e25cbac150160cc5be977?chain=mainnet
+- [smart_contract] https://explorer.hiro.so/txid/0xe05b5a92318bbb1dc555c1f32faf02d6c8d9f12c8d5ffac045f892fcb9a906e5?chain=mainnet
+- [smart_contract] https://explorer.hiro.so/txid/0xf4cc59c2769921d84226db4e0243f618684581fb4a14c2bcaed7db80f00d262d?chain=mainnet
+- [smart_contract] https://explorer.hiro.so/txid/SP119QJ4NVE3RQP8RXJVW5EXAV3XD4CJZWRCEEAAR.borrower-v1?chain=mainnet
+- [smart_contract] https://explorer.hiro.so/txid/SP26NGV9AFZBX7XBDBS2C7EC7FCPSAV9PKREQNMVS.trait-flash-loan-v1?chain=mainnet
+- [smart_contract] https://explorer.hiro.so/txid/SP26NGV9AFZBX7XBDBS2C7EC7FCPSAV9PKREQNMVS.trait-flash-loan-v1?chain=mainnet
+- [smart_contract] https://explorer.hiro.so/txid/SP35E2BBMDT2Y1HB0NTK139YBGYV3PAPK3WA8BRNA.constants-v1?chain=mainnet
+- [smart_contract] https://explorer.hiro.so/txid/SP35E2BBMDT2Y1HB0NTK139YBGYV3PAPK3WA8BRNA.staking-reward-v1?chain=mainnet
+- [smart_contract] https://explorer.hiro.so/txid/SP35E2BBMDT2Y1HB0NTK139YBGYV3PAPK3WA8BRNA.state-v1?chain=mainnet
+- [smart_contract] https://explorer.hiro.so/txid/SP3BJR4P3W2Y9G22HA595Z59VHBC9EQYRFWSKG743.constants-v2?chain=mainnet
 - [smart_contract] https://explorer.hiro.so/txid/SP3M2BYF7RGF8WKW5FVDNJ6WR8D7AR9BHDXAKPXZE.borrower-v1?chain=mainnet — Borrow USDCx
+- [smart_contract] https://explorer.hiro.so/txid/SP3M2BYF7RGF8WKW5FVDNJ6WR8D7AR9BHDXAKPXZE.flash-loan-v1?chain=mainnet
+- [smart_contract] https://explorer.hiro.so/txid/SP3M2BYF7RGF8WKW5FVDNJ6WR8D7AR9BHDXAKPXZE.governance-v1?chain=mainnet
 - [smart_contract] https://explorer.hiro.so/txid/SP3M2BYF7RGF8WKW5FVDNJ6WR8D7AR9BHDXAKPXZE.linear-kinked-ir-v1?chain=mainnet — USDCx interest rate kink
 - [smart_contract] https://explorer.hiro.so/txid/SP3M2BYF7RGF8WKW5FVDNJ6WR8D7AR9BHDXAKPXZE.liquidator-v1?chain=mainnet — Liquidator USDCx
 - [smart_contract] https://explorer.hiro.so/txid/SP3M2BYF7RGF8WKW5FVDNJ6WR8D7AR9BHDXAKPXZE.liquidity-provider-v1?chain=mainnet — Supplier USDCx
+- [smart_contract] https://explorer.hiro.so/txid/SP3M2BYF7RGF8WKW5FVDNJ6WR8D7AR9BHDXAKPXZE.meta-governance-v1?chain=mainnet
+- [smart_contract] https://explorer.hiro.so/txid/SP3M2BYF7RGF8WKW5FVDNJ6WR8D7AR9BHDXAKPXZE.pyth-adapter-v1?chain=mainnet
+- [smart_contract] https://explorer.hiro.so/txid/SP3M2BYF7RGF8WKW5FVDNJ6WR8D7AR9BHDXAKPXZE.pyth-adapter-v1?chain=mainnet
+- [smart_contract] https://explorer.hiro.so/txid/SP3M2BYF7RGF8WKW5FVDNJ6WR8D7AR9BHDXAKPXZE.state-v1?chain=mainnet
+- [smart_contract] https://explorer.hiro.so/txid/SP3M2BYF7RGF8WKW5FVDNJ6WR8D7AR9BHDXAKPXZE.state-v1?chain=mainnet
 - [smart_contract] https://explorer.hiro.so/txid/SP3M2BYF7RGF8WKW5FVDNJ6WR8D7AR9BHDXAKPXZE.state-v1?chain=mainnet — USDCx Market
+- [smart_contract] https://explorer.hiro.so/txid/SPSX722NK9V3A8D3CVQT0CDY4EBQ3E9FSDDE61FT.governance-v1?chain=mainnet
+- [smart_contract] https://explorer.hiro.so/txid/SPSX722NK9V3A8D3CVQT0CDY4EBQ3E9FSDDE61FT.liquidity-provider-v1?chain=mainnet
+- [smart_contract] https://explorer.hiro.so/txid/SPSX722NK9V3A8D3CVQT0CDY4EBQ3E9FSDDE61FT.pyth-adapter-v1?chain=mainnet
 - [smart_contract] https://immunefi.com — Primacy of Impact (primacy of impact)
 - [websites_and_applications] https://app.granite.world/ — Front end App for Granite
 - [websites_and_applications] https://app.granite.world/market — New markets added to Granite's front end
@@ -127,7 +132,9 @@ The calculation of the net amount rewarded is based on the average price between
 
 ## Out of scope (program-specific)
 
-Availability-only issues, including application downtime, crashes, denial of service, or resource exhaustion, that do not result in loss of funds, exposure of sensitive data, unauthorized actions, or privilege escalation, are considered out of scope.
+- Loss of availability only - including where it would otherwise meet "Taking down the application/website" - when the sole result is service unavailability: no loss of funds, no exposure or loss of user data, and no privilege gained. Covers crashes, process aborts, hangs, and resource exhaustion of the front end or its workers, by a single request or many.
+
+- Availability-only issues, including application downtime, crashes, denial of service, or resource exhaustion, that do not result in loss of funds, exposure of sensitive data, unauthorized actions, or privilege escalation, are considered out of scope.
 
 ## Out of scope and rules
 
@@ -137,6 +144,9 @@ Availability-only issues, including application downtime, crashes, denial of ser
 
 (none)
 
-## Known issues (0)
+## Known issues (4)
 
-(none)
+- - **Deployment parameter validation** Issues related to deployment parameter validation fall under incorrect deployment or deployment best practices. Ensuring proper contract deployment and initialization is a fundamental responsibility of any blockchain-based protocol. (https://github.com/GraniteProtocol/audits/blob/main/2024-07%20Granite%20Audit%20-%20Halipot.pdf)
+- - **Input validation on Governance Functions** We assume that governance members will validate any action before execution: input validation on the governance side is out of scope. Additionally, a malicious takeover of governance is excluded from the scope of this audit. (https://granite.world/blog/granite-just-shipped-new-pages-smarter-flows-and-a-cleaner-bitcoin-defi-experience)
+- - **References to non-existent smart contract methods** Issues referencing methods that do not exist in the latest version of the smart contract are out of scope. The audit covers only the most recent code, older versions or deprecated versions are excluded by default. (https://github.com/GraniteProtocol/audits/tree/main)
+- Liquidation risk  incurred through dynamic soft liquidations will be managed by ecosystem liquidators and by enabling public participation in liquidations through a Liquidations page. (https://granite.world/blog/soft-liquidation)
