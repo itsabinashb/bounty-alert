@@ -35,7 +35,7 @@
 ## Rewards
 
 - [smart_contract] Critical: maxReward=$3,500,000, minReward=$100,000, rewardCalculationPercentage=10, rewardModel=range
-- [smart_contract] Medium: maxReward=$10,000, minReward=$1, rewardModel=range
+- [smart_contract] Medium: maxReward=$10,000, minReward=$500, rewardModel=range
 
 ## Reward notes
 
