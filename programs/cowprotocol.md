@@ -5,11 +5,11 @@
 - KYC required: yes
 - Paused: no
 - Invite only: no
-- Program type: Smart Contract
-- PoC required for: smart_contract - high, smart_contract - medium, smart_contract - critical
+- Program type: Smart Contract, Websites and Applications
+- PoC required for: smart_contract - high, smart_contract - medium, smart_contract - critical, websites_and_applications - critical
 - End date: (none)
 
-## Assets in scope (19)
+## Assets in scope (27)
 
 - [smart_contract] https://github.com/cowprotocol/contracts/blob/6ebbd810ff2da635fb6f88e9a15fde196f8c852a/src/contracts/GPv2AllowListAuthentication.sol — GPv2AllowListAuthentication
 - [smart_contract] https://github.com/cowprotocol/contracts/blob/6ebbd810ff2da635fb6f88e9a15fde196f8c852a/src/contracts/GPv2Settlement.sol — GPv2Settlement
@@ -30,6 +30,14 @@
 - [smart_contract] https://github.com/cowprotocol/contracts/blob/6ebbd810ff2da635fb6f88e9a15fde196f8c852a/src/contracts/mixins/Initializable.sol — Initializable.sol
 - [smart_contract] https://github.com/cowprotocol/contracts/blob/6ebbd810ff2da635fb6f88e9a15fde196f8c852a/src/contracts/mixins/ReentrancyGuard.sol — ReentrancyGuard.sol
 - [smart_contract] https://github.com/cowprotocol/contracts/blob/6ebbd810ff2da635fb6f88e9a15fde196f8c852a/src/contracts/mixins/StorageAccessible.sol — StorageAccessible.sol
+- [websites_and_applications] https://cow.fi — CoW Protocol website
+- [websites_and_applications] https://github.com/cowprotocol/cow-sdk — CoW Protocol SDK monorepo
+- [websites_and_applications] https://github.com/cowprotocol/cowswap/tree/main/apps/cow-fi — CoW Protocol website
+- [websites_and_applications] https://github.com/cowprotocol/cowswap/tree/main/apps/cowswap-frontend — CoW Swap frontend
+- [websites_and_applications] https://github.com/cowprotocol/cowswap/tree/main/libs/iframe-transport — @cowprotocol/iframe-transport
+- [websites_and_applications] https://github.com/cowprotocol/cowswap/tree/main/libs/widget-lib — @cowprotocol/widget-lib
+- [websites_and_applications] https://github.com/cowprotocol/cowswap/tree/main/libs/widget-react — @cowprotocol/widget-react
+- [websites_and_applications] https://swap.cow.fi — CoW Swap hosted application
 
 ## Asset notes
 
@@ -63,8 +71,6 @@ Any vulnerabilities mentioned in this [audit report](https://github.com/gnosis/g
 
 The following versions are eligible:
 
-For repository assets, the release branch at the time of submission, currently `main`. The `develop` branch is not in scope unless the finding also reproduces on the release branch.
-
 - For a CoW-controlled deployment, the code served by that deployment at the time of submission.
 - For a published npm package, its latest public version at the time of submission.
 - A tag or release that does not satisfy one of these rules is not independently in scope. Superseded, deprecated, yanked and unpublished versions are otherwise out of scope.
@@ -73,11 +79,9 @@ Preview, pull-request, staging, testnet and other non-production deployments are
 
 The `npm` scope is limited to packages whose source is contained in one of the repositories or paths listed above. A package is not in scope merely because it is published under the `@cowprotocol` namespace.
 
-The CoW Swap service worker and its `emergency.js` reset path are in scope.
-
 For a report to be eligible, both the affected asset and the demonstrated impact must be listed in scope, and no Out of Scope rule may apply.
 
-## Impacts in scope (11)
+## Impacts in scope (14)
 
 - [smart_contract] Critical: Access to user funds outside of a trade.
 - [smart_contract] Critical: Changing the owner address of the authentication contract as well as adding a solver without authorization
@@ -90,6 +94,12 @@ For a report to be eligible, both the affected asset and the demonstrated impact
 - [smart_contract] High: Removing a solver without authorization (also as a solver)
 - [smart_contract] Medium: Freeing storage without being a solver
 - [smart_contract] Medium: Invalidate an order without the permission of the user who created it
+- [websites_and_applications] Critical: Direct theft of user funds
+- [websites_and_applications] Critical: Malicious interactions with an already-connected wallet, such as:
+- Modifying transaction arguments or parameters
+- Substituting contract addresses
+- Submitting malicious transactions
+- [websites_and_applications] Critical: Subdomain takeover with already-connected wallet interaction
 
 ## Impact notes
 
@@ -102,6 +112,7 @@ Only the following Smart Contracts and Websites & Applications impacts are accep
 - [smart_contract] Critical: maxReward=$1,000,000, minReward=$50,000, rewardCalculationPercentage=10, rewardModel=range
 - [smart_contract] High: maxReward=$50,000, minReward=$10,000, rewardModel=range
 - [smart_contract] Medium: maxReward=$10,000, minReward=$1,000, rewardModel=range
+- [websites_and_applications] Critical: maxReward=$10,000, minReward=$1,000, otherImpactMaxReward=$0, primacy=primacy_of_rules, rewardModel=range
 
 ## Reward notes
 
@@ -112,25 +123,9 @@ Rewards are distributed according to the demonstrated impact of the vulnerabilit
 The maximum reward for eligible critical vulnerabilities is:
 
 - **Smart Contracts: USD 1,000,000**
-- **Websites and Applications: USD 50,000**
+- **Websites and Applications: USD 10,000**
 
 The CoW Protocol bounty program considers a number of variables in determining rewards. Determinations of eligibility, score, and all terms related to an award are at the sole and final discretion of the CoW team bug bounty panel, on behalf of CoW DAO.
-
-SDK, widget, frontend, signing, `postMessage`, package-publishing and release-pipeline findings do not receive a separate severity merely because of the affected component or vulnerability type. The report must demonstrate one of the impacts listed in the Impacts in Scope section, and that impact determines severity under the Classification System.
-
-For example, a mismatch between displayed order terms and an EIP-712 payload is critical only where the proof of concept demonstrates direct theft, an unauthorized state-modifying action, or a malicious interaction with an already-connected wallet. JavaScript execution by itself does not establish a particular severity; the demonstrated impact controls.
-
-## Critical rewards for Websites and Applications
-
-For eligible Websites and Applications findings classified as Critical, the reward is up to USD 50,000 where the proof of concept demonstrates at least one of the following:
-
-- Direct theft of user funds through an attack requiring no action by the user.
-- An unauthorized transfer, approval, order or other malicious interaction through an already-connected wallet, including where it is caused by substitution of a contract address, modification of transaction arguments, submission of a transaction the user did not authorize, or a material divergence between displayed order terms and the EIP-712 payload presented for signature.
-- Retrieval or leakage of a private key or key-generation material through exploitation of the reported vulnerability, leading to unauthorized access to user funds.
-
-All other eligible Websites and Applications findings classified as Critical are rewarded up to USD 25,000, subject to the published minimum reward for that category.
-
-These criteria determine the reward amount only. They do not change the severity assigned under the Classification System or expand the assets or impacts in scope.
 
 ## Reward eligibility
 
@@ -148,11 +143,18 @@ A Proof of Concept demonstrating execution and impact is required for all Smart 
 
 For Websites and Applications reports, the Proof of Concept must isolate the defect in the in-scope CoW component and use one of the following reproduction routes:
 
-- **CoW-controlled deployment.** Reproduce on swap.cow.fi or cow.fi. Do so without disrupting the service, affecting other users, submitting unauthorized transactions, or publishing malicious content.
+- **CoW-controlled deployment** Reproduce on swap.cow.fi or cow.fi. Do so without disrupting the service, affecting other users, submitting unauthorized transactions, or publishing malicious content.
 
-- **Reporter-built integration.** Reproduce using a minimal integration built from CoW's published documentation, and include its complete source in the report. The demonstrated behavior must arise from the in-scope CoW component rather than from a value, configuration or custom behavior chosen by the researcher. A reporter-built integration is a reproduction environment, not a separate asset or severity category, and does not itself increase or reduce severity.
+- **Existing production integration** Identify an existing, legitimate third-party production integration using an eligible version of the affected CoW component. Provide verifiable evidence of its version, relevant configuration and attack prerequisites. A minimal local reproduction is permitted if it preserves the integration’s security-relevant behavior and includes its complete source. A hypothetical integration or researcher-created configuration does not establish eligibility.
 
-- **Controlled local reproduction.** For source, service-worker, build, release or publishing defects that cannot be tested safely through a CoW-controlled deployment or naturally through a reporter-built integration, reproduce from an eligible release in an isolated environment and provide the steps and evidence needed for CoW to verify the affected production path. Claimed impact must not depend only on mock, test or example code.
+- **Controlled local reproduction.** Where live testing would be unsafe or prohibited, reproduce in an isolated environment using the affected eligible version. Establish that the same code path and prerequisites exist in an eligible production deployment or integration. Local chain forks may be used to demonstrate transaction effects without risking real funds.
+
+Every report must identify the affected version, production reachability, attacker-controlled inputs, trust boundary crossed, required victim actions and specific listed impact. Include reproducible steps, necessary source and configuration, and observed execution results.
+
+For signing or transaction findings, capture the request produced by the affected CoW component and demonstrate how it causes the claimed unauthorized interaction. Claims of direct theft must additionally establish the resulting funds flow through safe execution or equivalent verifiable evidence.
+
+Fixtures, test accounts and instrumentation are permitted where they preserve the relevant behavior. Impact must not depend solely on a stand-in for the affected component, an unreachable production state, or attacker powers assumed rather than established. Modified responses must represent inputs the attacker can actually cause under the program’s trust model.
+
 
 ## Safe testing
 
@@ -217,7 +219,7 @@ The following activities are prohibited by bug bounty program:
 
 ## For Websites & Applications:
 
-- Backend APIs, including api.cow.fi, bff.cow.fi and cms.cow.fi
+- Backend APIs, including api.cow.fi, bff.cow.fi and cms.cow.fi, including defects whose root cause or fix lies in a backend, even when reached through or displayed by an in-scope frontend
 - The widget configurator and widget.cow.fi
 - Cosmos code and the testing/, tools/ and patches/ directories
 - Defects specific to IPFS or ENS delivery, including defects that reproduce only through cowswap.eth or cowswap.eth.limo
@@ -232,16 +234,29 @@ The following activities are prohibited by bug bounty program:
 - Superseded, deprecated, yanked or unpublished versions.
 - Findings that require a configuration contrary to CoW's published documentation, unless that configuration is currently present on a CoW-controlled production deployment
 - Defects solely in a third-party service, dependency, browser extension, wallet, RPC provider or other system outside CoW's control
-- Transaction or signing-request changes caused solely by a host page, browser extension or wallet, without exploiting a defect in an in-scope CoW component
+- Transaction or signing-request changes caused solely by a host page, browser extension or wallet
+- Impacts requiring a malicious or compromised integrator. Any third-party page or application that embeds or integrates a CoW component (including the widget, SDK and iframe transport) is trusted, so its code, configuration, parameters, messages and any wallet provider it supplies are out of scope
+- Code that is shipped but not reachable in production: disabled features, features behind feature flags, and SDK providers or features that no CoW-controlled production deployment uses, whether or not documented as experimental
+- Referral, affiliate and analytics attribution
+- Issues already known to the CoW team, publicly disclosed or not, whether from earlier reports, internal reviews, scans, audits, issue trackers or design documents. A known issue covers every exploit path that shares its root cause, including paths through other components
+- Impacts that require the victim to open an attacker-supplied link, or any URL whose path, query string, fragment or parameters the attacker chose
 - Source-level observations without demonstrated execution and impact
 - Reports generated without researcher analysis, including unverified LLM output
 
+**Trust model**
+
+The following parties are trusted. Impacts that require any of them to act maliciously, be compromised, or behave in a way they would not in normal operation are out of scope, including where an in-scope CoW component could validate their behaviour more strictly. Each report must name an attacker who is not one of them.
+
+- Integrators and embedding pages, as defined above.
+- Third-party services CoW integrates, including bridge and quote providers, Safe services, RPC providers, token lists and price sources.
+- CoW backend services, including api.cow.fi, bff.cow.fi and cms.cow.fi.
+- Solvers, including how they batch, order and settle orders.
+- The user's wallet, browser and browser extensions.
+- The user, including the recipients, hooks and parameters the user chooses.
+
+A stubbed or modified response from a trusted party is mock data and does not establish impact.
+
 A finding is not eligible merely because a hypothetical misconfiguration could create an impact. If the unsafe configuration is currently present on an in-scope CoW-controlled production deployment, the report is assessed under the normal scope and impact rules.
-
-### External dependency discount
-
-Where exploitation requires a system outside CoW’s control to deviate from its documented or expected behavior, the reward may be reduced by up to 50%. Reliance on an external system that is behaving normally is not grounds for a discount.
-The discount affects the reward amount only. It does not change the severity assigned under the Classification System.
 
 ## Out of scope and rules
 

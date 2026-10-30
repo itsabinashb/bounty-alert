@@ -276,7 +276,7 @@ If an impact can be caused to any other asset managed by GMX that isn’t on thi
 
 Detection of malicious Timelock transactions will be eligible for a bounty if it is submitted 1 hour after the malicious transaction was sent, this is to allow time for the GMX team to self-report based on their own monitoring. An exception to this would be if the Timelock transaction is able to cause losses in less than an hour’s time due to any misconfiguration of the Timelock, in which case it would be preferred that the report be submitted as early as possible.
 
-## Impacts in scope (33)
+## Impacts in scope (35)
 
 - [smart_contract] Critical: Direct theft of any user funds, whether at-rest or in-motion, other than unclaimed yield
 - [smart_contract] Critical: Loss of user funds by freezing, theft, or manipulation of the price of GLP
@@ -309,7 +309,7 @@ Detection of malicious Timelock transactions will be eligible for a bounty if it
 - [websites_and_applications] Critical: Subdomain takeover with already-connected wallet interaction
 - [websites_and_applications] Critical: Taking down the application/website
 - [websites_and_applications] Critical: Tampering with transactions submitted to the user’s wallet
-- [websites_and_applications] Critical: Wallet interaction modification resulting in financial loss
+- [websites_and_applications] Critical: Wallet interaction flow modification by an attacker resulting in financial loss
 - [websites_and_applications] High: Improperly disclosing confidential user information, such as:
 - Email address
 - Phone number
@@ -318,11 +318,13 @@ Detection of malicious Timelock transactions will be eligible for a bounty if it
 - HTML injection without JavaScript
 - Replacing existing text with arbitrary text
 - Arbitrary file uploads, etc.
+- [websites_and_applications] High: Interface logic error, with no attacker involved, that directly makes user funds unrecoverable (excluding fees and execution price)
 - [websites_and_applications] High: Privilege escalation to access unauthorized functionalities
 - [websites_and_applications] High: Subdomain takeover without already-connected wallet interaction
 - [websites_and_applications] Medium: Changing non-sensitive details of other users (including modifying browser local storage) without already-connected wallet interaction and with up to one click of user interaction, such as:
 - Changing the first/last name of user
 - Enabling/disabling notifications
+- [websites_and_applications] Medium: Interface logic error, with no attacker involved, that causes financial loss to the user
 - [websites_and_applications] Medium: Redirecting users to malicious websites (open redirect)
 - [websites_and_applications] Medium: Third-Party API keys leakage that demonstrates loss of funds or modification on the website
 

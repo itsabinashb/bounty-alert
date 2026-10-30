@@ -152,9 +152,9 @@ Therefore, Immunefi has developed a set of feasibility limitation standards whic
 ## Rewards
 
 - [smart_contract] Critical: maxReward=$250,000, minReward=$10,000, rewardCalculationPercentage=10, rewardModel=range
-- [smart_contract] High: maxReward=$100,000, minReward=$25,000, rewardModel=range
-- [smart_contract] Medium: fixedReward=$10,000, primacy=primacy_of_rules, rewardModel=fixed
-- [smart_contract] Low: fixedReward=$2,500, rewardModel=fixed
+- [smart_contract] High: maxReward=$100,000, minReward=$10,000, rewardModel=range
+- [smart_contract] Medium: maxReward=$5,000, minReward=$1,000, primacy=primacy_of_rules, rewardModel=range
+- [smart_contract] Low: maxReward=$1,000, minReward=$500, rewardModel=range
 - [websites_and_applications] Critical: fixedReward=$25,000, otherImpactMaxReward=$10,000, rewardModel=fixed
 - [websites_and_applications] High: maxReward=$20,000, minReward=$5,000, rewardModel=range
 - [websites_and_applications] Medium: fixedReward=$2,500, primacy=primacy_of_rules, rewardModel=fixed
