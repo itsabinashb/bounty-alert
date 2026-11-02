@@ -3,7 +3,7 @@
 - Page: https://immunefi.com/bug-bounty/beanstalk/scope/
 - Max bounty: $1,100,000
 - KYC required: no
-- Paused: no
+- Paused: yes
 - Invite only: no
 - Program type: Smart Contract, Websites and Applications
 - PoC required for: smart_contract - critical, smart_contract - medium, smart_contract - high, websites_and_applications - critical
