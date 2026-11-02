@@ -6,7 +6,7 @@
 - Paused: no
 - Invite only: no
 - Program type: Smart Contract
-- PoC required for: (none)
+- PoC required for: smart_contract - high, smart_contract - critical
 - End date: (none)
 
 ## Assets in scope (47)
@@ -112,7 +112,7 @@ __Deviations from the Standard__
 
 In the case of a counterfeiting or fund-stealing bug affecting Yearn, however, we might decide not to include those details with our reports to partners ahead of coordinated release, as long as we are sure that they are not vulnerable.
 
-## Impacts in scope (15)
+## Impacts in scope (12)
 
 - [smart_contract] Critical: Any governance voting result manipulation
 - [smart_contract] Critical: Direct theft of any user funds, whether at-rest or in-motion, other than unclaimed yield
@@ -125,10 +125,7 @@ In the case of a counterfeiting or fund-stealing bug affecting Yearn, however, w
 - [smart_contract] High: Temporary freezing of funds for at least 7 days
 - [smart_contract] High: Theft of unclaimed yield
 - [smart_contract] Medium: Definite losses due to  Miner-extractable value (MEV) on user actions with external factors
-- [smart_contract] Medium: Griefing (e.g. no profit motive for an attacker, but damage to the users or the protocol)
 - [smart_contract] Medium: Temporary freezing of funds for at least for 2 days
-- [smart_contract] Medium: Theft of gas
-- [smart_contract] Medium: Unbounded gas consumption
 
 ## Impact notes
 
