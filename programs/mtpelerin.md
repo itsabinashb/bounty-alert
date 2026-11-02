@@ -1,7 +1,7 @@
 # Mt Pelerin
 
 - Page: https://immunefi.com/bug-bounty/mtpelerin/scope/
-- Max bounty: $5,000
+- Max bounty: $3,500
 - KYC required: no
 - Paused: no
 - Invite only: no
@@ -49,14 +49,27 @@
 
 (none)
 
-## Impacts in scope (6)
+## Impacts in scope (13)
 
+- [smart_contract] Critical: Direct theft of any user funds, whether at-rest or in-motion, other than unclaimed yield
 - [smart_contract] Critical: Loss of user funds staked (principal) by freezing or theft
 - [smart_contract] High: Freezing of unclaimed yield
+- [smart_contract] High: Temporary freezing of funds
 - [smart_contract] High: Temporary freezing of funds for any amount of time
-- [smart_contract] High: Theft of unclaimed yield
+- [websites_and_applications] Critical: A loss of funds involving an attack that does not require any user action
 - [websites_and_applications] Critical: Data theft
+- [websites_and_applications] Critical: Direct theft of user funds
+- [websites_and_applications] Critical: Execute arbitrary system commands
+- [websites_and_applications] Critical: Private key or private key generation leakage leading to unauthorized access to user funds
+- [websites_and_applications] Critical: Retrieve sensitive data/files from a running server, such as:
+- /etc/shadow
+- database passwords
+- blockchain keys (this does not include non-sensitive environment variables, open source code, or usernames)
 - [websites_and_applications] High: Data deletion
+- [websites_and_applications] High: Improperly disclosing confidential user information, such as:
+- Email address
+- Phone number
+- Physical address, etc.
 
 ## Impact notes
 
@@ -64,9 +77,9 @@
 
 ## Rewards
 
-- [smart_contract] Critical: fixedReward=$5,000, rewardCalculationPercentage=10, rewardModel=fixed
+- [smart_contract] Critical: fixedReward=$3,500, rewardCalculationPercentage=10, rewardModel=fixed
 - [smart_contract] High: fixedReward=$1,000, rewardModel=fixed
-- [websites_and_applications] Critical: fixedReward=$5,000, otherImpactMaxReward=$0, rewardModel=fixed
+- [websites_and_applications] Critical: fixedReward=$3,500, otherImpactMaxReward=$0, rewardModel=fixed
 - [websites_and_applications] High: fixedReward=$1,000, rewardModel=fixed
 
 ## Reward notes
@@ -81,6 +94,13 @@ Payouts are handled by **Mt Pelerin** directly and are estimated in
 **USD**. However, payouts are done in **ETH, BTC, USDT, USDC, or DAI**.
 
 ## Out of scope (program-specific)
+
+**Important note on Bridge Protocol**
+Bridge Protocol is deprecated. No new token will be deployed on it, and the only token in production on this protocol is MPS v2 on Gnosis Chain. Only impacts on MPS v2, as currently deployed and configured, are eligible. This means:
+- Findings must be demonstrated with a PoC running on a fork of Gnosis Chain against the deployed MPS v2 contracts and their actual configuration. Local harnesses built from source, or setups where the researcher deploys or configures contracts themselves, will not be accepted as proof of impact.
+- Findings related to token sales (TokenSale) are out of scope, as no token sale is planned on this protocol.
+
+Additional out of scope information:
 
 - Best practice critiques
 - Attacks requiring privileged access from within the organization
