@@ -9,10 +9,12 @@
 - PoC required for: smart_contract - critical, smart_contract - high
 - End date: (none)
 
-## Assets in scope (64)
+## Assets in scope (70)
 
 - [smart_contract] https://arbiscan.io/address/0xD8724322f44E5c58D7A815F542036fb17DbbF839 — Bridged WOETH
+- [smart_contract] https://basescan.org/address/0x03578bC4b5fB0cC0cA7A6AD05b06407ae6324a82 — CCIP Adapter (Base)
 - [smart_contract] https://basescan.org/address/0x0CbEAcf86232fC04050cD679d860516F7254c22E — superOETHb Harvester
+- [smart_contract] https://basescan.org/address/0x0F12256E27E658790C404C087C38ab4f34D53360 — Superbridge Adapter (Base)
 - [smart_contract] https://basescan.org/address/0x3b56c09543D3068f8488ED34e6F383c3854d2bC1 — superOETHb Zapper
 - [smart_contract] https://basescan.org/address/0x7FcD174E80f264448ebeE8c88a7C4476AAF58Ea6 — wsuperOETHb Token
 - [smart_contract] https://basescan.org/address/0x7FcD174E80f264448ebeE8c88a7C4476AAF58Ea6#code — Wrapped Super OETH
@@ -24,11 +26,14 @@
 - [smart_contract] https://basescan.org/address/0xD8724322f44E5c58D7A815F542036fb17DbbF839 — Bridged WOETH
 - [smart_contract] https://basescan.org/address/0xDBFeFD2e8460a6Ee4955A68582F85708BAEA60A3 — superOETHb Token
 - [smart_contract] https://basescan.org/address/0xF611cC500eEE7E4e4763A05FE623E2363c86d2Af — superOETHb Strategy - Aerodrome AMO
+- [smart_contract] https://basescan.org/address/0xa03360b3f6d902F1b3334c0adBd5C6995d3513fe — wOETH Master Strategy
 - [smart_contract] https://basescan.org/address/0xf817cb3092179083c48c014688D98B72fB61464f — Base Timelock
 - [smart_contract] https://etherscan.io/address/0x01F30B7358Ba51f637d1aa05D9b4A60f76DAD680 — Lido ARM Zapper
+- [smart_contract] https://etherscan.io/address/0x03578bC4b5fB0cC0cA7A6AD05b06407ae6324a82 — CCIP Adapter (Ethereum)
 - [smart_contract] https://etherscan.io/address/0x0C9ac6D63B2b2A1b502E29eC47a53d0966Ea9465 — USDC ARM - PYUSD Adapter
 - [smart_contract] https://etherscan.io/address/0x0DC20109Ea012f050BeDA184844c1eD5ec6dA33A — Ethena ARM - AAVE Market
 - [smart_contract] https://etherscan.io/address/0x0DC20109Ea012f050BeDA184844c1eD5ec6dA33A#readProxyContract — Ethena ARM Aave Strategy
+- [smart_contract] https://etherscan.io/address/0x0F12256E27E658790C404C087C38ab4f34D53360 — Superbridge Adapter (Ethereum)
 - [smart_contract] https://etherscan.io/address/0x19B1Edb2caD902F103a20A30011f125DCe44F954 — USDC ARM CapManager
 - [smart_contract] https://etherscan.io/address/0x1D3Fbd4d129Ddd2372EA85c5Fa00b2682081c9EC — Origin Governance
 - [smart_contract] https://etherscan.io/address/0x1b84E64279D63f48DdD88B9B2A7871e817152A44 — SafeModule - Claim Strategy Rewards
@@ -66,6 +71,7 @@
 - [smart_contract] https://etherscan.io/address/0xE620aFB67223AE03C260112aE21A717Af94C90f0 — Ethena ARM - sUSDe Adapter
 - [smart_contract] https://etherscan.io/address/0xE75D77B1865Ae93c7eaa3040B038D7aA7BC02F70 — OUSD Vault
 - [smart_contract] https://etherscan.io/address/0xFa205c9a110a3e82Bd8d223CccCB15C5b9E6434e — WETH ARM - eETH Adapter
+- [smart_contract] https://etherscan.io/address/0xa03360b3f6d902F1b3334c0adBd5C6995d3513fe — wOETH Remote Strategy
 - [smart_contract] https://etherscan.io/address/0xad2b1657E2c3243750B32Cb9A51169575945b05B — OETH Vault Lens
 - [smart_contract] https://etherscan.io/address/0xb7992eFDa9aBBaC3522336A626191D198fa37145 — Compounding Staking Strategy View
 - [smart_contract] https://etherscan.io/address/0xba0e352AB5c13861C26e4E773e7a833C3A223FE6 — OETH Strategy - Curve AMO
