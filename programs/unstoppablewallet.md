@@ -3,7 +3,7 @@
 - Page: https://immunefi.com/bug-bounty/unstoppablewallet/scope/
 - Max bounty: $1,000
 - KYC required: no
-- Paused: no
+- Paused: yes
 - Invite only: no
 - Program type: Websites and Applications
 - PoC required for: websites_and_applications - critical, websites_and_applications - high
