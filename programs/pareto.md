@@ -38,7 +38,7 @@
 
 ## Asset notes
 
-Only Senior Best Yield contracts will be considered in scope for the Best Yield. Governance and Utilities and ERC-4626 wrappers contracts are not covered under this bug bounty program. **Paused** contracts and contract market as **Deprecated**/**Decommissioned** in doc are not considered in scope
+Only Senior Best Yield contracts will be considered in scope for the Best Yield. Governance and Utilities and ERC-4626 wrappers contracts are not covered under this bug bounty program. **Paused** contracts and contract market as **Deprecated**/**Decommissioned** in doc are not considered in scope. For Queue contracts only Critical are evaluated
 
 ## Impacts in scope (8)
 
@@ -53,7 +53,7 @@ Only Senior Best Yield contracts will be considered in scope for the Best Yield.
 
 ## Impact notes
 
-For Credit Vaults  contract marked in the description as “Queue” should be considered out of scope. Paused contracts and contract market as Deprecated/Decommissioned in doc are not considered in scope
+For Credit Vaults  contract marked in the description as “Queue” should be considered out of scope (unless a critical is submitted). Paused contracts and contract market as Deprecated/Decommissioned in doc are not considered in scope
 
 ## Rewards
 
