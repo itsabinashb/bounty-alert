@@ -337,8 +337,8 @@ Detection of malicious Timelock transactions will be eligible for a bounty if it
 - [smart_contract] Critical: maxReward=$5,000,000, rewardCalculationPercentage=10, rewardModel=up_to
 - [smart_contract] High: maxReward=$25,000, minReward=$10,000, rewardModel=range
 - [smart_contract] Medium: maxReward=$10,000, minReward=$2,500, rewardModel=range
-- [websites_and_applications] Critical: fixedReward=$50,000, otherImpactMaxReward=$0, rewardModel=fixed
-- [websites_and_applications] High: fixedReward=$10,000, rewardModel=fixed
+- [websites_and_applications] Critical: maxReward=$50,000, minReward=$10,000, otherImpactMaxReward=$0, rewardModel=range
+- [websites_and_applications] High: fixedReward=$5,000, rewardModel=fixed
 - [websites_and_applications] Medium: fixedReward=$1,000, rewardModel=fixed
 
 ## Reward notes
