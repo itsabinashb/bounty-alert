@@ -144,9 +144,10 @@ The calculation of the net amount rewarded is based on the average price between
 
 (none)
 
-## Known issues (4)
+## Known issues (5)
 
 - - **Deployment parameter validation** Issues related to deployment parameter validation fall under incorrect deployment or deployment best practices. Ensuring proper contract deployment and initialization is a fundamental responsibility of any blockchain-based protocol. (https://github.com/GraniteProtocol/audits/blob/main/2024-07%20Granite%20Audit%20-%20Halipot.pdf)
 - - **Input validation on Governance Functions** We assume that governance members will validate any action before execution: input validation on the governance side is out of scope. Additionally, a malicious takeover of governance is excluded from the scope of this audit. (https://granite.world/blog/granite-just-shipped-new-pages-smarter-flows-and-a-cleaner-bitcoin-defi-experience)
 - - **References to non-existent smart contract methods** Issues referencing methods that do not exist in the latest version of the smart contract are out of scope. The audit covers only the most recent code, older versions or deprecated versions are excluded by default. (https://github.com/GraniteProtocol/audits/tree/main)
 - Liquidation risk  incurred through dynamic soft liquidations will be managed by ecosystem liquidators and by enabling public participation in liquidations through a Liquidations page. (https://granite.world/blog/soft-liquidation)
+- The adapter enforces the configured confidence bound only when the update carries a confidence field. An absent field is read as zero spread, so the bound passes trivially (https://github.com/GraniteProtocol/audits/blob/main/2025-02-06%20Granite%20Misc%20Upgrades%20Audit%20-%20Clarity%20Alliance.pdf)
