@@ -5,7 +5,7 @@
 - KYC required: no
 - Paused: no
 - Invite only: no
-- Program type: Smart Contract, Websites and Applications
+- Program type: Websites and Applications, Smart Contract
 - PoC required for: smart_contract - critical, smart_contract - high, websites_and_applications - critical
 - End date: (none)
 
