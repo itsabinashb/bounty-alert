@@ -9,7 +9,7 @@
 - PoC required for: websites_and_applications - critical, websites_and_applications - high, websites_and_applications - medium, smart_contract - low, smart_contract - medium, smart_contract - high, smart_contract - critical
 - End date: (none)
 
-## Assets in scope (255)
+## Assets in scope (258)
 
 - [smart_contract] https://github.com/dapphub/ds-weth/blob/master/src/weth9.sol — MCD_ETH
 - [smart_contract] https://github.com/sky-ecosystem/arbitrum-dai-bridge/blob/master/contracts/l1/L1CrossDomainEnabled.sol — L1 Cross Domain Enabled (Arbitrum DAI Bridge)
@@ -26,6 +26,7 @@
 - [smart_contract] https://github.com/sky-ecosystem/arbitrum-token-bridge/blob/master/src/L2TokenGateway.sol — Arbitrum L2 Token Gateway
 - [smart_contract] https://github.com/sky-ecosystem/chief/blob/master/src/Chief.sol — Chief
 - [smart_contract] https://github.com/sky-ecosystem/clipper-mom/blob/master/src/ClipperMom.sol — Clipper Mom
+- [smart_contract] https://github.com/sky-ecosystem/diamond-pau/blob/cbf71b2ac840ca9288eb867d3dd354e08089e1d7/src/PAUFactory.sol — L2_PAU_Factory
 - [smart_contract] https://github.com/sky-ecosystem/diamond-pau/blob/dev/src/Beacon.sol — PAU_BEACON
 - [smart_contract] https://github.com/sky-ecosystem/diamond-pau/blob/dev/src/PAUFactory.sol — PAU Factory
 - [smart_contract] https://github.com/sky-ecosystem/diamond-pau/blob/dev/src/facets/aave/AaveFacet.sol — AAVE_FACET
@@ -217,6 +218,7 @@
 - [smart_contract] https://github.com/sky-ecosystem/pas/blob/947e71cd5dbaaf9c5b3840dd1b23e8e99d9a564d/src/Configurator.sol — PAS_CONFIGURATOR
 - [smart_contract] https://github.com/sky-ecosystem/pas/blob/947e71cd5dbaaf9c5b3840dd1b23e8e99d9a564d/src/PASMom.sol — PAS_MOM
 - [smart_contract] https://github.com/sky-ecosystem/pas/blob/947e71cd5dbaaf9c5b3840dd1b23e8e99d9a564d/src/timelock/Timelock.sol — PAS_TIMELOCK
+- [smart_contract] https://github.com/sky-ecosystem/pau-administered-agent/blob/5e6b52f45266913a9bc0611d417aef2c7752ab25/src/AdministeredAgentFactory.sol — L2_ADMINISTERED_AGENT_FACTORY
 - [smart_contract] https://github.com/sky-ecosystem/pau-administered-agent/blob/master/src/AdministeredAgentFactory.sol — Administered Agent Factory
 - [smart_contract] https://github.com/sky-ecosystem/pau-assemblers/blob/dev/src/DefaultPAUAssembler.sol — Default PAU Assembler
 - [smart_contract] https://github.com/sky-ecosystem/protego/blob/master/src/EmergencyDropSpell.sol — Emergency Drop Spell
@@ -260,6 +262,7 @@
 - [smart_contract] https://github.com/sky-ecosystem/usds/blob/dev/src/DaiUsds.sol — DAI to USDS Converter
 - [smart_contract] https://github.com/sky-ecosystem/usds/blob/dev/src/Usds.sol — USDS ERC20
 - [smart_contract] https://github.com/sky-ecosystem/usds/blob/dev/src/UsdsJoin.sol — USDSJoin
+- [smart_contract] https://github.com/sky-ecosystem/value-registry/blob/main/src/ValueRegistry.sol — STUSDS_VALUE_REGISTRY
 - [smart_contract] https://github.com/sky-ecosystem/vote-delegate/blob/v3/src/VoteDelegate.sol — Vote Delegate
 - [smart_contract] https://github.com/sky-ecosystem/vote-delegate/blob/v3/src/VoteDelegateFactory.sol — Vote Delegate Factory
 - [websites_and_applications] https://app.sky.money — Sky DeFi Web App
