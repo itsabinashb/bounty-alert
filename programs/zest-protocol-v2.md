@@ -9,7 +9,7 @@
 - PoC required for: smart_contract - high, smart_contract - critical
 - End date: (none)
 
-## Assets in scope (25)
+## Assets in scope (32)
 
 - [smart_contract] https://explorer.hiro.so/txid/0x110c04dab690e12be239ebd41df6b8a4e71a55782c2c592cbb3350c31e1bdb19?chain=mainnet — dao-executor
 - [smart_contract] https://explorer.hiro.so/txid/0x8b54f4d0d5b4fcbf8f881f6a33744b4c51a73851143b51aba26f6509ffd21fed?chain=mainnet — dao-treasury
@@ -34,6 +34,13 @@
 - [smart_contract] https://explorer.hiro.so/txid/SP1A27KFY4XERQCCRCARCYD1CC5N7M6688BSYADJ7.zv-state-stbtc-0?chain=mainnet — zv-state-stbtc-0
 - [smart_contract] https://explorer.hiro.so/txid/SP1A27KFY4XERQCCRCARCYD1CC5N7M6688BSYADJ7.zv-traits?chain=mainnet — zv-traits
 - [smart_contract] https://explorer.hiro.so/txid/SP1A27KFY4XERQCCRCARCYD1CC5N7M6688BSYADJ7.zvstBTC?chain=mainnet — zvstBTC
+- [smart_contract] https://explorer.hiro.so/txid/SP2NK9P261ZN3ZG2M1DS68PCJCRDFZVFMPYA6ZEST.clmm-lp-token-v1?chain=mainnet — cmm-lp-token-v1
+- [smart_contract] https://explorer.hiro.so/txid/SP2NK9P261ZN3ZG2M1DS68PCJCRDFZVFMPYA6ZEST.clmm-pool-v1?chain=mainnet — clmm-pool-v1
+- [smart_contract] https://explorer.hiro.so/txid/SP2NK9P261ZN3ZG2M1DS68PCJCRDFZVFMPYA6ZEST.clmm-router-v1?chain=mainnet — clmm-router-v1
+- [smart_contract] https://explorer.hiro.so/txid/SP2NK9P261ZN3ZG2M1DS68PCJCRDFZVFMPYA6ZEST.executor-dao?chain=mainnet — executor-dao
+- [smart_contract] https://explorer.hiro.so/txid/SP2NK9P261ZN3ZG2M1DS68PCJCRDFZVFMPYA6ZEST.extension-trait?chain=mainnet — extension-trait
+- [smart_contract] https://explorer.hiro.so/txid/SP2NK9P261ZN3ZG2M1DS68PCJCRDFZVFMPYA6ZEST.operators?chain=mainnet — operators
+- [smart_contract] https://explorer.hiro.so/txid/SP2NK9P261ZN3ZG2M1DS68PCJCRDFZVFMPYA6ZEST.proposal-trait?chain=mainnet — proposal-trait
 - [smart_contract] https://explorer.hiro.so/txid/SP3YCQZYWQR0CA6TT35301B28DV9D926VBZBBJWR7.dao-traits?chain=mainnet — dao-traits
 - [smart_contract] https://immunefi.com/ — Primacy of Impact (primacy of impact)
 

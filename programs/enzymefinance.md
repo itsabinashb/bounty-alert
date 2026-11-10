@@ -355,7 +355,7 @@ Out of Scope reports:
 - GatedRedemptionQueueSharesWrapperLib used with sharesActionTimelock
 - first depositor share inflation attack
 - missing wrapped-native fallback in redeemFromQueue dispersal leads to griefing of native-asset batch redemptions
-- malicious vault owner
+- malicious vault owner, and asset manager
 - external position can be removed with negative value (debt)
 - taking ETH/tokens accidentally sent directly to the contract outside intended protocol flows, without demonstrating how such funds can be introduced through valid protocol interactions. Common example: reports claiming an attacker can drain tokens from an adapter due to a missing onlyIntegrationManager check are invalid if the funds can only exist there via accidental direct transfers, or other non-protocol flows.
 - front-running contract initialization during deployment. Contracts are deployed via factory contracts, which invoke the init function in the same transaction as the deployment, preventing attackers from front-running the initialization step.

@@ -112,9 +112,9 @@
 - [smart_contract] High: maxReward=$50,000, minReward=$10,000, rewardModel=range
 - [smart_contract] Medium: fixedReward=$5,000, rewardModel=fixed
 - [smart_contract] Low: fixedReward=$1,000, rewardModel=fixed
-- [websites_and_applications] Critical: maxReward=$50,000, minReward=$5,000, otherImpactMaxReward=$0, rewardModel=range
-- [websites_and_applications] High: fixedReward=$2,500, rewardModel=fixed
-- [websites_and_applications] Medium: fixedReward=$1,000, primacy=primacy_of_rules, rewardModel=fixed
+- [websites_and_applications] Critical: maxReward=$25,000, minReward=$2,500, otherImpactMaxReward=$0, rewardModel=range
+- [websites_and_applications] High: fixedReward=$1,250, rewardModel=fixed
+- [websites_and_applications] Medium: fixedReward=$500, primacy=primacy_of_rules, rewardModel=fixed
 
 ## Reward notes
 
@@ -127,7 +127,7 @@ For critical web/apps bugs, reports will be rewarded with $25,000, only if the i
 - A loss of funds involving an attack that does not require any user action
 - Private key or private key generation leakage leading to unauthorized access to user funds 
 
-All other impacts that would be classified as Critical would be rewarded a flat amount of $5,000. The rest of the severity levels are paid out according to the Impact in Scope table.
+All other impacts that would be classified as Critical would be rewarded a flat amount of $2,500. The rest of the severity levels are paid out according to the Impact in Scope table.
 
 
 __Reward Payment Terms__
