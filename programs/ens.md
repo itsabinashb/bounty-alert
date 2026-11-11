@@ -57,7 +57,6 @@ ENS’s codebase can be found at https://github.com/orgs/ensdomains/repositories
 - [smart_contract] Low: Contract fails to deliver promised returns, but doesn't lose value
 - [smart_contract] Low: Griefing where damage is reversible by any party at gas cost
 - [smart_contract] Low: Temporary disruption of contract view-layer functions that self-heals through a permissionless call
-- [websites_and_applications] Critical: Changing sensitive details of transactions (including modifying browser local storage) without already-connected wallet interaction and with up to one click of user interaction, such as: Registration Timer, Cached Transaction History
 - [websites_and_applications] Critical: Direct theft of user NFTs
 - [websites_and_applications] Critical: Direct theft of user funds
 - [websites_and_applications] Critical: Execute arbitrary system commands
@@ -66,7 +65,7 @@ ENS’s codebase can be found at https://github.com/orgs/ensdomains/repositories
 - [websites_and_applications] Critical: Subdomain takeover with already-connected wallet interaction
 - [websites_and_applications] Critical: Taking state-modifying authenticated actions (with or without blockchain state interaction) on behalf of other users without any interaction by that user, such as:   Changing registration information, Voting, Changing ENS records
 - [websites_and_applications] High: Changing NFT metadata
-- [websites_and_applications] High: Changing details of other users (including modifying browser local storage) without already-connected wallet interaction and with significant user interaction, such as: Iframing leading to modifying the backend/browser state (demonstrate impact with PoC)
+- [websites_and_applications] High: Changing sensitive details of transactions (including modifying browser local storage) without already-connected wallet interaction and with up to one click of user interaction, such as: Registration Timer, Cached Transaction History
 - [websites_and_applications] High: Improperly disclosing confidential user information, such as:  Email address, Phone number, Physical address, etc.
 - [websites_and_applications] High: Injecting/modifying the static content on the target application without JavaScript (persistent), such as:  HTML injection without JavaScript, Replacing existing text with arbitrary text, Arbitrary file uploads, etc
 - [websites_and_applications] High: Subdomain takeover without already-connected wallet interaction
@@ -75,6 +74,8 @@ ENS’s codebase can be found at https://github.com/orgs/ensdomains/repositories
 - [websites_and_applications] Medium: Redirecting users to malicious websites (open redirect)
 - [websites_and_applications] Medium: Taking down the NFT URI
 - [websites_and_applications] Medium: Taking down the application/website
+- [websites_and_applications] Low: Changing details of other users (including modifying browser local storage) without already-connected wallet interaction and with significant user interaction, such as:
+- Iframing leading to modifying the backend/browser state (must demonstrate impact with PoC)
 - [websites_and_applications] Low: Taking over broken or expired outgoing links, such as:  Social media handles, etc.
 - [websites_and_applications] Low: Temporarily disabling user to access target site, such as:  Locking up the victim from login, Cookie bombing, etc.
 
@@ -167,6 +168,8 @@ Therefore, Immunefi has developed a set of feasibility limitation standards whic
 Rewards are paid in USDC on Ethereum and are determined based on severity under the Immunefi Vulnerability Severity Classification System (V2.3).
 
 Rewards are broadly based on the principles set forth within the [Immunefi Vulnerability Severity Classification System V2.3. ](https://immunefi.com/immunefi-vulnerability-severity-classification-system-v2-3/)
+
+If the exploit requires elevated privileges or uncommon user interaction, the level of the bug may be downgraded to reflect that or rejected.
 
 Final reward amounts are determined by ENS in its sole discretion after assessing factors such as:
 
