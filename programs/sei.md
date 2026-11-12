@@ -29,20 +29,20 @@ All code of Sei Foundation can be found at https://github.com/sei-protocol. Docu
 - [blockchain_dlt] High: Unintended permanent chain split requiring hard fork to resolve (network partition with no automatic recovery)
 - [blockchain_dlt] Medium: Block production delay exceeding 2.5 seconds on realistic validator hardware, caused by crafted transactions or messages (excluding malicious proposers)
 - [blockchain_dlt] Medium: Bug in layer 0/1/2 network code that causes deterministic unintended smart contract execution, with no funds directly at risk
-- [blockchain_dlt] Medium: Crash of RPC nodes running default configuration via direct unauthenticated network access to RPC/gRPC endpoints
-- [blockchain_dlt] Medium: Crash or halt of ≥10% but <1/3 of validators via crafted (non-brute-force) messages, where the network retains liveness
+- [blockchain_dlt] Medium: Crash of RPC nodes running default configuration via direct unauthenticated network access to the EVM JSON-RPC endpoints (HTTP and WebSocket)
+- [blockchain_dlt] Medium: Crash or halt of ≥10% but <1/3 of validators (assuming no direct network access to validator nodes) via crafted (non-brute-force) messages, where the network retains liveness
 - [blockchain_dlt] Medium: Direct loss of funds of less than USD $5,000 (including but not limited to unauthorized transfers, token minting, or token burning)
 - [blockchain_dlt] Medium: Malicious proposer block freeze: delay of ≥10 minutes caused by a single proposer beyond simply skipping their own proposal slot(s)
 - [blockchain_dlt] Medium: Permanent freezing of funds of less than USD $5,000 with no on-chain remediation path, excluding general network unavailability (fix requires hard fork)
 - [blockchain_dlt] Low: Causing network processing nodes to include or order mempool transactions outside of protocol-defined selection and priority rules
-- [blockchain_dlt] Low: Crash or halt of <10% of validators via crafted (non-brute-force) messages, where the network retains liveness
+- [blockchain_dlt] Low: Crash or halt of <10% of validators (assuming no direct network access to validator nodes) via crafted (non-brute-force) messages, where the network retains liveness
 - [blockchain_dlt] Low: Manipulation of transaction fee calculation resulting in fees outside protocol-defined bounds
 
 ## Impact notes
 
 __Giga-Related Functionality__
 
-With the exception of the **Giga executor**, all functionality related to **Giga** is currently **out of scope** for this bug bounty program.
+With the exception of the **Giga executor** and **FlatKV**, all functionality related to **Giga** is currently **out of scope** for this bug bounty program.
 
 **The Giga executor is in scope.** The Giga executor is **enabled by default**. The following are in scope:
 
@@ -55,16 +55,16 @@ The following are **out of scope** even though they relate to the Giga executor,
 - **Transaction result differences (including `LastResultsHash` divergence) between the Giga and V2 executors**: the two execution implementations are not guaranteed to produce identical transaction results or an identical `LastResultsHash`. This is a known difference.
 - **Block delay impacts that rely on the current fallback from Giga to V2 execution**: the current fallback from Giga to V2 execution can increase EVM transaction execution time, and block delay impacts that depend on this fallback are not in scope.
 
-**All other Giga functionality is out of scope.** Every Giga feature other than the executor remains **disabled by default** in all supported environments. Specifically, the following are excluded from scope:
+**All other Giga functionality is out of scope.** Every Giga feature other than the executor and FlatKV remains **disabled by default** in all supported environments. Specifically, the following are excluded from scope:
 
 - The **Autobahn** multi-proposer consensus protocol
-- **Giga storage**, including **FlatKV** and related storage components (see the dedicated FlatKV exclusion below)
+- **Giga storage**, other than **FlatKV**, which is in scope (see the Giga-only FlatKV exclusion below)
 - Any code paths that require setting a `GIGA_*` configuration flag to `true`, other than enabling the Giga executor
 - Any configuration options under `giga`-prefixed sections other than `[giga_executor]`
 - Any code contained within `giga` packages other than `giga/executor`
 
 As a result:
-- Vulnerabilities that are only exploitable when Giga functionality other than the executor is enabled
+- Vulnerabilities that are only exploitable when Giga functionality other than the executor and FlatKV is enabled
 - Vulnerabilities that exist exclusively within `giga` packages other than `giga/executor`
 - Vulnerabilities reachable solely through execution paths gated by non-executor Giga configuration
 
@@ -72,20 +72,16 @@ are **not eligible for rewards** under this bug bounty program.
 
 ---
 
-__Excluded FlatKV Functionality__
+__Excluded Giga-Only FlatKV Functionality__
 
-**FlatKV** is currently **out of scope** for this bug bounty program while it undergoes internal security review.
-
-FlatKV is part of Giga / Eidos storage. Unlike cleanly feature-flagged Giga components, FlatKV-related code is not fully isolated into separate packages and can share state and code paths with other storage components. For that reason, FlatKV is **explicitly excluded** from scope regardless of package location or whether a `GIGA_*` configuration flag is set.
+**FlatKV is in scope** as the EVM state store of a default seid node. Some FlatKV code, however, exists only to serve Giga functionality that is out of scope and is not live on mainnet. It is not isolated into `giga` packages and can share code paths with the in-scope FlatKV store.
 
 Specifically, the following are excluded from scope and are **not eligible for rewards**:
 
-- Any functionality related to **FlatKV**, including its storage layout, WAL / StateWAL, LtHash-backed state fingerprinting, snapshot / view-manager integration, pruning paths specific to FlatKV, and related storage backends
-- Vulnerabilities that are only exploitable when FlatKV (or related Giga storage) is enabled or in use
-- Vulnerabilities that exist exclusively within FlatKV-related code paths, including code that is not under a `giga`-prefixed package
-- Vulnerabilities that require FlatKV-specific state, migration, or backward-compatibility behavior to exploit
-
-This exclusion is **temporary** pending completion of internal review. Until the program explicitly brings FlatKV back into scope, reports targeting FlatKV are **not eligible for rewards**.
+- **BUD (Block Update Digest) hashes, BUD proofs and BUD state proofs**, including the `giga/apphash` packages and the hash the StateWAL reports to the Giga app hash builder. That hash is currently a placeholder, not a BUD hash.
+- The **Giga storage manager** (`sei-db/bootstrap`) and the FlatKV, StateWAL and app hash wiring it sets up for Autobahn and the EVM-only application
+- The lack of **state proofs for FlatKV-backed stores**: queries with `prove=true` against a FlatKV-backed store (such as `evm`) return an error until BUD proofs are implemented. This is a known limitation.
+- Vulnerabilities that are only exploitable with Autobahn or Giga storage enabled, even when the affected code is in a FlatKV package.
 
 ---
 
@@ -109,6 +105,35 @@ StateSync Peers are considered trusted infrastructure within the Sei network's t
 - Vulnerabilities that exist exclusively within P2P-mode state sync code paths
 
 are **not eligible for rewards** under this bug bounty program.
+
+---
+
+__Excluded Non-EVM RPC Endpoints__
+
+Of the RPC/API endpoints a node exposes, only the **EVM JSON-RPC** endpoints (HTTP and WebSocket) are in scope for direct-access attacks.
+
+Specifically, the following are excluded from scope and are **not eligible for rewards**:
+
+- Crashes, halts, or resource exhaustion (CPU, memory, file descriptors, goroutines, disk) of a node caused by sending requests directly to the **CometBFT/Tendermint RPC** endpoint (HTTP and WebSocket, port `26657` by default)
+- The same impacts caused by sending requests directly to the Cosmos **REST/LCD API** (`1317`) endpoint
+- The same impacts caused by sending requests directly to the Cosmos **gRPC** (`9090`) or **gRPC-Web** (`9091`) endpoints, on any node that still serves them. These servers are being removed from `seid` ([sei-chain#4570](https://github.com/sei-protocol/sei-chain/pull/4570))
+- The same impacts caused through any other node RPC/API endpoint other than EVM JSON-RPC
+
+This exclusion covers only availability impacts reached by connecting to these endpoints. It does not exclude:
+
+- Crashes caused by malicious blocks, transactions, or messages propagated through the network, which remain in scope under the impacts that assume no direct network access
+- CometBFT/Tendermint consensus, mempool, and P2P code
+- Loss or freezing of funds, or any other in-scope impact, regardless of which endpoint the transaction or request was submitted through
+
+Reports whose impact is a node crash or resource exhaustion via direct requests to these endpoints are **not eligible for rewards**.
+
+---
+
+__Excluded Governance-Dependent Issues__
+
+Issues which require a **governance proposal to pass** are **out of scope** for this bug bounty program and are **not eligible for rewards**. This includes vulnerabilities that are only exploitable after a parameter change, software upgrade, or any other proposal has been approved through on-chain governance.
+
+Vulnerabilities that allow a proposal to pass, or to take effect, without the required votes remain in scope.
 
 ## Rewards
 
@@ -163,11 +188,13 @@ For Medium, High and Critical reports, we ask that whitehats provide a PoC using
 2. Connect to node0 with `docker exec -it sei-node-0 /bin/bash`
 3. Carry out attack
 
+PoCs for the direct network access RPC crash impact must target the EVM JSON-RPC endpoints. PoCs that crash a node via direct requests to the CometBFT/Tendermint RPC, gRPC, gRPC-Web, or REST/LCD endpoints are **out of scope**.
+
 Note that any PoC submitted against testnet **must not** enable any Giga functionality other than the Giga executor. In particular, a PoC **must not**:
 - Set any `GIGA_*` flag to `true`, other than the flags that enable the Giga executor (`[giga_executor]`)
 - Explicitly enable any configuration under sections prefixed with `giga`, other than the `[giga_executor]` section
 
-The Giga executor is enabled by default and is in scope. PoCs that rely on out-of-scope Giga functionality — for example, Autobahn consensus, Giga storage (including **FlatKV**), or the EVMone execution backend — will be considered **out of scope** and will not be eligible for a bounty. **FlatKV is explicitly out of scope** while it undergoes internal security review; PoCs that depend on FlatKV-related storage paths are not eligible. See [scope](https://immunefi.com/bug-bounty/sei/scope/#top) for further information.
+The Giga executor is enabled by default and is in scope. PoCs that rely on out-of-scope Giga functionality — for example, Autobahn consensus, Giga storage other than FlatKV, Giga-only FlatKV functionality such as BUD hashes and proofs, or the EVMone execution backend — will be considered **out of scope** and will not be eligible for a bounty. See [scope](https://immunefi.com/bug-bounty/sei/scope/#top) for further information.
 
 
 __Reward Payment Terms__
