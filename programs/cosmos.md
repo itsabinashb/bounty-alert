@@ -9,7 +9,7 @@
 - PoC required for: blockchain_dlt - high, blockchain_dlt - critical, blockchain_dlt - medium, blockchain_dlt - low
 - End date: (none)
 
-## Assets in scope (23)
+## Assets in scope (24)
 
 - [blockchain_dlt] https://crates.io/crates/ibc-chain-registry — Blockchain/DLT - Hermes Relayer (ibc-chain-registry)
 - [blockchain_dlt] https://crates.io/crates/ibc-relayer — Blockchain/DLT -  Hermes Relayer (ibc-relayer)
@@ -28,12 +28,13 @@
 - [blockchain_dlt] https://github.com/cosmos/evm — Cosmos EVM - An EVM compatible framework for blockchain development with the Cosmos SDK.",         "isPrimacyOfImpact
 - [blockchain_dlt] https://github.com/cosmos/gaia — Gaia - Cosmos Hub
 - [blockchain_dlt] https://github.com/cosmos/iavl — IAVL - Merkleized IAVL+ Tree implementation in Go.
-- [blockchain_dlt] https://github.com/cosmos/ibc-go — IBC Go enables cross-blockchain communication. The protocol achieves interoperability by specifying data structures, abstractions, and semantics implementable by any distributed ledger that satisfies a small set of requirements.
 - [blockchain_dlt] https://github.com/cosmos/ics23 — ICS23 - A generic merkle proof format for IBC
 - [blockchain_dlt] https://github.com/cosmos/ledger-cosmos — Blockchain/DLT - Ledger Cosmos app
 - [blockchain_dlt] https://github.com/cosmos/ledger-cosmos — Ledger Cosmos - The Cosmos app for Ledger Nano S+, X, Stax, Flex and Apex P.
-- [blockchain_dlt] https://github.com/cosmos/solidity-ibc-eureka — Solidity IBC Eureka - IBC v2 is a simplified version of the IBC protocol that is encoding agnostic. This enables a trust-minimized IBC connection between Ethereum and a Cosmos SDK chain.
 - [blockchain_dlt] https://github.com/informalsystems/hermes — Hermes - IBC relayer in Rust
+- [blockchain_dlt] https://github.com/lfdt-ibc/ibc — This repository is the canonical home of the inter-blockchain communication protocol (IBC): the specifications that define it, and the implementations that run it
+- [blockchain_dlt] https://github.com/lfdt-ibc/ibc-contracts — IBC v2 is a simplified version of the IBC protocol that is encoding agnostic. This enables a trust-minimized IBC connection between Ethereum and a Cosmos SDK chain.
+- [blockchain_dlt] https://github.com/lfdt-ibc/ibc-go — IBC Go enables cross-blockchain communication. The protocol achieves interoperability by specifying data structures, abstractions, and semantics implementable by any distributed ledger that satisfies a small set of requirements.
 
 ## Asset notes
 

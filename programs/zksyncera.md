@@ -9,28 +9,41 @@
 - PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium, blockchain_dlt - critical, blockchain_dlt - high
 - End date: (none)
 
-## Assets in scope (132)
+## Assets in scope (236)
 
-- [blockchain_dlt] https://github.com/matter-labs/zksync-crypto/tree/main/crates/snark-wrapper — SNARK wrapper
-- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/main/crates/zkevm_circuits/src — Supplementary code
-- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/main/crates/zkevm_circuits/src/code_unpacker_sha256 — Code unpacker
-- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/main/crates/zkevm_circuits/src/demux_log_queue — Log Demuxer
-- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/main/crates/zkevm_circuits/src/ecrecover — EC Recover
-- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/main/crates/zkevm_circuits/src/eip_4844 — Eip 4844
-- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/main/crates/zkevm_circuits/src/fsm_input_output — Finite State Machine Input Output
-- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/main/crates/zkevm_circuits/src/keccak256_round_function — Keccak
-- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/main/crates/zkevm_circuits/src/linear_hasher — Linear Hasher
-- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/main/crates/zkevm_circuits/src/log_sorter — Events sorter (L1Messages)
-- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/main/crates/zkevm_circuits/src/main_vm — Main vm
-- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/main/crates/zkevm_circuits/src/ram_permutation — RAM Permutation
-- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/main/crates/zkevm_circuits/src/recursion — Recursion
-- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/main/crates/zkevm_circuits/src/scheduler — Scheduler
-- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/main/crates/zkevm_circuits/src/secp256r1_verify — Secp256r1 verify
-- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/main/crates/zkevm_circuits/src/sha256_round_function — SHA256
-- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/main/crates/zkevm_circuits/src/sort_decommittment_requests — Code decommitment sorter
-- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/main/crates/zkevm_circuits/src/storage_application — Storage Application
-- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/main/crates/zkevm_circuits/src/storage_validity_by_grand_product — Storage sorter
-- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/main/crates/zkevm_circuits/src/transient_storage_validity_by_grand_product — Transient Storage
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/crypto/crates/snark-wrapper — SNARK wrapper
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/eravm-airbender-verifier/crates/airbender_verifier — EraVM Airbender verifier
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/eravm-airbender-verifier/crates/basic_types — Verifier basic types
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/eravm-airbender-verifier/crates/constants — Verifier constants
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/eravm-airbender-verifier/crates/contracts — Verifier contracts
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/eravm-airbender-verifier/crates/crypto_primitives — Verifier crypto primitives
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/eravm-airbender-verifier/crates/merkle_tree — Verifier Merkle tree
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/eravm-airbender-verifier/crates/mini_merkle_tree — Verifier mini Merkle tree
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/eravm-airbender-verifier/crates/multivm — Verifier multivm
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/eravm-airbender-verifier/crates/types — Verifier types
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/eravm-airbender-verifier/crates/vm_interface — Verifier VM interface
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/eravm-airbender-verifier/guest — EraVM Airbender verifier guest
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/protocol/crates/zkevm_circuits/src — Supplementary code
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/protocol/crates/zkevm_circuits/src/code_unpacker_sha256 — Code unpacker
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/protocol/crates/zkevm_circuits/src/demux_log_queue — Log Demuxer
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/protocol/crates/zkevm_circuits/src/ecrecover — EC Recover
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/protocol/crates/zkevm_circuits/src/eip_4844 — Eip 4844
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/protocol/crates/zkevm_circuits/src/fsm_input_output — Finite State Machine Input Output
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/protocol/crates/zkevm_circuits/src/keccak256_round_function — Keccak
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/protocol/crates/zkevm_circuits/src/linear_hasher — Linear Hasher
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/protocol/crates/zkevm_circuits/src/log_sorter — Events sorter (L1Messages)
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/protocol/crates/zkevm_circuits/src/main_vm — Main vm
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/protocol/crates/zkevm_circuits/src/ram_permutation — RAM Permutation
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/protocol/crates/zkevm_circuits/src/recursion — Recursion
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/protocol/crates/zkevm_circuits/src/scheduler — Scheduler
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/protocol/crates/zkevm_circuits/src/secp256r1_verify — Secp256r1 verify
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/protocol/crates/zkevm_circuits/src/sha256_round_function — SHA256
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/protocol/crates/zkevm_circuits/src/sort_decommittment_requests — Code decommitment sorter
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/protocol/crates/zkevm_circuits/src/storage_application — Storage Application
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/protocol/crates/zkevm_circuits/src/storage_validity_by_grand_product — Storage sorter
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/protocol/crates/zkevm_circuits/src/transient_storage_validity_by_grand_product — Transient Storage
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/vm2/crates/vm2 — EraVM (vm2)
+- [blockchain_dlt] https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/vm2/crates/vm2-interface — EraVM interface (vm2)
 - [blockchain_dlt] https://immunefi.com — Primacy of Impact (primacy of impact)
 - [smart_contract] https://etherscan.io/address/0x0a67f0fd2f7523057039f14969fe23a5f620f19a#code — ProtocolUpgradeHandler.sol
 - [smart_contract] https://etherscan.io/address/0x303a465B659cBB0ab36eE643eA362c509EEb5213#code — Bridgehub proxy TransparentUpgradeableProxy.sol
@@ -50,6 +63,89 @@
 - [smart_contract] https://explorer.zksync.io/address/0xC9E442574958f96C026DeF9a50C3236cab17428a#contract — ZkGovOps TimelockController.sol
 - [smart_contract] https://explorer.zksync.io/address/0xb83FF6501214ddF40C91C9565d095400f3F45746#contract — ZkTokenGovernor.sol
 - [smart_contract] https://explorer.zksync.io/address/0xe5d21A9179CA2E1F0F327d598D464CcF60d89c3d#contract — ZkToken TimelockController.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/da-contracts/contracts/EIP7702Checker.sol — EIP7702Checker.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/da-contracts/contracts/RollupL1DAValidator.sol — RollupL1DAValidator.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/da-contracts/contracts/da-layers/avail/AvailL1DAValidator.sol — AvailL1DAValidator.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/bridge/BridgedStandardERC20.sol — BridgedStandardERC20.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/bridge/L1ERC20Bridge.sol — L1ERC20Bridge.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/bridge/L1Nullifier.sol — L1Nullifier.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/bridge/L2SharedBridgeLegacy.sol — L2SharedBridgeLegacy.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/bridge/L2WrappedBaseToken.sol — L2WrappedBaseToken
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/bridge/L2WrappedBaseTokenStore.sol — L2WrappedBaseTokenStore.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/bridge/UpgradeableBeaconDeployer.sol — UpgradeableBeaconDeployer.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/bridge/asset-router/L1AssetRouter.sol — L1AssetRouter.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/bridge/asset-router/L2AssetRouter.sol — L2AssetRouter
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/bridge/asset-tracker/GWAssetTracker.sol — GWAssetTracker.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/bridge/asset-tracker/L1AssetTracker.sol — L1AssetTracker.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/bridge/asset-tracker/L2AssetTracker.sol — L2AssetTracker.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/bridge/ntv/L1NativeTokenVault.sol — L1NativeTokenVault.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/bridge/ntv/L2NativeTokenVault.sol — L2NativeTokenVault
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/core/bridgehub/L1Bridgehub.sol — L1Bridgehub.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/core/bridgehub/L2Bridgehub.sol — L2Bridgehub.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/core/chain-asset-handler/L1ChainAssetHandler.sol — L1ChainAssetHandler.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/core/chain-asset-handler/L2ChainAssetHandler.sol — L2ChainAssetHandler.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/core/chain-registration/ChainRegistrationSender.sol — ChainRegistrationSender.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/core/ctm-deployment/CTMDeploymentTracker.sol — CTMDeploymentTracker.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/core/message-root/L1MessageRoot.sol — L1MessageRoot.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/core/message-root/L2MessageRoot.sol — L2MessageRoot.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/interop/InteropCenter.sol — InteropCenter.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/interop/InteropHandler.sol — InteropHandler.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/interop/L2InteropRootStorage.sol — L2InteropRootStorage.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/interop/L2MessageVerification.sol — L2MessageVerification.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/l2-system/BaseTokenHolder.sol — BaseTokenHolder.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/l2-system/era/L2BaseTokenEra.sol — L2BaseToken (L2BaseTokenEra.sol)
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/l2-upgrades/L2ComplexUpgrader.sol — ComplexUpgrader (L2ComplexUpgrader.sol)
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/l2-upgrades/L2GenesisUpgrade.sol — L2GenesisUpgrade
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/l2-upgrades/SystemContractProxy.sol — SystemContractProxy.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/l2-upgrades/SystemContractProxyAdmin.sol — SystemContractProxyAdmin.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/state-transition/EraChainTypeManager.sol — EraChainTypeManager.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/state-transition/chain-deps/facets/Admin.sol — AdminFacet (Admin.sol)
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/state-transition/chain-deps/facets/Committer.sol — CommitterFacet (Committer.sol)
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/state-transition/chain-deps/facets/Executor.sol — ExecutorFacet (Executor.sol)
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/state-transition/chain-deps/facets/Getters.sol — GettersFacet (Getters.sol)
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/state-transition/chain-deps/facets/Mailbox.sol — MailboxFacet (Mailbox.sol)
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/state-transition/chain-deps/facets/Migrator.sol — MigratorFacet (Migrator.sol)
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/state-transition/data-availability/RollupDAManager.sol — RollupDAManager.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/state-transition/data-availability/ValidiumL1DAValidator.sol — ValidiumL1DAValidator.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/state-transition/validators/EraMultisigValidator.sol — EraMultisigValidator.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/state-transition/validators/MultisigCommitter.sol — MultisigCommitter.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/state-transition/validators/PermissionlessValidator.sol — PermissionlessValidator.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/state-transition/validators/ValidatorTimelock.sol — ValidatorTimelock.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/state-transition/verifiers/AirbenderVerifierPlonk.sol — AirbenderVerifierPlonk.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/state-transition/verifiers/EraMultiProofVerifier.sol — EraMultiProofVerifier.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/l1-contracts/contracts/state-transition/verifiers/EraVerifierFflonk.sol — EraVerifierFflonk.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/bootloader/bootloader.yul — Bootloader.yul
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/AccountCodeStorage.sol — AccountCodeStorage
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/BootloaderUtilities.sol — BootloaderUtilities
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/Compressor.sol — Compressor
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/ContractDeployer.sol — ContractDeployer
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/Create2Factory.sol — Create2Factory
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/DefaultAccount.sol — DefaultAccount.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/EmptyContract.sol — EmptyContract
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/EventWriter.yul — EventWriter
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/EvmEmulator.yul — EvmEmulator
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/EvmGasManager.yul — EvmGasManager
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/EvmHashesStorage.sol — EvmHashesStorage
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/EvmPredeploysManager.sol — EvmPredeploysManager
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/ImmutableSimulator.sol — ImmutableSimulator
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/KnownCodesStorage.sol — KnownCodesStorage
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/L1Messenger.sol — L1Messenger
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/MsgValueSimulator.sol — MsgValueSimulator
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/NonceHolder.sol — NonceHolder
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/PubdataChunkPublisher.sol — PubdataChunkPublisher
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/SloadContract.sol — SloadContract
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/SystemContext.sol — SystemContext
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/precompiles/CodeOracle.yul — CodeOracle
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/precompiles/EcAdd.yul — EcAdd
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/precompiles/EcMul.yul — EcMul
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/precompiles/EcPairing.yul — EcPairing
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/precompiles/Ecrecover.yul — Ecrecover
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/precompiles/Identity.yul — Identity
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/precompiles/Keccak256.yul — Keccak256
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/precompiles/Modexp.yul — Modexp
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/precompiles/P256Verify.yul — P256Verify
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/492671af657801b6a06215453ca71408b7d25b71/system-contracts/contracts/precompiles/SHA256.yul — SHA256
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/da-contracts/contracts/BlobsL1DAValidatorZKsyncOS.sol — BlobsL1DAValidatorZKsyncOS.sol
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/da-contracts/contracts/BlobsL1DAValidatorZKsyncOS.sol — BlobsL1DAValidatorZKsyncOS.sol
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/da-contracts/contracts/EIP7702Checker.sol — EIP7702Checker.sol
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/da-contracts/contracts/RollupL1DAValidator.sol — RollupL1DAValidator.sol
@@ -69,6 +165,7 @@
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/bridge/ntv/L1NativeTokenVault.sol — L1NativeTokenVault.sol
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/bridge/ntv/L2NativeTokenVault.sol — L2NativeTokenVault
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/bridge/ntv/L2NativeTokenVaultZKOS.sol — L2NativeTokenVaultZKOS.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/bridge/ntv/L2NativeTokenVaultZKOS.sol — L2NativeTokenVaultZKOS.sol
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/core/bridgehub/L1Bridgehub.sol — L1Bridgehub.sol
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/core/bridgehub/L2Bridgehub.sol — L2Bridgehub.sol
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/core/chain-asset-handler/L1ChainAssetHandler.sol — L1ChainAssetHandler.sol
@@ -84,13 +181,17 @@
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/l2-system/BaseTokenHolder.sol — BaseTokenHolder.sol
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/l2-system/era/L2BaseTokenEra.sol — L2BaseToken (L2BaseTokenEra.sol)
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/l2-system/zksync-os/L1MessengerZKOS.sol — L1MessengerZKOS.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/l2-system/zksync-os/L1MessengerZKOS.sol — L1MessengerZKOS.sol
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/l2-system/zksync-os/L2BaseTokenZKOS.sol — L2BaseTokenZKOS.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/l2-system/zksync-os/L2BaseTokenZKOS.sol — L2BaseTokenZKOS.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/l2-system/zksync-os/SystemContext.sol — ZKsync OS SystemContext
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/l2-system/zksync-os/SystemContext.sol — ZKsync OS SystemContext
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/l2-upgrades/L2ComplexUpgrader.sol — ComplexUpgrader (L2ComplexUpgrader.sol)
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/l2-upgrades/L2GenesisUpgrade.sol — L2GenesisUpgrade
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/l2-upgrades/SystemContractProxy.sol — SystemContractProxy.sol
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/l2-upgrades/SystemContractProxyAdmin.sol — SystemContractProxyAdmin.sol
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/state-transition/EraChainTypeManager.sol — EraChainTypeManager.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/state-transition/ZKsyncOSChainTypeManager.sol — ZKsyncOSChainTypeManager.sol
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/state-transition/ZKsyncOSChainTypeManager.sol — ZKsyncOSChainTypeManager.sol
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/state-transition/chain-deps/facets/Admin.sol — AdminFacet (Admin.sol)
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/state-transition/chain-deps/facets/Committer.sol — CommitterFacet (Committer.sol)
@@ -108,7 +209,10 @@
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/state-transition/verifiers/EraVerifierFflonk.sol — EraVerifierFflonk.sol
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/state-transition/verifiers/EraVerifierPlonk.sol — EraVerifierPlonk.sol
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/state-transition/verifiers/ZKsyncOSDualVerifier.sol — ZKsyncOSDualVerifier.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/state-transition/verifiers/ZKsyncOSDualVerifier.sol — ZKsyncOSDualVerifier.sol
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/state-transition/verifiers/ZKsyncOSVerifierFflonk.sol — ZKsyncOSVerifierFflonk.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/state-transition/verifiers/ZKsyncOSVerifierFflonk.sol — ZKsyncOSVerifierFflonk.sol
+- [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/state-transition/verifiers/ZKsyncOSVerifierPlonk.sol — ZKsyncOSVerifierPlonk.sol
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/l1-contracts/contracts/state-transition/verifiers/ZKsyncOSVerifierPlonk.sol — ZKsyncOSVerifierPlonk.sol
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/system-contracts/bootloader/bootloader.yul — Bootloader.yul
 - [smart_contract] https://github.com/matter-labs/era-contracts/blob/7b75e11e631936f8bd93ec7c03e7e4f4ac63f6b4/system-contracts/contracts/AccountCodeStorage.sol — AccountCodeStorage
@@ -159,13 +263,29 @@ __Dev Environment and Documentation:__
 
 ZKsync has included dev documentation and/or instructions to help in reviewing code and exploring for bugs:
 
-- [https://github.com/matter-labs/zksync-era](https://github.com/matter-labs/zksync-era)
-- [https://github.com/matter-labs/era-contracts](https://github.com/matter-labs/era-contracts)
-- [https://github.com/matter-labs/era-zkevm_circuits](https://github.com/matter-labs/era-zkevm_circuits)
-- [https://github.com/matter-labs/era-zkevm_opcode_defs](https://github.com/matter-labs/era-zkevm_opcode_defs)
-- [https://github.com/matter-labs/era-zkEVM-assembly](https://github.com/matter-labs/era-zkEVM-assembly)
-- [https://github.com/matter-labs/era-zkevm_test_harness](https://github.com/matter-labs/era-zkevm_test_harness)
-- [https://github.com/matter-labs/era-zk_evm](https://github.com/matter-labs/era-zk_evm)
+- [zksync-era](https://github.com/matter-labs/zksync-era)
+- era-contracts, at the pinned commit: [`l1-contracts`](https://github.com/matter-labs/era-contracts/tree/492671af657801b6a06215453ca71408b7d25b71/l1-contracts), [`system-contracts`](https://github.com/matter-labs/era-contracts/tree/492671af657801b6a06215453ca71408b7d25b71/system-contracts), [`da-contracts`](https://github.com/matter-labs/era-contracts/tree/492671af657801b6a06215453ca71408b7d25b71/da-contracts)
+- zksync-protocol, at the pinned commit: [`protocol`](https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/protocol) (circuits), [`eravm-airbender-verifier`](https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/eravm-airbender-verifier), [`vm2`](https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/vm2), [`crypto`](https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/crypto) (SNARK wrapper)
+
+__Pinned code:__
+
+GitHub assets are pinned to a commit. Reports on them are judged against the pinned code.
+
+__EraVM Airbender verifier and vm2:__
+
+From protocol version v34, Era batches are proven with both Boojum and Airbender. The EraVM Airbender verifier is the Airbender guest program: it re-executes the batch with vm2, the out-of-circuit EraVM, and checks the result against the batch commitment.
+
+The verifier and vm2 assets point into the zksync-protocol repository at commit [`2a2ecb3bfcccc46758826d3b0d11933b95e511be`](https://github.com/matter-labs/zksync-protocol/tree/2a2ecb3bfcccc46758826d3b0d11933b95e511be/eravm-airbender-verifier) on `main`.
+
+Reports on zksync-protocol assets must reproduce the issue in a local test against the pinned code.
+
+Reports that the EraVM Airbender verifier accepts an invalid batch are assessed as if Airbender were the only proof system required to finalize a batch. Reports that it rejects a valid batch are assessed under the High impact "Difference between implementation outside of the circuit and within the circuit".
+
+__Denial of service through proving limits:__
+
+In production, the EraVM Airbender verifier must prove each batch within Airbender's limit of 2^36 cycles and a peak guest memory of 4 GiB. This section covers only reports that a batch can't be proven because it exceeds one of these limits; other denial-of-service reports are assessed as usual.
+
+Such a report is in scope only if a single L1→L2 transaction that the L1 contracts accept from a user exceeds a limit, even alone in a batch. On EraVM chains, the contracts cap a user's L1→L2 transaction at 15M gas for its body (`USER_PRIORITY_TX_MAX_GAS_LIMIT`). Reports that need several transactions to exceed a limit are out of scope. In-scope reports are assessed under the High impact named above.
 
 __Impacts to other assets:__
 
@@ -210,7 +330,7 @@ __Payouts and Payout Requirements:__
 
 Rewards for critical smart contract bug reports will be further capped at 10% of direct funds at risk based on the PoC provided.. However, there is a minimum reward of __USD 100 000__.
 
-For the project's bug bounty program, high-severity smart contract vulnerability rewards are determined according to an internal set of criteria established by the team. These criteria take into account the exploitability, impact, and probability of the vulnerability occurring, with special consideration given to bug reports that require multiple conditions not currently in place. There is a minimum reward of __USD 20,000__ for high-severity level vulnerabilities, and the maximum reward is capped at 100% of the affected funds, up to the max high cap, whichever is lower.
+For the project's bug bounty program, high-severity smart contract vulnerability rewards are determined according to an internal set of criteria established by the team. These criteria take into account the exploitability, impact, and probability of the vulnerability occurring, with special consideration given to bug reports that require multiple conditions not currently in place. There is a minimum reward of __USD 10,000__ for high-severity level vulnerabilities, and the maximum reward is capped at 100% of the affected funds, up to the max high cap, whichever is lower.
 
 Payouts are handled by the ZKsync team directly and are denominated in USD. However, payouts are done in USDC (Ethereum mainnet). ZKsync commits to honoring payouts according to the terms set out in this program at the time of report submission, and to treat this program as the agreement and source of truth concerning bug reports and responsible disclosures. 
 
