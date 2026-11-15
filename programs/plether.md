@@ -7,7 +7,7 @@
 - Invite only: no
 - Program type: Smart Contract
 - PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium, smart_contract - low
-- End date: 2026-11-16T10:00:00.000Z
+- End date: 2026-11-16T08:30:00.000Z
 
 ## Assets in scope (4)
 
