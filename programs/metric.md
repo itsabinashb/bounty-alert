@@ -24,9 +24,9 @@
 
 - [smart_contract] Critical: An oracle accepts a price update without a valid Pyth or Chainlink signature, or a compressed-feed push from an unauthorized pusher
 - [smart_contract] Critical: Direct theft of any user funds, whether at-rest or in-motion, other than unclaimed yield
+- [smart_contract] Critical: Permanent freezing of funds
 - [smart_contract] Critical: Protocol insolvency
 - [smart_contract] High: Bypassing the admin fee caps or the price-provider timelock.
-- [smart_contract] High: Permanent freezing of funds
 - [smart_contract] High: Permanent freezing of unclaimed royalties
 - [smart_contract] High: Permanent freezing of unclaimed yield
 - [smart_contract] High: Swap on a Metric anchored price provider pool executes outside the band or beyond its configured staleness limit
@@ -106,6 +106,13 @@ The following are out of scope and not eligible for rewards:
 - Attacks that require a user to interact with a pool, extension or price provider created by the attacker are downgraded by one severity level.
 - Immunefi’s standard feasibility limitations apply, including Attack Investment Amount: if the capital required exceeds the potential gain, severity may be downgraded.
 - Reports must include a runnable proof of concept on a local fork. Testing against mainnet or testnet deployments is prohibited.
+
+8. OracleValueStopLossExtension: intended behaviour (documented in the contract header). Reports that rely only on the following are out of scope:
+- Watermarks are not seeded when liquidity is added. They initialise on the first swap that touches a live bin, so that first swap is not drawdown-protected.
+- Watermarks are not cleared when liquidity is removed. An emptied bin keeps its old watermark until a later swap crosses it, so liquidity re-added before that crossing can cause swaps to be blocked.
+- After an empty bin is crossed and its watermark resets to zero, the next swap on that bin is again unprotected.
+- Only bins crossed by a swap are checked, a breach blocks only the affected direction, and a drawdown setting of 0 disables the check.
+- Watermarks decay lazily per bin. Drawdown, decay, timelock and watermark changes by the pool admin are timelocked by design.
 
 ## Out of scope and rules
 

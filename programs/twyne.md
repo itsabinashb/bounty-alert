@@ -9,12 +9,11 @@
 - PoC required for: smart_contract - critical, smart_contract - high
 - End date: (none)
 
-## Assets in scope (17)
+## Assets in scope (16)
 
 - [smart_contract] https://etherscan.io/address/0x0aF56aFBDDCb140323445BD7211Ba90E54e5FD1C — aPT22Oct2026 Wrapper
 - [smart_contract] https://etherscan.io/address/0x0acd3A3c8Ab6a5F7b5A594C88DFa28999dA858aC — Vault Manager
 - [smart_contract] https://etherscan.io/address/0x229fE10bC00bBE99Ac99703647D4f74F31605e91 — Aave V3 Deleverage Operator
-- [smart_contract] https://etherscan.io/address/0x451949bde57aBe2F5DBD4758Cd50C6DCfC093A4C — Aave V3 Leverage Operator
 - [smart_contract] https://etherscan.io/address/0x75029a47f28550C93Ad5A3BbD2d9b5315204B561 — aWSTETH Intermediate Credit Vault
 - [smart_contract] https://etherscan.io/address/0x7613D202Af490c3d1cE1873b0a7022a34E89815f — eWSTETH Intermediate Credit Vault
 - [smart_contract] https://etherscan.io/address/0x79CF33e623555E899d4EE122b9BfA0214fa5A4A1 — aPT22Oct2026 Intermediate Credit Vault
