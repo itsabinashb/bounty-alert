@@ -32,7 +32,6 @@
 - Modifying transaction arguments or parameters
 - Substituting contract addresses
 - Submitting malicious transactions
-- [websites_and_applications] Critical: Manipulation of payment or billing logic resulting in unauthorized access to paid services or financial loss to the project
 - [websites_and_applications] Critical: Retrieve sensitive data/files from a running server, such as:
 - /etc/shadow
 - database passwords
@@ -66,6 +65,7 @@
 - [websites_and_applications] Medium: Injecting/modifying the static content on the target application without JavaScript (reflected), such as:
 - Reflected HTML Injection
 - Loading external site data
+- [websites_and_applications] Medium: Manipulation of payment or billing logic resulting in unauthorized access to paid services or financial loss to the project
 - [websites_and_applications] Low: Changing details of other users (including modifying browser local storage) without already-connected wallet interaction and with significant user interaction, such as:
 - Iframing leading to modifying the backend/browser state (must demonstrate impact with PoC)
 - [websites_and_applications] Low: Taking over broken or expired outgoing links, such as:
@@ -80,7 +80,7 @@
 
 ## Rewards
 
-- [websites_and_applications] Critical: maxReward=$100,000, minReward=$30,000, rewardModel=range
+- [websites_and_applications] Critical: maxReward=$100,000, minReward=$30,000, otherImpactMaxReward=$0, rewardModel=range
 - [websites_and_applications] High: maxReward=$30,000, minReward=$10,000, rewardModel=range
 - [websites_and_applications] Medium: maxReward=$10,000, minReward=$2,000, rewardModel=range
 - [websites_and_applications] Low: maxReward=$2,000, minReward=$100, rewardModel=range

@@ -108,8 +108,10 @@ Payouts are handled by the __Livepeer__ team directly and are denominated in USD
 
 (none)
 
-## Known issues (4)
+## Known issues (6)
 
+- ETH payouts through Minter.trustedWithdrawETH fail for recipients that need more than the 2,300-gas stipend (https://github.com/livepeer/protocol/issues/668)
+- L2Migrator.claimStake can mark a delegator with no delegate as migrated without bonding their stake (https://github.com/livepeer/protocol/issues/667)
 - LivepeerGovernor allows proposals with zero opinionated votes to succeed, and proposals with 1 wei "against" / 0 "for" votes can succeed if quorum is met via "abstain" votes. (https://github.com/livepeer/protocol/issues/654)
 - Missing freshness check in L2LPTDataCache.finalizeCacheTotalSupply leads to underpaid (or overpaid) rewards in the next rounds. (https://github.com/livepeer/protocol/issues/664)
 - MixinReserve.claimableReserve() can produce per-claimant reserve caps above or below the fair R/N allocation when the live transcoder pool size and the current-round active set diverge mid-round (e.g. during resignation or activation). Overclaim is bounded by the ticket face value. No theft is possible. (https://github.com/livepeer/protocol/issues/656)
