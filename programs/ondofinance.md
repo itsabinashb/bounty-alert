@@ -3,7 +3,7 @@
 - Page: https://immunefi.com/bug-bounty/ondofinance/scope/
 - Max bounty: $1,000,000
 - KYC required: yes
-- Paused: yes
+- Paused: no
 - Invite only: no
 - Program type: Smart Contract
 - PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium, smart_contract - low
