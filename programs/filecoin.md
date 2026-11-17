@@ -86,7 +86,7 @@ Rewards are distributed according to the impact of the vulnerability based on th
 
 __Reward Calculation for Critical Level Reports__
 
-For critical Blockchain/DLT bugs, the reward amount is 10% of the funds directly affected, capped at the maximum critical reward $150,000 . However, a minimum reward of USD $100,000 is to be rewarded in order to incentivize security researchers against withholding on a bug report.
+For critical Blockchain/DLT bugs, the reward amount is 10% of the funds directly affected, capped at the maximum critical reward $50,000 . However, a minimum reward of USD $25,000 is to be rewarded in order to incentivize security researchers against withholding on a bug report.
 
 Findings with the Critical impact "Unintended permanent chain split requiring hard fork (network partition persisting after affected nodes restart on patched binaries, reconcilable only by hard fork or state rollback)" will be rewarded with a flat reward of $50,000 USD.
 
