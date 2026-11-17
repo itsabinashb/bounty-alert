@@ -175,8 +175,54 @@ __Smart Contracts and Blockchain/DLT__
 
 (none)
 
-## Known issues (3)
+## Known issues (4)
 
 - Any external tokens are expected to correctly follow their standards. Tokens are expected not to have non-standard functionalities such as fees on transfer, blacklists, etc. Rebasing tokens specifically are not supported (https://www.chainsecurity.com/reports/Polygon/ChainSecurity_Polygon_PoSPortal_Audit.pdf)
 - CS-POLYGON-SPOL-006 "Bridge Liquidity on L1" (https://github.com/0xPolygon/sPOL-contracts/blob/main/audits/1.0.0/ChainSecurity_Polygon_SPOL_Audit.pdf)
 - CS-POLYGON-SPOL-024 Migration Completion Can Be Front-Run (https://github.com/0xPolygon/sPOL-contracts/blob/main/audits/1.0.0/ChainSecurity_Polygon_SPOL_Audit.pdf)
+- Pending eth_simulateV1 can corrupt the sealing state's storage trie through a shared prefetche
+Source: apex-scan2. Bor (0xPolygon/bor), Apex workspace BOR1, scan 59077f7b-286d-40c3-ab3e-70a9f4e4722a.
+
+Janus: valid / escalate, assessed low, confidence medium. Triage job: pending.
+
+Janus report id: apex-scan2-BOR1-31.
+Apex: https://ai.cantina.xyz/agglayer/finding/BOR1-31
+
+Janus decision
+Valid — the StateDB.Copy prefetcher-pointer share (a Bor divergence from upstream's s.prefetcher.copy()), combined with the uncopied peek(), is a genuine correctness bug that violates the documented deep-copy contract and is reachable from eth_simulateV1(pending). Severity: Low — impact is confined to a self-DoS of a node that must be both an active producer and a public eth_simulateV1(pending) endpoint (a misconfiguration), the default path scheme defuses persistent corruption, honest peers accept the correctly-rooted block (no consensus/fund impact), and the VEBloP sequencer path takes precedence over the attacked miner-snapshot path.
+Recommended Action: Escalate — the Copy independence-contract violation and the non-thread-safe trie sharing are worth fixing regardless of bounty tier; engineering should confirm path-scheme behavior and decide final payout.
+
+Key findings
+Aliasing primitive confirmed: StateDB.copy() shares the prefetcher pointer (statedb.go:1681-1683) and subfetcher.peek() returns the live trie uncopied (trie_prefetcher.go:455-463); peek's doc-comment claims a shallow copy it does not make
+Reachable from eth_simulateV1(pending) via the miner.Pending()->snapshotState.Copy() fallback path, which shares the live prefetcher; simulate applies caller StateOverrides then computes a root
+Severity-decisive scope limiter (verified): the sealed header root is computed from the real block txs, so honest peers re-execute without attacker overrides, recompute it, and ACCEPT the block -> no consensus split, no fund loss; impact confined to the producer's own local state (self-DoS / missed slot / possible panic)
+Default state scheme is path (config.go:940); the report's persistent-corruption PoC is hash-only; exploit also requires a block producer to publicly expose eth_simulateV1(pending), a topology that violates standard producer/sentry firewall separation
+VEBloP seqConsumer.PendingState takes precedence over the attacked miner-snapshot path in pendingStateAndHeader (api_backend_pending.go:126-140), narrowing the live attack surface further
+PoC not executed (no Go toolchain); models the unit-level primitive only, not the end-to-end concurrent miner/RPC race whose realistic outcome is a panic rather than a clean overwrite
+BOR1-31 — Pending eth_simulateV1 can corrupt the sealing state's storage trie through a shared prefetcher
+Severity: high
+Scanner status: valid
+Impact: high
+Likelihood: medium
+Source: core/state/statedb.go
+Repository: bor
+URL: https://ai.cantina.xyz/agglayer/finding/BOR1-31
+Summary
+StateDB.Copy shares a mutable trie prefetcher with pending RPC state. During a block build, eth_simulateV1 can apply a caller-controlled StateDiff to a trie also retained by the sealing task, after its header root has been calculated.
+
+Impact
+If a producer exposes eth_simulateV1 with the pending selector, an attacker can submit a funded storage-writing transaction and race simulations that override the same slot before the sealing task is committed. In the default hash-based trie scheme, this can leave the canonical header root pointing to unavailable or inconsistent storage data, causing state-read failures and disrupting descendant production or import on the affected node. The failure requires active producer work and the timing window; alternate state schemes may change the manifestation.
+
+Repositories
+
+0xPolygon/bor — commit 6b214d042228
+Context Files
+StateDB.Copy prefetcher assignment
+Path: core/state/statedb.go
+Source: https://github.com/0xPolygon/bor/blob/6b214d0422283fe36ab733829e470ed913becc22/core/state/statedb.go
+
+if prefetcher := s.prefetcher; prefetcher != nil {
+    state.prefetcher = prefetcher
+}
+Proof of Concept
+Place the suppl (https://github.com/0xPolygon/0xsecurity-pos/issues/591)
