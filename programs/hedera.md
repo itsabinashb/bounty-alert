@@ -9,8 +9,9 @@
 - PoC required for: blockchain_dlt - critical, blockchain_dlt - high, blockchain_dlt - medium
 - End date: (none)
 
-## Assets in scope (8)
+## Assets in scope (9)
 
+- [blockchain_dlt] https://github.com/hiero-ledger/hiero-block-node — Hedera Block Node Codebase
 - [blockchain_dlt] https://github.com/hiero-ledger/hiero-consensus-node — Hedera Services Codebase
 - [blockchain_dlt] https://github.com/hiero-ledger/hiero-cryptography — Hedera Cryptography Codebase
 - [blockchain_dlt] https://github.com/hiero-ledger/hiero-json-rpc-relay — JSON RPC Relay
