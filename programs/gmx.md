@@ -324,9 +324,9 @@ Detection of malicious Timelock transactions will be eligible for a bounty if it
 - [websites_and_applications] Medium: Changing non-sensitive details of other users (including modifying browser local storage) without already-connected wallet interaction and with up to one click of user interaction, such as:
 - Changing the first/last name of user
 - Enabling/disabling notifications
-- [websites_and_applications] Medium: Interface logic error, with no attacker involved, that causes financial loss to the user
 - [websites_and_applications] Medium: Redirecting users to malicious websites (open redirect)
 - [websites_and_applications] Medium: Third-Party API keys leakage that demonstrates loss of funds or modification on the website
+- [websites_and_applications] Low: Interface logic error, with no attacker involved, that causes financial loss to the user
 
 ## Impact notes
 
@@ -340,6 +340,7 @@ Detection of malicious Timelock transactions will be eligible for a bounty if it
 - [websites_and_applications] Critical: maxReward=$50,000, minReward=$10,000, otherImpactMaxReward=$0, rewardModel=range
 - [websites_and_applications] High: fixedReward=$5,000, rewardModel=fixed
 - [websites_and_applications] Medium: fixedReward=$1,000, rewardModel=fixed
+- [websites_and_applications] Low: fixedReward=$250, rewardModel=fixed
 
 ## Reward notes
 
