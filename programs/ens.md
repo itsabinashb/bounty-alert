@@ -156,9 +156,9 @@ Therefore, Immunefi has developed a set of feasibility limitation standards whic
 - [smart_contract] High: maxReward=$100,000, minReward=$10,000, rewardModel=range
 - [smart_contract] Medium: maxReward=$5,000, minReward=$1,000, primacy=primacy_of_rules, rewardModel=range
 - [smart_contract] Low: maxReward=$1,000, minReward=$500, rewardModel=range
-- [websites_and_applications] Critical: fixedReward=$25,000, otherImpactMaxReward=$10,000, rewardModel=fixed
-- [websites_and_applications] High: maxReward=$20,000, minReward=$5,000, rewardModel=range
-- [websites_and_applications] Medium: fixedReward=$2,500, primacy=primacy_of_rules, rewardModel=fixed
+- [websites_and_applications] Critical: fixedReward=$20,000, otherImpactMaxReward=$10,000, rewardModel=fixed
+- [websites_and_applications] High: fixedReward=$5,000, rewardModel=fixed
+- [websites_and_applications] Medium: fixedReward=$2,000, primacy=primacy_of_rules, rewardModel=fixed
 - [websites_and_applications] Low: maxReward=$1,000, minReward=$100, primacy=primacy_of_rules, rewardModel=range
 
 ## Reward notes
@@ -224,11 +224,13 @@ The reward for high-severity smart contract vulnerabilities ranges between USD 2
 
 ### **Critical Web / App Reward Calculation**
 
-Critical web/application bug reports will be rewarded with USD 25,000, **only** if the impact leads to:
+Critical web/application bug reports will be rewarded with USD 20,000, **only** if the impact leads to:
 
 - A loss of funds involving an attack that does not require any user action  
 - Unauthorized minting of tokens on-chain.  
 - Private key or private key generation leakage leading to unauthorized access to user funds.
+
+All other critical impacts will be rewarded a flat fee of $7500.
 
 __Severity Assessment for XSS Reports:__
 

@@ -65,7 +65,7 @@
 - [smart_contract] Critical: maxReward=$200,000, minReward=$50,000, primacy=primacy_of_impact, rewardCalculationPercentage=10, rewardModel=range
 - [smart_contract] High: maxReward=$20,000, minReward=$5,000, rewardModel=range
 - [smart_contract] Medium: maxReward=$5,000, minReward=$1,000, rewardModel=range
-- [websites_and_applications] Critical: fixedReward=$7,500, rewardModel=fixed
+- [websites_and_applications] Critical: fixedReward=$7,500, otherImpactMaxReward=$0, rewardModel=fixed
 - [websites_and_applications] High: fixedReward=$4,000, rewardModel=fixed
 
 ## Reward notes
