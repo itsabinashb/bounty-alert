@@ -9,7 +9,7 @@
 - PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium, smart_contract - low
 - End date: (none)
 
-## Assets in scope (83)
+## Assets in scope (82)
 
 - [smart_contract] https://etherscan.io/address/0x464C71f6c2F760DdA6093dCB91C24c39e5d6e18c — Aave v2 Collector
 - [smart_contract] https://etherscan.io/address/0x8A32f49FFbA88aba6EFF96F45D8BD1D4b3f35c7D — Aave v2 Lending Rate Oracle
@@ -59,7 +59,6 @@
 - [smart_contract] https://github.com/aave-dao/gho-origin/blob/main/src/contracts/facilitators/gsm/priceStrategy/FixedPriceStrategy4626.sol — FixedPriceStrategy4626
 - [smart_contract] https://github.com/aave-dao/gho-origin/blob/main/src/contracts/gho/GhoToken.sol — GhoToken
 - [smart_contract] https://github.com/aave-dao/gho-origin/blob/main/src/contracts/gho/UpgradeableGhoToken.sol — UpgradeableGhoToken
-- [smart_contract] https://github.com/aave/ — Primacy of Impact Placeholder (primacy of impact)
 - [smart_contract] https://github.com/aave/aave-v3-core/blob/master/contracts/protocol/tokenization/StableDebtToken.sol — Aave v3 StableDebtToken
 - [smart_contract] https://github.com/aave/ccip/blob/d5c6cedde6fbca9890a92a55f2db80e94793d0ec/contracts/src/v0.8/ccip/pools/GHO/UpgradeableBurnMintTokenPool.sol — UpgradeableBurnMintTokenPool
 - [smart_contract] https://github.com/aave/ccip/blob/d5c6cedde6fbca9890a92a55f2db80e94793d0ec/contracts/src/v0.8/ccip/pools/GHO/UpgradeableLockReleaseTokenPool.sol — UpgradeableLockReleaseTokenPool
