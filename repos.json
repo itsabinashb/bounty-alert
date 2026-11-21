@@ -75,7 +75,7 @@
  "ensdomains/metadata-service-v2@main": "2c640c4c829ae76a359a7d8c3a6f9d338d1b0a8c",
  "enzymefinance/protocol@dev": "7200e4d3cb76603af2e52aca97f15088853af532",
  "ethereum-optimism/optimism@develop": "65e803329acd2bfd6fca0b3ff2012f7c55aa1bdf",
- "ethereum/consensus-specs@master": "031a603a48e4efaf5e52bab38c473d8b7161f6ef",
+ "ethereum/consensus-specs@master": "2d519bc04f0f9c52f0e0876f69b238a9523f1ef8",
  "ethereum/execution-specs@forks/bogota": "391d8a05d5cb182542ac7e7330c858b6ee03f990",
  "ethereum/go-ethereum@master": "2b7829ea6aed9a95a3fd793cca46731202c6c310",
  "ethereum/solidity@develop": "bc24c77fb97afa3a42955a3762f88dac2ee65170",
@@ -217,7 +217,7 @@
  "pancakeswap/infinity-universal-router@main": "1b6d479e1f76361f5950d1168d9392361e73a1e8",
  "pancakeswap/pancake-swap-periphery@master": "d769a6d136b74fde82502ec2f9334acc1afc0732",
  "pancakeswap/pancake-v3-contracts@main": "986847948755cba528324d41be19480731c36c2a",
- "paradigmxyz/reth@main": "53b5db1c3bc841bae679e58a625485d3d44d5b74",
+ "paradigmxyz/reth@main": "85c70663312d3e96d2d4428635e2b0d9492b349f",
  "prysmaticlabs/prysm@develop": "0c1e3d248a063c10ce31d638217cb97f2b567c85",
  "pyth-network/governance@main": "44102f0fecd11d39144c67df4e0f9d188dc78f0d",
  "pyth-network/pyth-crosschain@main": "de5612d4a7a9f86de1a84308578c204184e8b767",
@@ -331,6 +331,6 @@
  "wormhole-foundation/native-token-transfers@main": "5e56c0a0bfce0b3705cc2c1beaffca83dfec5341",
  "wormhole-foundation/wormhole-circle-integration@main": "234202543cc96ba593449ca1b9d7cb2b9499668d",
  "wormhole-foundation/wormhole@main": "3618de02593beb986fc7aadf152e3956da84ba8a",
- "xoxno/rs-lending-xlm@main": "2ff3ec64a578c15780274c5a48c46b76224fd319",
+ "xoxno/rs-lending-xlm@main": "525e4230537fd037685cd83d88499ced29db6f6e",
  "zerolend/governance@main": "60d255aca56f46fe9b26f012eee683e1aede2b33"
 }
