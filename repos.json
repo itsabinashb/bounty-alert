@@ -119,7 +119,7 @@
  "hiero-ledger/hiero-consensus-node@main": "0057e6f6a6369b7a8c655d91f0da61d196567128",
  "hiero-ledger/hiero-cryptography@main": "c08c97dfebd90d6b95ee5280ca8356298623e093",
  "hiero-ledger/hiero-json-rpc-relay@main": "990eb7e936e5a3095652b083453bec247c593bb6",
- "hiero-ledger/hiero-mirror-node@main": "aa0f9dd57e6d1e49d4481f81c1a1dac2f854483b",
+ "hiero-ledger/hiero-mirror-node@main": "8dee09b4860c0d2d277c93d38785947daa29608b",
  "hiero-ledger/hiero-sdk-go@main": "ddfe7784e57a7fc6bbe1d4397b6026489d506e9e",
  "hiero-ledger/hiero-sdk-java@main": "875f6c134fda9f6d4923f2f61ed456a75ddc9437",
  "hiero-ledger/hiero-sdk-js@main": "f647d29473a2a5b492d646f44bf449c912e78479",
