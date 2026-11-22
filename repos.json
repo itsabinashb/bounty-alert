@@ -34,7 +34,7 @@
  "bgd-labs/stake-token@main": "5346765ccdeaa3a897247034bae46dc9be1e9462",
  "byteball/city-aa@main": "4a0a53f0456cf91083e8df85427854f935584d4e",
  "byteball/coop-aa@main": "d7d5e57f0c6932f8a0d644c23a81bf43ee29e22a",
- "byteball/counterstake-bridge@master": "aa94392c53bfed0a78b8e71affb5c25265f1ef9f",
+ "byteball/counterstake-bridge@master": "daddabdc92ab68f4e8bbb92fda7d5dc68290299e",
  "byteball/friend-aa@main": "45019f997e683e659acc83c212af8da588feae53",
  "byteball/obyte-cascading-donations@master": "2f484822015b8487e836c07c5e8a13648682e99b",
  "byteball/obyte-gui-wallet@master": "90a0167fe3d33bfdf68ea87d6977c1423fd8167e",
@@ -75,7 +75,7 @@
  "ensdomains/metadata-service-v2@main": "2c640c4c829ae76a359a7d8c3a6f9d338d1b0a8c",
  "enzymefinance/protocol@dev": "7200e4d3cb76603af2e52aca97f15088853af532",
  "ethereum-optimism/optimism@develop": "65e803329acd2bfd6fca0b3ff2012f7c55aa1bdf",
- "ethereum/consensus-specs@master": "2d519bc04f0f9c52f0e0876f69b238a9523f1ef8",
+ "ethereum/consensus-specs@master": "1db1846bdc6393fc9764ff5e1ca2bb5fb641f6e2",
  "ethereum/execution-specs@forks/bogota": "391d8a05d5cb182542ac7e7330c858b6ee03f990",
  "ethereum/go-ethereum@master": "2b7829ea6aed9a95a3fd793cca46731202c6c310",
  "ethereum/solidity@develop": "bc24c77fb97afa3a42955a3762f88dac2ee65170",
@@ -331,6 +331,6 @@
  "wormhole-foundation/native-token-transfers@main": "5e56c0a0bfce0b3705cc2c1beaffca83dfec5341",
  "wormhole-foundation/wormhole-circle-integration@main": "234202543cc96ba593449ca1b9d7cb2b9499668d",
  "wormhole-foundation/wormhole@main": "3618de02593beb986fc7aadf152e3956da84ba8a",
- "xoxno/rs-lending-xlm@main": "525e4230537fd037685cd83d88499ced29db6f6e",
+ "xoxno/rs-lending-xlm@main": "b4d8d0b53abac65ad1b8c13d94e6532eadff72f2",
  "zerolend/governance@main": "60d255aca56f46fe9b26f012eee683e1aede2b33"
 }
