@@ -29,7 +29,7 @@
 - [smart_contract] High: Permanent freezing of unclaimed yield
 - [smart_contract] High: Temporary Freezing of Funds at 0 cost or profit to attacker for greater than 1 day
 - [smart_contract] High: Theft of unclaimed yield
-- [smart_contract] Medium: Griefing at minimal no to cost to attacker
+- [smart_contract] Medium: Griefing at minimal to no cost to the attacker, causing damage to users or the protocol
 - [smart_contract] Medium: Miner Extractable Value in excess of 0.75%
 - [smart_contract] Medium: Smart contract unable to operate due to lack of token funds
 - [smart_contract] Low: Contract fails to deliver promised returns, but doesn't lose value
@@ -60,6 +60,9 @@ High impacts concerning theft/permanent freezing of unclaimed yield/royalties ar
 
 In the event of temporary freezing, the reward doubles from the full frozen vallue for every additional 24h that the funds are temporarily frozen, up until a max cap of the high reward.
 
+__Reward Classifications for Griefing impact__
+Griefing reports where the demonstrated damage to users or the protocol is at least USD 1,000 but below USD 4,000 will be classified as Low and paid the Low reward.
+
 ## Out of scope (program-specific)
 
 **Yield Strategies**
@@ -79,6 +82,8 @@ The items located at https://github.com/alchemix-finance/v3/blob/scoopy-ai-scan-
 
 **How transmuter returns are viewed**
 When a user deposits to the transmuter, they deposit alAsset and expect to get MYT back after a fixed period of time. We view the alAsset to MYT conversion as "promised returns", NOT "user funds". Ie, the user does not own MYT until the conversion. They own the alAsset. If they are unable to claim the MYT, then their position is still alAsset denominated and they have not recieved the promised returns.
+
+**Griefing reports where the demonstrated damage to users or the protocol below USD 1,000 is out of scope.**
 
 ## Out of scope and rules
 

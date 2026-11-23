@@ -92,7 +92,7 @@ Rewards are distributed according to the impact of the vulnerability based on th
 - Low: Flat USD 1000
 - Informational: Only in exceptional circumstances and solely at our discretion
 
-**Primacy of Impact:** where a vulnerability in an in-scope Leather asset can be chained to a direct loss of user funds on Bitcoin or Stacks, the report escalates to the corresponding Blockchain reward tier of the Stacks program rather than being capped at the Websites and Applications tier. Escalation requires a complete, demonstrated exploit chain from the initial vulnerability through to the fund-loss impact, with each step proven by a working proof of concept.
+**Escalation to the Stacks programme:** where a vulnerability in an in-scope Leather asset is chained with a vulnerability in the Stacks blockchain or protocol, and that chain leads to a direct loss of user funds, the report is rewarded under the corresponding Blockchain tier of the Stacks programme. Escalation requires a complete, demonstrated exploit chain, with each step proven by a working proof of concept. Loss of user funds caused by a vulnerability in Leather alone is rewarded under the Leather reward table.
 
 **We agree to:**
 

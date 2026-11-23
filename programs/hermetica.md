@@ -9,20 +9,21 @@
 - PoC required for: smart_contract - critical, smart_contract - high
 - End date: (none)
 
-## Assets in scope (13)
+## Assets in scope (14)
 
 - [smart_contract] https://explorer.hiro.so/txid/0x0f1ad52bafc2099b9b75ecff15933546dc09a4c60ed93f902998c7eb570563e9?chain=mainnet — Blacklist
+- [smart_contract] https://explorer.hiro.so/txid/0x2e143b49461ce9185de3f91d8f62f27af8720babaeffa44ee360c7b321793904?chain=mainnet — Vault
 - [smart_contract] https://explorer.hiro.so/txid/0x49512dd2cf400a9b1ace64687d386b3d3d1ad40444de83f6dda1c29cebe01919?chain=mainnet — State
-- [smart_contract] https://explorer.hiro.so/txid/0x570b90c20a3b63e431a387a50ee3c9f6a3a709527731a8cbde75b731e9c7369a?chain=mainnet — Zest Interface
 - [smart_contract] https://explorer.hiro.so/txid/0x834662426960938e9d483ebfb7ecae90a6c5c0d4327e2cb4011700387d2167bf?chain=mainnet — HQ
+- [smart_contract] https://explorer.hiro.so/txid/0x86e9d5f969014176df6a82b1ec4e8a25e28da6288cfd2c5aeaf17f17f648eff3?chain=mainnet — Trading
 - [smart_contract] https://explorer.hiro.so/txid/0x87f8c3bc9625579280050678cdddf46b00f678009be32aab76e5d9beca4e7056?chain=mainnet — Fee Collector
 - [smart_contract] https://explorer.hiro.so/txid/0x8a6cfafb63b1fb9549d42789cf2b9a160bcf5859257f4c578451d77dafd0a2e0?chain=mainnet — Controller
 - [smart_contract] https://explorer.hiro.so/txid/0x99e0e204634af511074897cae5d7b79602a808b1b4569a7f900fedb0ec2af245?chain=mainnet — Token
-- [smart_contract] https://explorer.hiro.so/txid/0x9e2cd7bdd7cc29cf30750835155060a42ebd26943c1f35d2a83b8e6e81f90a35?chain=mainnet — Trading
 - [smart_contract] https://explorer.hiro.so/txid/0xb8ce9c1fb139bc4338ae3b6d6c5fa4525fafb87ed9f9ce515b213a0cc0022449?chain=mainnet — Reserve
 - [smart_contract] https://explorer.hiro.so/txid/0xb8e567a6f918e041e1fa5a9ca317fdf3048d14f57b0fefdd836cba9da14d3c6e?chain=mainnet — Vault
 - [smart_contract] https://explorer.hiro.so/txid/0xc1c3face1d66819ce2cd6f28876b07577c252812c4c43b2145ac89af61819117?chain=mainnet — Hermetica Interface
 - [smart_contract] https://explorer.hiro.so/txid/0xdd73e479841dbedba4fa6eee29be9dcef5d64e6093b905016ec1ba74dabba2ba?chain=mainnet — Reserve Fund
+- [smart_contract] https://explorer.hiro.so/txid/0xeb54424610e109cfb89b3f065d92cdabc104f1c13455158b27205695c892451e?chain=mainnet — Zest Interface
 - [smart_contract] https://hermetica.fi/ — Primacy of Impact (primacy of impact)
 
 ## Asset notes

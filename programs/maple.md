@@ -96,7 +96,7 @@ Rewards for critical smart contract vulnerabilities are further capped at 10% of
 Maple requires KYC to be done for all bug bounty hunters submitting a report and wanting a reward. The information needed is a government-issued photo ID as well as a proof of address issued within the last 3 months (eg. utility bill). 
 
 All known issues highlighted in the following audit reports are considered to be out-of-scope:
-- [https://github.com/maple-labs/maple-v2-audits/blob/main/README.md](https://github.com/maple-labs/maple-v2-audits/blob/main/README.md) 
+- [https://docs.maple.finance/technical-resources/security/security](https://docs.maple.finance/technical-resources/security/security) 
 
 In addition, all issues related to 4626 compliance are considered out of scope of this program. 
 
