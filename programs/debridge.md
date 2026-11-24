@@ -151,6 +151,7 @@ The following vulnerabilities/problems are not eligible for a reward:
   - If user passes ​​REVERT_IF_EXTERNAL_FAIL flag and specifies "data" and "receiver address" params that will lead to tx being constantly reverted
   - Framework used by the deBridge node exploitation of which requires knowledge of IP address unless information about IP address was obtained during the attack
   - Problem with the callProxy smart contract when gas limit specified by claimer is not enough for the proper execution of the externalCall that leads to externalCall being reverted even though transaction itself is completed
+  - Problem with the callProxy contract where the `_destination` was not set correctly and cannot execute code
 
 Payouts are handled by the __deBridge__ team directly and are denominated in USD. However, payouts are done in __USDT and USDC__, with the choice of the ratio at the discretion of the team.
 
