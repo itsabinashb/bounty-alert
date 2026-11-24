@@ -63,6 +63,18 @@ In the event of temporary freezing, the reward doubles from the full frozen vall
 __Reward Classifications for Griefing impact__
 Griefing reports where the demonstrated damage to users or the protocol is at least USD 1,000 but below USD 4,000 will be classified as Low and paid the Low reward.
 
+__Minimum amount at risk__
+Reports whose impact is theft of user funds, permanent freezing of funds, or theft or permanent freezing of unclaimed yield are classified by the amount at risk:
+- USD 20,000 or more: Critical, 10% of the funds directly affected, USD 20,000 to 150,000
+- USD 5,000 to under 20,000: High, 100% of the amount at risk, USD 5,000 to 20,000
+- USD 3,000 to under 5,000: Medium, USD 3,000
+- USD 1,000 to under 3,000: Low, USD 1,000
+- Under USD 1,000: out of scope
+
+The amount at risk is what could be stolen or frozen if the bug were exploited within the next 12 months, with the deployed contracts and the funds they hold at the time the report is submitted. Repeated runs of the attack within that period count together. An attack that needs capital counts only the capital an attacker could realistically obtain at submission, as set out in Immunefi's Attack Investment Amount standard.
+
+A report is never classified above the severity of its impact in Impacts in Scope. For theft of unclaimed yield, this replaces Immunefi's default trigger of USD 1 within 12 months. Once a report meets the amount for its severity, that severity's minimum reward applies, to incentivize security researchers against withholding a bug report. Impacts that don't depend on an amount at risk are not affected.
+
 ## Out of scope (program-specific)
 
 **Yield Strategies**
