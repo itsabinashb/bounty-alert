@@ -9,7 +9,7 @@
 - PoC required for: smart_contract - low, smart_contract - medium, smart_contract - high, smart_contract - critical
 - End date: (none)
 
-## Assets in scope (19)
+## Assets in scope (18)
 
 - [smart_contract] https://basescan.org/address/0x6cd905dF2Ed214b22e0d48FF17CD4200C1C6d8A3 — Trust (TRUST token) - Base Mainnet
 - [smart_contract] https://basescan.org/address/0x7745bDEe668501E5eeF7e9605C746f9cDfb60667 — BaseEmissionsController - Base Mainnet
@@ -26,7 +26,6 @@
 - [smart_contract] https://explorer.intuition.systems/address/0x81cFb09cb44f7184Ad934C09F82000701A4bF672 — WrappedTrust (WTRUST) - Intuition Mainnet
 - [smart_contract] https://explorer.intuition.systems/address/0x98C9BCecf318d0D1409Bf81Ea3551b629fAEC165 — AtomWarden (proxy) - Intuition Mainnet
 - [smart_contract] https://explorer.intuition.systems/address/0xC23cD55CF924b3FE4b97deAA0EAF222a5082A1FF — AtomWalletBeacon - Intuition Mainnet
-- [smart_contract] https://explorer.intuition.systems/address/0xbCb1526A8de4a155e4dE003361b122eDe2f22908 — AtomWallet implementation (logic behind AtomWalletBeacon) - Intuition Mainnet
 - [smart_contract] https://explorer.intuition.systems/address/0xc3eFD5471dc63d74639725f381f9686e3F264366 — LinearCurve (proxy) - Intuition Mainnet
 - [smart_contract] https://explorer.intuition.systems/address/0xd0E488Fb32130232527eedEB72f8cE2BFC0F9930 — BondingCurveRegistry (proxy) - Intuition Mainnet
 - [smart_contract] https://intuition.systems — Primacy of Impact (primacy of impact)
