@@ -290,11 +290,11 @@ If an impact can be caused to any other asset managed by Hyperlane that isn’t 
 
 - [smart_contract] Critical: maxReward=$2,500,000, minReward=$10,000, rewardCalculationPercentage=10, rewardModel=range
 - [smart_contract] High: maxReward=$200,000, minReward=$5,000, rewardModel=range
-- [smart_contract] Medium: fixedReward=$2,500, rewardModel=fixed
+- [smart_contract] Medium: maxReward=$5,000, minReward=$1,500, rewardModel=range
 - [smart_contract] Low: fixedReward=$1,000, rewardModel=fixed
-- [websites_and_applications] Critical: fixedReward=$20,000, rewardModel=fixed
-- [websites_and_applications] High: fixedReward=$10,000, rewardModel=fixed
-- [websites_and_applications] Medium: fixedReward=$2,000, rewardModel=fixed
+- [websites_and_applications] Critical: maxReward=$20,000, minReward=$10,000, otherImpactMaxReward=$0, rewardModel=range
+- [websites_and_applications] High: maxReward=$10,000, minReward=$3,000, rewardModel=range
+- [websites_and_applications] Medium: maxReward=$2,000, minReward=$1,250, rewardModel=range
 - [websites_and_applications] Low: fixedReward=$1,000, rewardModel=fixed
 
 ## Reward notes

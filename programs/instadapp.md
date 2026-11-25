@@ -9,12 +9,21 @@
 - PoC required for: smart_contract - high, smart_contract - critical, websites_and_applications - critical, websites_and_applications - high
 - End date: (none)
 
-## Assets in scope (6)
+## Assets in scope (15)
 
+- [smart_contract] https://etherscan.io/address/0x273DA948ACa9261043fbdb2a857BC255ECC29012 — Fluid Lite USD – Vault (and all linked modules)
+- [smart_contract] https://etherscan.io/address/0xA0D3707c569ff8C87FA923d3823eC5D81c98Be78 — Fluid Lite ETH – Vault iETHv2 (and all linked modules)
 - [smart_contract] https://github.com/Instadapp/avocado-contracts-public — Avocado (excluding the helper folder within avo-contracts)
 - [smart_contract] https://github.com/Instadapp/dsa-contracts — Instadapp Pro
 - [smart_contract] https://github.com/Instadapp/fluid-contracts-public — Fluid Liquidity Layer, Fluid Lending protocol, Fluid Vault protocol. Fluid Contracts (excluding periphery folder)
 - [smart_contract] https://github.com/Instadapp/inst-governance — Governance
+- [smart_contract] https://www.moveregistry.com/package/@0xfluid/lending — Fluid Sui – Lending (@0xfluid/lending)
+- [smart_contract] https://www.moveregistry.com/package/@0xfluid/lending-rewards — Fluid Sui – Lending Rewards (@0xfluid/lending-rewards)
+- [smart_contract] https://www.moveregistry.com/package/@0xfluid/library — Fluid Sui – Library (@0xfluid/library)
+- [smart_contract] https://www.moveregistry.com/package/@0xfluid/liquidity — Fluid Sui – Liquidity (@0xfluid/liquidity)
+- [smart_contract] https://www.moveregistry.com/package/@0xfluid/oracle — Fluid Sui – Oracle (@0xfluid/oracle)
+- [smart_contract] https://www.moveregistry.com/package/@0xfluid/timelock — Fluid Sui – Timelock (@0xfluid/timelock)
+- [smart_contract] https://www.moveregistry.com/package/@0xfluid/vaults — Fluid Sui – Vaults (@0xfluid/vaults)
 - [websites_and_applications] https://avocado.instadapp.io — Avocado
 - [websites_and_applications] https://fluid.instadapp.io/ — Fluid
 
@@ -126,9 +135,11 @@ __Scope Clarifications__
 
 - Issues affecting the first or last user of a pool or vault that arise from dust amounts, in any protocol other than DexV2, are classified at most as Low, since the standard production setup includes seeding a dust position that serves as the first and last user.
 
-- A vulnerability present in both the EVM and Solana codebases is treated as a single finding and rewarded once, not as two separate reports.
+- A vulnerability present in more than one of the EVM, Solana and Sui codebases is treated as a single finding and rewarded once.
 
-- Deployed contract addresses are listed in [deployments.md](https://github.com/Instadapp/fluid-contracts-public/blob/main/deployments/deployments.md) in the public repository; funds at risk is assessed against the deployed contracts referenced there.
+- Sui: the mainnet packages listed in Assets by Move Registry name, at their latest version. Fluid Lite USD and Fluid Lite ETH: the vault proxies listed in Assets and all linked modules.
+
+- Deployed contract addresses are listed in [deployments.md](https://github.com/Instadapp/fluid-contracts-public/blob/main/deployments/deployments.md) in the public repository; funds at risk is assessed against the deployed contracts referenced there. For the Sui packages and Fluid Lite, funds at risk is assessed against the packages and vaults listed in Assets.
 
 __Deprecated Contracts__
 

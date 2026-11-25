@@ -136,6 +136,11 @@ These exclusions apply only to findings that require the listed unsupported mode
   - Signature and replay domains: 0x7900 (sender), 0x7901 (payer) and 0x7902 (replay_id).
   - Execution client dependency: github.com/base/reth at 2b20e42de9c42b51ea0fb56599fda3c2f22640ef, as recorded in the deployment manifest.
 
+The list is not exhaustive. Base may run production settings that are not listed above. A finding is out of scope where Base shows, with verifiable evidence, that a setting already active in its production deployment before the report was submitted prevents the demonstrated impact. The evidence must include:
+1. the setting and its value in Base's production deployment, with a deployment record or commit dated before the submission; and
+2. the report's PoC, re-run on the designated Everest devnet with that setting applied, no longer producing the impact.
+Where the setting reduces the impact without preventing it, severity is assessed on the remaining impact. Settings introduced after a report is submitted are part of Base's response and do not affect that report.
+
 __Build Commands, Test Commands, and How to Run Them__
 
 Detailed build commands, test commands and run instructions are in the README files and documentation of each repository:

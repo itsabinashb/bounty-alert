@@ -5,7 +5,7 @@
 - KYC required: yes
 - Paused: no
 - Invite only: no
-- Program type: Smart Contract, Websites and Applications
+- Program type: Websites and Applications, Smart Contract
 - PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium, websites_and_applications - critical, websites_and_applications - high, websites_and_applications - medium, websites_and_applications - low
 - End date: (none)
 
@@ -18,7 +18,7 @@
 
 Fusion contracts (Fusion.sol,...) are out of scope as they are not in production.
 
-## Impacts in scope (25)
+## Impacts in scope (24)
 
 - [smart_contract] Critical: Direct theft of any user funds, whether at-rest or in-motion
 - [smart_contract] Critical: Manipulation of governance voting result deviating from voted outcome and resulting in a direct change from intended effect of original results
@@ -43,7 +43,6 @@ Fusion contracts (Fusion.sol,...) are out of scope as they are not in production
 - [websites_and_applications] Medium: Injecting/modifying the static content on the target application without JavaScript (reflected), such as:  Reflected HTML injection, Loading external site data
 - [websites_and_applications] Medium: Redirecting users to malicious websites (open redirect)
 - [websites_and_applications] Low: Changing details of other users (including modifying browser local storage) without already-connected wallet interaction & with significant user interaction, such as: Iframing leading to modifying the backend/browser state(must demonstrate impact with POC)
-- [websites_and_applications] Low: Taking over broken or expired outgoing links, such as:  Social media handles, etc.
 - [websites_and_applications] Low: Temporarily disabling user to access target site, such as:  Locking up the victim from login Cookie bombing, etc.
 
 ## Impact notes
@@ -55,7 +54,7 @@ Fusion contracts (Fusion.sol,...) are out of scope as they are not in production
 - [smart_contract] Critical: maxReward=$250,000, minReward=$25,000, rewardCalculationPercentage=10, rewardModel=range
 - [smart_contract] High: maxReward=$40,000, minReward=$5,000, rewardModel=range
 - [smart_contract] Medium: fixedReward=$4,000, rewardModel=fixed
-- [websites_and_applications] Critical: maxReward=$20,000, minReward=$6,000, rewardModel=range
+- [websites_and_applications] Critical: maxReward=$20,000, minReward=$6,000, otherImpactMaxReward=$0, rewardModel=range
 - [websites_and_applications] High: fixedReward=$5,000, rewardModel=fixed
 - [websites_and_applications] Medium: fixedReward=$2,500, rewardModel=fixed
 - [websites_and_applications] Low: fixedReward=$1,000, rewardModel=fixed
