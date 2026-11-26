@@ -25,23 +25,26 @@
 
 Specific mainnet contract addresses can be found on [https://docs.pyth.network/price-feeds/contract-addresses](https://docs.pyth.network/price-feeds/contract-addresses) and [https://docs.pyth.network/entropy/contract-addresses](https://docs.pyth.network/entropy/contract-addresses).
 
-## Impacts in scope (30)
+## Impacts in scope (33)
 
-- [smart_contract] Critical: Arbitrarily manipulate Pyth oracle prices or other published values
 - [smart_contract] Critical: Assume ownership of Pyth’s contracts in mainnet
+- [smart_contract] Critical: Change the result of a Pyth DAO vote through a bug in an in-scope contract (i.e., the voted-on outcome differs from the outcome in the governance message sent to other blockchains), or make an in-scope contract run a governance action that Pyth governance did not approve, including one from a replaced governance data source or an approved message run twice on the same contract.
 - [smart_contract] Critical: Direct theft of any user funds, whether at-rest or in-motion, other than unclaimed yield
-- [smart_contract] Critical: Locking, loss, or theft of funds staked on Pyth
+- [smart_contract] Critical: Make an in-scope contract on mainnet accept or return, for a feed, an attacker-chosen value (price, confidence, exponent, time or another field) that the signers and data sources it is configured to trust did not sign for that feed, or make Entropy give a request a random number other than the one the Entropy protocol determines for it
 - [smart_contract] Critical: Manipulation of governance voting result deviating from voted outcome and resulting in a direct change from intended effect of original results
 - [smart_contract] Critical: Permanent freezing of funds
+- [smart_contract] Critical: Permanent freezing or loss of funds, other than unclaimed yield: no one can move or recover them, even with a contract upgrade
 - [smart_contract] Critical: Protocol insolvency
+- [smart_contract] Critical: Theft of funds staked on Pyth
 - [smart_contract] High: Exposure of private keys controlled by the PDA or permissionless services
 - [smart_contract] High: Permanent freezing of unclaimed yield
-- [smart_contract] High: Software flaws in the on-chain program cause Pyth to publish an inaccurate price when ≥ 3/4 of the contributing publishers are accurate.
+- [smart_contract] High: Permanent freezing of unclaimed yield: no one can move or recover it, even with a contract upgrade
 - [smart_contract] High: Temporary freezing of funds
 - [smart_contract] High: Theft of unclaimed yield
 - [smart_contract] Medium: Block stuffing
 - [smart_contract] Medium: Griefing (e.g. no profit motive for an attacker, but damage to the users or the protocol)
 - [smart_contract] Medium: Smart contract unable to operate due to lack of token funds
+- [smart_contract] Medium: Temporary freezing of funds for at least 7 days (assuming Pyth takes no action), including funds that only a contract upgrade can free
 - [smart_contract] Medium: Theft of gas
 - [smart_contract] Medium: Unbounded gas consumption
 - [smart_contract] Low: Contract fails to deliver promised returns, but  doesn't lose value
@@ -98,25 +101,21 @@ Rewards are distributed according to the impact of the vulnerability based on th
 
 __Reward Calculation for Critical Smart Contract Reports__
 
-For critical smart contract bugs, the reward amount is 10% of the funds directly affected up to a maximum of 125 000 USDC. The calculation of the amount of funds at risk is based on the time and date the bug report is submitted.  For the avoidance of doubt, directly affected funds calculation does not include downstream protocols or users of the Pyth protocol or any effects on the $PYTH token price.
+The calculation of the amount of funds at risk is based on the time and date the bug report is submitted.  For the avoidance of doubt, directly affected funds calculation does not include downstream protocols or users of the Pyth protocol or any effects on the $PYTH token price.
 
 __Repeatable Attack Limitations__
 
 If the smart contract where the vulnerability exists can be upgraded or paused, only the initial attacks within the first hour will be considered for a reward. This is because the project can mitigate the risk of further exploitation by upgrading or pausing the component where the vulnerability exists. The reward amount will depend on the severity of the impact and the funds at risk. 
 
-
 For critical repeatable attacks on smart contracts that cannot be upgraded or paused, the project will consider the cumulative impact of the repeatable attacks for a reward. This is because the project cannot prevent the attacker from repeatedly exploiting the vulnerability until all funds are drained and/or other irreversible damage is done. Therefore, this warrants a reward equivalent to 10% of funds at risk, capped at the maximum critical reward. 
 
 __Reward Calculation for High Smart Contract Reports__
-
-High vulnerabilities concerning theft/permanent freezing of unclaimed yield/royalties are rewarded up to $50,000 USDC depending on the funds at risk, capped at the maximum high reward.  
-
 
 In the event of temporary freezing, the reward doubles from the full frozen value for every additional 24h that the funds are temporarily frozen, up until a max cap of the high reward. This is because as the duration of the freezing lengthens, the potential for greater damage and subsequent reputational harm intensifies. Thus, by increasing the reward proportionally with the frozen duration, the project ensures stronger incentives for bug disclosure of this nature.
 
 __Reward Calculation for High Websites and Applications Reports__
 
-For High web/app impacts, the maximum reward of **USD 20 000** will only be paid out for issues that affect our main user-facing applications, generally hosted under pyth.network.
+For High web/app impacts, the maximum reward will only be paid out for issues that affect our main user-facing applications, generally hosted under pyth.network.
 
 __Reward Payment Terms__
 
