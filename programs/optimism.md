@@ -5,34 +5,43 @@
 - KYC required: yes
 - Paused: no
 - Invite only: no
-- Program type: Smart Contract, Websites and Applications, Blockchain/DLT
+- Program type: Smart Contract, Blockchain/DLT, Websites and Applications
 - PoC required for: smart_contract - critical, smart_contract - high, smart_contract - medium, blockchain_dlt - high, blockchain_dlt - critical, websites_and_applications - critical
 - End date: (none)
 
-## Assets in scope (36)
+## Assets in scope (45)
 
 - [blockchain_dlt] https://github.com/ethereum-optimism/optimism/tree/develop/op-dispute-mon — op-dispute-mon (in scope for impacts listed in the smart contracts section)
+- [blockchain_dlt] https://github.com/ethereum-optimism/optimism/tree/develop/op-interop-filter — op-interop-filter
 - [blockchain_dlt] https://github.com/ethereum-optimism/optimism/tree/develop/op-node — op-node
+- [blockchain_dlt] https://github.com/ethereum-optimism/optimism/tree/develop/op-supernode — op-supernode
 - [blockchain_dlt] https://github.com/ethereum-optimism/optimism/tree/develop/rust/op-reth — op-reth
 - [blockchain_dlt] https://immunefi.com — Primacy of Impact (primacy of impact)
-- [smart_contract] https://etherscan.io/address/0x0f8EdFbDdD3c0256A80AD8C0F2560B1807873C9c — MIPS
-- [smart_contract] https://etherscan.io/address/0x18DAc71c228D1C32c99489B7323d441E1175e443 — AnchorStateRegistry
+- [smart_contract] https://etherscan.io/address/0x19AF533Cc2A2A55786DCB8672aA5717e64213208 — SuperFaultDisputeGame
+- [smart_contract] https://etherscan.io/address/0x1B6DBF05EaF22d4E70dC993e8a19dd9F3dcb3162 — DelayedWETH
+- [smart_contract] https://etherscan.io/address/0x1E1d73536A081Ef2F355d29794547a9770Aeb1E0 — PreimageOracle
 - [smart_contract] https://etherscan.io/address/0x229047fed2591dbec1eF1118d64F7aF3dB9EB290 — SystemConfig
+- [smart_contract] https://etherscan.io/address/0x23B2C62946350F4246f9f9D027e071f0264FD113 — AnchorStateRegistry
 - [smart_contract] https://etherscan.io/address/0x25ace71c97B33Cc4729CF772ae268934F7ab5fA1 — L1CrossDomainMessenger
-- [smart_contract] https://etherscan.io/address/0x4146DF64D83acB0DcB0c1a4884a16f090165e122 — FaultDisputeGame
+- [smart_contract] https://etherscan.io/address/0x322b47Ff1FA8D5611F761e3E275C45B71b294D43 — ETHLockbox
 - [smart_contract] https://etherscan.io/address/0x543bA4AADBAb8f9025686Bd03993043599c6fB04 — ProxyAdmin
+- [smart_contract] https://etherscan.io/address/0x5C3eb47cB0174aea522a2a9Ae79487139A53D691 — SuperPermissionedDisputeGame
 - [smart_contract] https://etherscan.io/address/0x5a7749f83b81B301cAb5f48EB8516B986DAef23D — L1ERC721Bridge
 - [smart_contract] https://etherscan.io/address/0x75505a97BD334E7BD3C476893285569C4136Fa0F — OptimismMintableERC20Factory
+- [smart_contract] https://etherscan.io/address/0x95703e0982140D16f8ebA6d158FccEde42f04a4C — SuperchainConfig
 - [smart_contract] https://etherscan.io/address/0x99C9fc46f92E8a1c0deC1b1747d010903E884bE1 — L1StandardBridge
-- [smart_contract] https://etherscan.io/address/0xD326E10B8186e90F4E2adc5c13a2d0C137ee8b34 — PreimageOracle
-- [smart_contract] https://etherscan.io/address/0xE497B094d6DbB3D5E4CaAc9a14696D7572588d14 — DelayedWETH
-- [smart_contract] https://etherscan.io/address/0xE9daD167EF4DE8812C1abD013Ac9570C616599A0 — PermissionedDisputeGame
+- [smart_contract] https://etherscan.io/address/0xaCc005DCd857B401e4732E6F7837135A22825cfA — MIPS64
+- [smart_contract] https://etherscan.io/address/0xb20B23af6071405C37dDDA0C0640e8eBb7899645 — OptimismPortal Implementation
 - [smart_contract] https://etherscan.io/address/0xbEb5Fc579115071764c7423A4f12eDde41f106Ed — OptimismPortal
 - [smart_contract] https://etherscan.io/address/0xdE1FCfB0851916CA5101820A69b13a4E276bd81F — AddressManager
-- [smart_contract] https://etherscan.io/address/0xdfe97868233d1aa22e815a266982f2cf17685a27 — L2OutputOracle
-- [smart_contract] https://etherscan.io/address/0xe2F826324b2faf99E513D16D266c3F80aE87832B — OptimismPortal Implementation
 - [smart_contract] https://etherscan.io/address/0xe5965Ab5962eDc7477C8520243A95517CD252fA9 — DisputeGameFactory
 - [smart_contract] https://immunefi.com — Primacy of Impact (primacy of impact)
+- [smart_contract] https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000007 — L2CrossDomainMessenger
+- [smart_contract] https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000022 — CrossL2Inbox
+- [smart_contract] https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000023 — L2ToL2CrossDomainMessenger
+- [smart_contract] https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000024 — SuperchainETHBridge
+- [smart_contract] https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000025 — ETHLiquidity
+- [smart_contract] https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000030 — UndeliveredMessageExporter
 - [smart_contract] https://optimistic.etherscan.io/address/0xb5CB7a05DD1311195982A26DFC8222477f9D8179 — PolicyEngineStaking
 - [websites_and_applications] http://gateway.optimism.io/ — Optimism's Gateway
 - [websites_and_applications] http://jobs.optimism.io/ — Optimism's Careers page
@@ -54,7 +63,7 @@
 
 However, only those in the Assets in Scope table are considered as in-scope of the bug bounty program.
 
-## Impacts in scope (30)
+## Impacts in scope (31)
 
 - [blockchain_dlt] Critical: Direct loss of funds, not including proposer/challenger bonds or fee vaults
 - [blockchain_dlt] High: Freezing of funds (fix requires L2 hardfork)
@@ -62,6 +71,7 @@ However, only those in the Assets in Scope table are considered as in-scope of t
 - [blockchain_dlt] High: Network not being able to confirm any new transactions, including deposits (Total network shutdown)
 - [blockchain_dlt] Medium: Direct theft or permanent loss of fee vault funds (excluding missed revenue, unrealized yield, or failure to collect fees from pending transactions)
 - [blockchain_dlt] Medium: Network not being able to confirm new transactions on L2, while forced-inclusion via L1 is still possible
+- [blockchain_dlt] Medium: [op-interop-filter] Fails to reject an invalid executing message, excluding messages that become invalid because of a reorg
 - [smart_contract] Critical: Loss of user funds by direct theft, not including proposer/challenger bonds or fee vaults
 - [smart_contract] Critical: Permanent freezing of funds, not including proposer/challenger bonds or fee vaults
 - [smart_contract] Critical: Protocol insolvency, not including proposer/challenger bonds or fee vaults
@@ -124,7 +134,7 @@ Critical vulnerabilities are further capped at 10% of economic damage, with the 
 
 For web application reports, the sensitivity of the data involved determines the position within the reward range. Disclosure of personal information or confidential customer organization data is awarded towards the top of the range.
 
-For testing any exploits involving cross-domain transactions, we recommend working with our [dockerized services](https://github.com/ethereum-optimism/optimism/blob/6f8e432506a5f4ba094f091b22a0bb6acc53fdac/ops/README.md) and modifying our [integration tests](https://github.com/ethereum-optimism/optimism/blob/6f8e432506a5f4ba094f091b22a0bb6acc53fdac/integration-tests/test/bridged-tokens.spec.ts)
+For exploits against deployed contracts, run the PoC against a mainnet fork with `anvil --fork-url`. For exploits that need a full L1 and L2 system, such as cross-domain transactions, write an [acceptance test](https://github.com/ethereum-optimism/optimism/tree/65e803329acd2bfd6fca0b3ff2012f7c55aa1bdf/op-acceptance-tests). These tests run the OP Stack in process and do not need Docker. Submit the PoC as a git patch against the monorepo, or as a GitHub gist.
 
 __Governance Proposals:__
 
@@ -148,6 +158,10 @@ __Blockchain / DLT__:
 - There are scenarios where, if an attacker can predict an L1 reorg, they could exploit it to reorder dispute game transactions in a way that causes the honest challenger to respond incorrectly and therefore lose its bond — although the dispute game itself will still resolve correctly.
 - *Clarification regarding malicious sequencer/batcher bugs*: the Default Blockchain/DLT out-of-scope item "Impacts caused by attacks requiring access to leaked keys/credentials" in particular puts malicious sequencer/batcher bugs out of scope. However, we put a sub-class of these bugs back into scope with "Malicious sequencer/batcher stealing user funds".
    - This **doesn't** generally move any derivation discrepancies that only a malicious sequencer/batcher can trigger in scope, like bugs where op-node, kona-node or kona-client disagree on the validity or interpretation of batcher transactions, frames, channels or batches. Only if the direct impact is stealing of user funds is such a bug in scope.
+- Vulnerabilities that depend on a sequencer refusing to include the relay of an interop message on its chain.
+- Within an interop set, the safe head of every chain stops when the safe head of one chain stops, for example when one chain's batcher stops.
+- Impacts of an invalid executing message in an unsafe or local-safe block, such as reorgs of unsafe blocks. Executing message validation replaces the block before it becomes safe. If op-interop-filter should have rejected the message, report it under the op-interop-filter impact.
+- op-interop-filter allowing an executing message that becomes invalid because of a reorg.
 
 __Smart Contracts__:
 - Vulnerabilities in the implementation of ‘custom token bridges’ which are written by third parties for bridging tokens to their network
@@ -157,6 +171,7 @@ __Smart Contracts__:
 - A bug in ResolvedDelegateProxy.sol which could result in a storage slot key collision overwriting the address of the implementation. This bug is dependent on the layout of the implementation contract, and Optimism is not affected.
 - There is an edge case in which ETH deposited to the OptimismPortal by a contract can be irrecoverably stranded:
   - When a deposit transaction fails to execute, the sender’s account balance is still credited with the mint value. However, if the deposit’s L1 sender is a contract, the tx.origin on L2 will be aliased, and this aliased address will receive the minted on L2. In general the contract on L1 will not be able to recover these funds. We have documented this risk and encourage users to take advantage of our CrossDomainMessenger contracts which provide additional safety measures.
+- The known limitations of interop message expiry: https://docs.optimism.io/app-developers/guides/interoperability/message-expiration#known-limitations
 - Sending cross-chain messages with very large amounts of data, or very specific amounts of gas can open up griefing attacks causing the sender’s funds to be stuck and requiring an upgrade to release them.
 - Deposit transactions can be griefed at a cost to the attacker, by filling up the MAX_RESOURCE_LIMIT. This issue is mitigated by PR 5064, which does not completely resolve the issue but does increase the cost of a sustained griefing attack. A more complete fix will require architectural changes.
 - There are various ‘foot guns’ in the bridge which may arise from misconfiguration of a token. To minimize complexity our bridge design does not try to prevent all forms of developer and user error. Examples of such foot guns include:
