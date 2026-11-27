@@ -58,6 +58,7 @@ All issues submitted by wardens to the GMTrade bounty will be added to this repo
 
 https://github.com/gmsol-labs/gmx-solana/blob/main/README.md#known-issues
 
+An issue is considered a known issue under the GMTrade Bug Bounty Program if it is documented in the GMX Synthetics repository (https://github.com/gmx-io/gmx-synthetics), including in its Known Issues section or source code comments, or in an audit report covering GMX Synthetics, and the same underlying issue applies to a protocol mechanism shared with GMTrade. Reports covering such issues are ineligible for rewards.
 
 Previous Audits
 Any previously reported vulnerabilities mentioned in past audit reports are not eligible for a reward.
